@@ -1,0 +1,525 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link rel="stylesheet" type="text/css" href="include/main.css" />
+</head>
+
+<body>
+<script src="include/main.js"></script>
+<script src="include/jquery.min.js"></script>
+<table class="PageHeaderFrame">
+	<tr>
+		<td>
+			<table class="PageHeader">
+				<tr>
+					<td>
+						<table class="PageHeaderContent">
+							<tr>
+								<td>
+									<table class="HeaderDate">
+										<tr>
+											<td rowspan="2" class="OghamDateOgham"><script>document.write(OghamJ("G U"));</script></td>
+											<td class="OghamDateEnglish">Tuesday, September 8, 2009</td>
+											<td>&nbsp;</td>
+										</tr>
+										<tr>
+											<td class="OghamDateNone" colspan="2">
+												<span class="CountryEnglish">Ireland</span><br>
+												<span class="CountryIrish fade33"><a name="Eire" id="Eire" />Éire</span>
+											</td>
+										</tr>
+									</table>
+								</td>
+								<td align="right">
+									<table id="ToC" class="ToC">
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<table class="IrishPronunciation">
+				<tr>
+					<td>
+						<table class="PageHeaderContent">
+							<tr>
+								<td>
+									<table width="100%">
+										<tr>
+											<td>
+												<span style="color:#59503C; font-size:2em; font-variant:small-caps"><b>Page Navigation</b></span><br />
+											</td>
+											<td>
+												<table class="PageNavigation">
+													<tr>
+														<td rowspan="2" onClick="PageNavigationClick(0)">&nbsp;&nbsp;Main&nbsp;&nbsp;</td>
+														<th colspan="3">August</th>
+														<th colspan="10">September</th>
+													</tr>
+													<tr>
+														<td onMouseOver="PageNavigation(29);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(29);">29</td>
+														<td onMouseOver="PageNavigation(30);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(30);">30</td>
+														<td onMouseOver="PageNavigation(31);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(31);">31</td>
+														<td onMouseOver="PageNavigation(1);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(1);">1</td>
+														<td onMouseOver="PageNavigation(2);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(2);">2</td>
+														<td onMouseOver="PageNavigation(3);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(3);">3</td>
+														<td onMouseOver="PageNavigation(4);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(4);">4</td>
+														<td onMouseOver="PageNavigation(5);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(5);">5</td>
+														<td onMouseOver="PageNavigation(6);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(6);">6</td>
+														<td onMouseOver="PageNavigation(7);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(7);">7</td>
+														<td onMouseOver="PageNavigation(8);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(8);" style="background-color:#A7C3AB">8</td>
+														<td onMouseOver="PageNavigation(9);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(9);">9</td>
+														<td onMouseOver="PageNavigation(10);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(10);">10</td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+									</table>
+									<p id="PageNavigationSubHeads" class="PageNavigation">&nbsp;</p>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<table class="IrishPronunciation">
+				<tr>
+					<td>
+						<table class="PageHeaderContent">
+							<tr>
+								<td>
+									<form id="RegExpForm" name="RegExpForm" method="post" action="">
+									  <span style="color:#59503C; font-size:2em; font-variant:small-caps"><b><a name="Pronounce" id="Pronounce"></a>Irish Pronunciation Utility</b></span><br />
+									  &nbsp;
+									  <table border="1" cellspacing="0" cellpadding="0" class="WhiteTable">
+										<tr>
+										  <td nowrap="nowrap">Pronounce This:&nbsp;&nbsp;</td>
+										  <td><input name="GaelicJ" type="text" id="GaelicJ" size="45" /><input type="button" name="Button" value="Convert" onclick="ConvertGaelicJ();" /></td>
+										</tr>
+										<tr id="GaelicRow" style="display:none">
+										  <td nowrap="nowrap">Irish:&nbsp;&nbsp;</td>
+										  <td id="GaelicColor" class="result"><span id="GaelicResult">&nbsp;</span></td>
+										  <td id="GaelicClean" style="display:none" class="result"><span id="GaelicCleanResult">&nbsp;</span></td>
+										</tr>
+										<tr id="TraditionalGaelicRow" style="display:none">
+										  <td nowrap="nowrap">Traditional Irish:&nbsp;&nbsp;</td>
+										  <td id="TraditionalGaelicColor" class="result"><span id="TraditionalGaelicResult">&nbsp;</span></td>
+										  <td id="TraditionalGaelicClean" style="display:none" class="result"><span id="TraditionalGaelicCleanResult">&nbsp;</span></td>
+										</tr>
+										<tr id="IPARow" style="display:none">
+										  <td nowrap="nowrap"><a href="http://en.wikipedia.org/wiki/International_Phonetic_Alphabet" target="_blank">IPA</a>:&nbsp;&nbsp;</td>
+										  <td id="IPAColor" class="result"><span id="IPAResult">&nbsp;</span></td>
+										  <td id="IPAClean" style="display:none" class="result"><span id="IPACleanResult">&nbsp;</span></td>
+										</tr>
+										<tr id="EnglishApproximateRow" style="display:none">
+										  <td nowrap="nowrap">English Approximate:&nbsp;&nbsp;</td>
+										  <td id="EnglishApproximateColor" class="result"><span id="EnglishApproxResult">&nbsp;</span></td>
+										  <td id="EnglishApproximateClean" style="display:none" class="result"><span id="EnglishApproxCleanResult">&nbsp;</span></td>
+										</tr>
+										<tr id="OghamRow" style="display:none">
+										  <td nowrap="nowrap">Ogham:&nbsp;&nbsp;</td>
+										  <td style="padding:5px"><span id="OghamResult">&nbsp;</span></td>
+										</tr>
+										<tr id="ISLRow" style="display:none">
+										  <td nowrap="nowrap">ISL:&nbsp;&nbsp;</td>
+										  <td style="padding:5px"><span id="ISLResult">&nbsp;</span></td>
+										</tr>
+									  </table>
+									<div id="buttons" style="display:none">
+									<p align="left" id="ItalicsInEnglishApproximate" style="display:none">Italics in the &quot;English Approximate&quot; indicate a sound that does not exist in English.  Refer to the &quot;IPA&quot; line for more accurate pronunciation information.</p>
+									<p align="left"> You can see the results with background color shading to illustrate which letters are mapped to which sounds, or you can hide the colors if you find it difficult the read the shaded text.<br />
+									<input id="HideColorButton" type="button" value="Hide Colors" onclick="ColorsJ('hide');" /><input id="ShowColorButton" style="display:none" type="button" value="Show Colors" onclick="ColorsJ('show');" /></p>
+									<p><input id="ReturnToTextButton" style="display:none" type="button" value="Return to Where You Were" onclick="PronounceReturnToTextJ();" /></p>
+									</div>
+									</form>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+
+<hr class="Disappear" />
+<script>
+WriteH1HeaderJ("Plan B");
+</script>
+<p>Having been there twice, I can definitely say that Ireland sets an agenda for me &#8211; an agenda that is influenced by my plans, but by no means a slave to them.</p>
+<p>Our plan for this day had been to go to Skellig Michael at the earliest sailing, tour it, return to the car by 3:00 PM, drive up to see the Cliffs of Moher, and then spend the night in <script>LangBoxJ("EN", "Sligo");LangBoxJ("GA", "Sligeach");</script> (at a cool ultramodern hotel called the Glass House, shaped like a boat, and overlooking the <script>LangBoxJ("EN", "River Garavogue");LangBoxJ("GA", "An Gharbhóg");</script>&nbsp;)</p>
+<p>The next day we would drive into Northern Ireland and walk across the alarming <script>LangBoxJ("EN", "Carrick-A-Rede");LangBoxJ("GA", "Carraig-a-Rade");</script> rope bridge (the name of which mean &#8220;Rock in the Road&#8221;, and which connects the mainland to tiny Carrick Island) &#8211; a site we had been keen on seeing on our first trip to Ireland, but which had been removed in its entirety for maintenance at that time. Then we would go to tour and spend the night in a city so ravaged by <script>LangBoxJ("EN", "&#8220;The Troubles&#8221;");LangBoxJ("GA", "&#8220;Na Trioblóidí&#8221;");</script> that even today it is known by two names: <script>LangBoxJ("EN", "Derry");LangBoxJ("GA", "Doire");LangBoxJ("GD", "Derrie");</script>, favored by (mostly-Catholic) Irish nationists, and <script>LangBoxJ("EN", "Londonderry");LangBoxJ("GA", "Doire Cholmchille");LangBoxJ("GD", "Lunnonderrie");</script>, favored by (mostly-Protestant) unionists. The situation is in such flux that official names often disagree, such as with the city&rsquo;s charter (establishing the name as &#8220;Londonderry&#8221; in 1662) and the city governance (which officially named itself the &#8220;Derry City Council&#8221; in 1984). Our plan was to stay close to the city center, allowing us to see the murals painted by the Irish nationalists, and to remember the tragedy of 
+<script>LangBoxJ("EN", "Bloody Sunday");LangBoxJ("GA", "Domhnach na Fola");</script>, also known as the &#8220;Bogside Massacre&#8221; of January 30, 1972, in which twenty-six unarmed protesters were shot by members of the British Army, fourteen of them fatally. This is the incident that was immortalized in the U2 song, <i>Sunday Bloody Sunday</i>.</p>
+<p>Alas, none of it was to be: Rough weather had passed over County Kerry in the night, and the seas were too rough for a sailing to Skellig Michael. But the proprietors of our B&B assured us that it would almost certainly be possible to see tomorrow, if we could just extend our stay in Caherciveen for another night. Skellig Michael was such a draw that we did so on the spot &#8211; calling to cancel our reservations in Sligo and (London)Derry, and establish one in Kilkenny.</p>
+<p>To hew as much as possible to the plan, though, we decided to drive north to the Cliffs of Moher this morning, and to use as much of the day as we could exploring this part of Ireland.</p>
+<script>WriteH1FooterJ();</script>
+
+<hr class="Disappear" />
+<script>
+WriteH1HeaderJ("Limerick", "Co. Limerick");
+WriteOghamJ("Luimneach");
+</script>
+<p>Our drive up the coast took us through the city of <script>LangBoxJ("EN", "Limerick");LangBoxJ("GA", "Luimneach");</script>, so it only makes sense to take a moment and dive here into an examination of the relationship between this city and the eponymous style of poetry &#8211; an examination made infinitely easier by the enormous font I silliness I encountered at the <a href="http://www.oedilf.com/">OEDILF</a> (don&rsquo;t be dirty; it stands for &#8220;Omnificent English Dictionary In Limerick Form&#8221;):</p>
+<table border="0" cellpadding="0" cellspacing="0" align="center"><tr><td><i>
+Thirteen feet in five lines. That&rsquo;s what&rsquo;s owed<br />
+To a limerick&rsquo;s poetical code:<br />
+Rhymes are matched, three and two,<br />
+Teamed to anapests &#8211; through<br />
+Careful crafting new meaning&rsquo;s bestowed.
+</i></td></tr></table>
+<p>and this:</p>
+<table border="0" cellpadding="0" cellspacing="0" align="center"><tr><td><i>
+Oh, the city of Limerick&rsquo;s renown<br />
+Is its comical poetry crown:<br />
+Nowhere else has a verse<br />
+As amusing and terse<br />
+To its name. There&rsquo;s no haiku-based town.
+</i></td></tr></table>
+<p>Let&rsquo;s go over the first one, since it both describes and embodies the structure.  A limerick is a rhyme (often bawdy in modern usage) that follows the rhyme scheme AABBA.  Lines in the <i>A</i> scheme (1st, 2nd, and 5th) use an anapestic trimeter, while those in the <i>B</i> scheme (3rd and 4th) use an anapestic dimeter:</p>
+<table border="0" cellpadding="0" cellspacing="0" align="center">
+	<tr>
+		<td>
+			<table border="0" cellspacing="0" cellpadding="0" class="nobordertable">
+				<tr style="font-variant:small-caps">
+					<td nowrap="nowrap" style="padding:0;">Thĭrtĕen <b>fēet</b>&nbsp;</td>
+					<td nowrap="nowrap" style="padding:0;">ĭn fĭve <b>līnes</b>.&nbsp;</td>
+					<td nowrap="nowrap" style="padding:0;">Thăt&rsquo;s whăt&rsquo;s <b>ōwed</b></td>
+				</tr>
+				<tr>
+					<td style="padding:0; border-left:1px #59503C solid; border-bottom:1px #59503C solid"><img src="images/invisible.gif" width="3" height="3" /></td>
+					<td style="padding:0; border-left:1px #59503C solid; border-bottom:1px #59503C solid"><img src="images/invisible.gif" width="3" height="3" /></td>
+					<td style="padding:0; border-left:1px #59503C solid; border-right:1px #59503C solid; border-bottom:1px #59503C solid"><img src="images/invisible.gif" width="3" height="3" /></td>
+				</tr>
+				<tr>
+					<td style="padding:0;" align="center">anapest</td>
+					<td style="padding:0;" align="center">anapest</td>
+					<td style="padding:0;" align="center">anapest</td>
+				</tr>
+			</table>
+		</td>
+		<td style="padding-left:30px; font-size:1.5em; vertical-align:middle">A</td>
+	</tr>
+	<tr>
+		<td>
+			<table border="0" cellspacing="0" cellpadding="0" class="nobordertable">
+				<tr style="font-variant:small-caps">
+					<td nowrap="nowrap" style="padding:0;">Tŏ ă <b>līme</b></td>
+					<td nowrap="nowrap" style="padding:0;">rĭck&rsquo;s pŏ<b>ē</b></td>
+					<td nowrap="nowrap" style="padding:0;">tĭcăl <b>cōde</b>:</td>
+				</tr>
+				<tr>
+					<td style="padding:0; border-left:1px #59503C solid; border-bottom:1px #59503C solid"><img src="images/invisible.gif" width="3" height="3" /></td>
+					<td style="padding:0; border-left:1px #59503C solid; border-bottom:1px #59503C solid"><img src="images/invisible.gif" width="3" height="3" /></td>
+					<td style="padding:0; border-left:1px #59503C solid; border-right:1px #59503C solid; border-bottom:1px #59503C solid"><img src="images/invisible.gif" width="3" height="3" /></td>
+				</tr>
+				<tr>
+					<td style="padding:0;" align="center">anapest</td>
+					<td style="padding:0;" align="center">anapest</td>
+					<td style="padding:0;" align="center">anapest</td>
+				</tr>
+			</table>
+		</td>
+		<td style="padding-left:30px; font-size:1.5em; vertical-align:middle">A</td>
+	</tr>
+	<tr>
+		<td>
+			<table border="0" cellspacing="0" cellpadding="0" class="nobordertable">
+				<tr style="font-variant:small-caps">
+					<td nowrap="nowrap" style="padding:0;">Rhymes ăre <b>mātched</b>,&nbsp;</td>
+					<td nowrap="nowrap" style="padding:0;">thrĕe ănd <b>twō</b>,</td>
+				</tr>
+				<tr>
+					<td style="padding:0; border-left:1px #59503C solid; border-bottom:1px #59503C solid"><img src="images/invisible.gif" width="3" height="3" /></td>
+					<td style="padding:0; border-left:1px #59503C solid; border-right:1px #59503C solid; border-bottom:1px #59503C solid"><img src="images/invisible.gif" width="3" height="3" /></td>
+				</tr>
+				<tr>
+					<td style="padding:0;" align="center">anapest</td>
+					<td style="padding:0;" align="center">anapest</td>
+				</tr>
+			</table>
+		</td>
+		<td style="padding-left:30px; font-size:1.5em; vertical-align:middle">B</td>
+	</tr>
+	<tr>
+		<td>
+			<table border="0" cellspacing="0" cellpadding="0" class="nobordertable">
+				<tr style="font-variant:small-caps">
+					<td nowrap="nowrap" style="padding:0;">Tĕamed tŏ <b>ān</b></td>
+					<td nowrap="nowrap" style="padding:0;">ăpĕsts &#8211; <b>thrōugh</b></td>
+				</tr>
+				<tr>
+					<td style="padding:0; border-left:1px #59503C solid; border-bottom:1px #59503C solid"><img src="images/invisible.gif" width="3" height="3" /></td>
+					<td style="padding:0; border-left:1px #59503C solid; border-right:1px #59503C solid; border-bottom:1px #59503C solid"><img src="images/invisible.gif" width="3" height="3" /></td>
+				</tr>
+				<tr>
+					<td style="padding:0;" align="center">anapest</td>
+					<td style="padding:0;" align="center">anapest</td>
+				</tr>
+			</table>
+		</td>
+		<td style="padding-left:30px; font-size:1.5em; vertical-align:middle">B</td>
+	</tr>
+	<tr>
+		<td>
+			<table border="0" cellspacing="0" cellpadding="0" class="nobordertable">
+				<tr style="font-variant:small-caps">
+					<td nowrap="nowrap" style="padding:0;">Cărefŭl <b>crāft</b></td>
+					<td nowrap="nowrap" style="padding:0;">ĭng nĕw <b>mēan</b></td>
+					<td nowrap="nowrap" style="padding:0;">ĭng&rsquo;s bĕ<b>stōwed</b>.</td>
+				</tr>
+				<tr>
+					<td style="padding:0; border-left:1px #59503C solid; border-bottom:1px #59503C solid"><img src="images/invisible.gif" width="3" height="3" /></td>
+					<td style="padding:0; border-left:1px #59503C solid; border-bottom:1px #59503C solid"><img src="images/invisible.gif" width="3" height="3" /></td>
+					<td style="padding:0; border-left:1px #59503C solid; border-right:1px #59503C solid; border-bottom:1px #59503C solid"><img src="images/invisible.gif" width="3" height="3" /></td>
+				</tr>
+				<tr>
+					<td style="padding:0;" align="center">anapest</td>
+					<td style="padding:0;" align="center">anapest</td>
+					<td style="padding:0;" align="center">anapest</td>
+				</tr>
+			</table>
+		</td>
+		<td style="padding-left:30px; font-size:1.5em; vertical-align:middle">A</td>
+	</tr>
+</table>
+<p>Anyway, we didn&rsquo;t really see anything in Limerick except traffic lights &#8211; but just being there whetted my appetite for learning more about the poems and their relationship to the city. The short answer, though, is that no one is certain.  One likelihood comes from the Maigue Poets, who met in Croom Castle on the banks of the nearby <script>LangBoxJ("EN", "River Maigue");LangBoxJ("GA", "An Mháigh");</script>, and who may have sometimes composed witticisms in this style. Another possibility is that it derived from a parlor game in which guests entertained each other by composing poems that pretty much were limericks, followed by the nonsense (and non-rhyming) line, &#8220;Will you come to Limerick&#8221; (or some variation thereof, always ending in &#8220;Limerick&#8221;). An example of these is:</p>
+<table border="0" cellpadding="0" cellspacing="0" align="center"><tr><td><i>
+There was a young rustic named Mallory,<br />
+who drew but a very small salary.<br />
+When he went to the show,<br />
+his purse made him go<br />
+to a seat in the uppermost gallery.<br />
+Tune, won&rsquo;t you come to Limerick.
+</i></td></tr></table>
+<script>WriteH1FooterJ();</script>
+
+<hr class="Disappear" />
+<script>
+WriteH1HeaderJ("Cliffs of Moher", "Co. Clare");
+WritePhotoGroupHeaderJ("Moher", "Cliffs of Moher");
+WritePhotoJ("Moher", "20090908", "Ticket20.jpg", "Admission Ticket the the Cliffs of Moher&rsquo;s Atlantic Edge Presentation", 326, 215);
+WritePhotoJ("Moher", "20090908", "Map_Ireland_Moher.jpg", "Location of the Cliffs", 450, 600);
+WritePhotoJ("Moher", "20090908", "IMG_0784.JPG", "Cliffs of Moher");
+WritePhotoJ("Moher", "20090908", "IMG_0787.JPG", "Cliffs of Moher");
+WritePhotoJ("Moher", "20090908", "IMG_0786.JPG", "O&rsquo;Brien&rsquo;s Tower");
+WritePhotoJ("Moher", "20090908", "IMG_0860.JPG", "I wasn&rsquo;t planning to get T-shirts on this trip, as I felt I had overdone the T-shirt thing a bit &#8211; but I really loved this design with the cliffs in the colors of the Irish flag.");
+WritePhotoGroupFooterJ();
+WriteOghamJ("Aillte an Mhothair");
+</script>
+<p>Finally we came to the focal point of our &#8220;Plan B&#8221; day: the <script>LangBoxJ("EN", "Cliffs of Moher");LangBoxJ("GA", "Aillte an Mhothair");</script>. The name, pronounced in English as <script>LangBoxJ("IPA", "/ˈmoʊ.hɚ/");</script>, means &#8220;cliffs of the ruin,&#8221; referring, possibly, to the ruins of Moher Tower (which we did not visit) at the southern end of the cliffs.</p>
+<p>Our first impression upon arrival was not that we were immersed in beauty, but rather than we were under attack by wind.  And more for refuge than enthusiasm we started in the indoor visitors center at the Atlantic Edge Presentation, the admission for which was a mandatory part of our entrance fee. This was a somewhat (but not tragically) cheesy presentation of a view of the cliffs from the eyes of one of the birds that nests on the cliff ledges &#8211; allowing one to see perspectives that are impossible from land, as well as the view underwater (as the bird conveniently dived for fish).</p>
+<p>Then, with our courage mustered, we went outside to look at the cliffs.  They are stunning, rising up to <script>MeasurementBoxJ("SI", "214 m", true);MeasurementBoxJ("US", "702'", false);</script> above the Atlantic &#8211; so high that the thunderous crashing waves at their base look like mere ripples. But at the end of the day, I find I don&rsquo;t have much to write about them, a fact also reflected in the meager number of pictures I took while there.</p>
+<p>But despite my middling enthusiasm, the cliffs are a big deal:  They are the <span class="dropnote">top tourist site in all of Ireland</span><span class="downarrow">➴</span>, attracting over a million visitors each year. And they have been named a finalist in the New7Wonders of Nature contest (for which I don&rsquo;t have a lot of respect, by the way; more anon).</p>
+<table class="dropnoteframe">
+	<tr>
+		<th width="25%">&nbsp;</th>
+		<td width="75%">
+			<table class="dropnotetable">
+				<tr>
+					<th>➴</th>
+					<td>Which I really don&rsquo;t get. I mean, Ireland is full of fantastic destinations, and &#8211; while the Cliffs of Moher definitely have their place &#8211; I just can&rsquo;t see putting them above the Rock of Cashel, Blarney Castle, the Ring of Kerry, or the sites of Dublin (just to include the places I know first-hand; and there&rsquo;s a lot in Ireland that I still haven&rsquo;t seen yet).</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<p>Before leaving, we walked up the hill to O&rsquo;Brien&rsquo;s Tower, built by Cornelius O&rsquo;Brien, who is also said to have built everything in the vicinity except the cliffs themselves. Officially, O&rsquo;Brien built the tower to attract Victorian-era tourists to the cliffs, which he hoped would help lift the area out of its crushing poverty. This may well be true, but there is another (not necessarily contradictory) story that &#8220;Wanna come see my tower?&#8221; was a fabulous pick-up line in the Victorian era, and even among the moral constraints of the day it helped him get laid.</p>
+<p>It was at O&rsquo;Brien&rsquo;s tower that I had one of my many unfortunate misses in the souvenir department. There is an Irish legend of St. Brigid weaving what is now known as <script>LangBoxJ("EN", "Brigid&rsquo;s cross");LangBoxJ("GA", "Cros Bríde");</script>, which Wikipedia relates as follows:</p>
+<blockquote>
+	<p>A pagan chieftain from the neighbourhood of Kildare was dying. Christians in his household sent for Brigid to talk to him about Christ. When she arrived, the chieftain was raving. As it was impossible to instruct this delirious man, hopes for his conversion seemed doubtful. Brigid sat down at his bedside and began consoling him. As was customary, the dirt floor was strewn with rushes both for warmth and cleanliness. Brigid stooped down and started to weave them into a cross, fastening the points together. The sick man asked what she was doing. She began to explain the cross, and as she talked, his delirium quieted and he questioned her with growing interest. Through her weaving, he converted and was baptized at the point of death. Since then, the cross of rushes has been venerated in Ireland.</p>
+</blockquote>
+<p>At the gift shop in O&rsquo;Brien&rsquo;s Tower, they sold versions of Brigid&rsquo;s cross made from rushes from the Shannon River, just like the original. I thought this seemed nice, but didn&rsquo;t want to carry it around &#8211; so I took a pass thinking this was the kind of trinket I might see all over the place. Ceramic and pewter versions of the cross are easy to find, but rushes are almost unheard of; thus I missed my chance. Anyway, here&rsquo;s what Brigid&rsquo;s cross looks like:</p>
+<p align="center"><img src="20090908/BrigidCross.png" width="250" height="254" alt="Brigid&rsquo;s Cross" /></p>
+<script>WriteH1FooterJ();</script>
+
+<hr class="Disappear" />
+<script>
+WriteH1HeaderJ("Will New7Wonders Never Cease?");
+</script>
+<p>As you may remember from my previous trip report, Billy and I were in the Middle East when the first New7Wonders list &#8211; <span class="dropnote">New Seven Wonders of the World</span><span class="downarrow">➴</span> &#8211; was being vetted, and our route took us to two sites then under consideration: Petra and the Pyramids of Giza. See <a href="../2007-3Continents/index.htm">that report</a> (bottom of the main page) for more information and editorializing. Well, actually, you don&rsquo;t have to go anywhere for the editorializing, as I&rsquo;m happy to repeat it here: I think this contest is ridiculous. In fact, I would offer that no such valid list can be compiled, and the only reason that the original (ancient) &#8220;Seven Wonders of the World&#8221; list has stood the test of time is that six of the seven items on it have been gone for milennia. And putting the whole thing up for a popular vote just increases the messiness of the whole affair. In short, I didn&rsquo;t like their idea, their process, or their results.</p>
+<table class="dropnoteframe">
+	<tr>
+		<th width="25%">&nbsp;</th>
+		<td width="75%">
+			<table class="dropnotetable">
+				<tr>
+					<th>➴</th>
+					<td>At that point they hadn&rsquo;t come up with their pithy &#8220;New7Wonders&#8221; thing.</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<p>And then, just as we started planning this trip, the New7Wonders folks decided that the world hadn&rsquo;t dealt with enough of their foolishness the first time around, and that they were going to use the same system to come up with a separate list of the New7Wonders of Nature. The original results were announced on July 7, 2007 (7/7/7); the New7Wonders of Nature will be announced on November 11, 2011 (11/11/11). So surely, if popular opinion can&rsquo;t put an end to this self-indulgence, numerology will.</p>
+<p>That said, I had never heard of the Cliffs of Moher before the twenty-eight finalists for the New7Wonders of Nature list was published, and it is because of that publicity that we came here at all &#8211; so, well, there&rsquo;s that.</p>
+<p>Anyway, here are the finalists:</p>
+<table align="center" border="0" cellpadding="5" cellspacing="0">
+	<tr>
+		<th style="border-left:1px #000 solid; border-top:1px #000 solid">&nbsp;</td>
+		<td style="border-top:1px #000 solid"><img border="1" src="20090908/N7WAmazon.jpg" width="55" height="42" alt="Amazon" /></td>
+		<th style="border-top:1px #000 solid" align="left">Amazon</th>
+		<th style="border-left:1px #000 solid; border-top:1px #000 solid">&nbsp;</td>
+		<td style="border-top:1px #000 solid"><img border="1" src="20090908/N7WEl-Yunque.jpg" width="55" height="42" alt="El Yunque" /></td>
+		<th style="border-top:1px #000 solid" align="left">El Yunque</th>
+		<th style="border-left:1px #000 solid; border-top:1px #000 solid">&nbsp;</td>
+		<td style="border-top:1px #000 solid"><img border="1" src="20090908/N7WJeju_Island.jpg" width="55" height="42" alt="Jeju Island" /></td>
+		<th style="border-top:1px #000 solid" align="left">Jeju Island</th>
+		<th style="border-left:1px #000 solid; border-top:1px #000 solid">&nbsp;</td>
+		<td style="border-top:1px #000 solid"><img border="1" src="20090908/N7WMud-Volcanos.jpg" width="55" height="42" alt="Mud Volcanoes" /></td>
+		<th style="border-top:1px #000 solid; border-right:1px #000 solid" align="left">Mud Volcanoes</th>
+	</tr>
+	<tr>
+		<th style="border-left:1px #000 solid">&nbsp;</td>
+		<td><img border="1" src="20090908/N7WAngel-Falls.jpg" width="55" height="42" alt="Angel Falls" /></td>
+		<th align="left">Angel Falls</th>
+		<th style="border-left:1px #000 solid">&nbsp;</td>
+		<td><img border="1" src="20090908/N7WGalapagos.jpg" width="55" height="42" alt="Galapagos" /></td>
+		<th align="left">Galapagos</th>
+		<th style="border-left:1px #000 solid">&nbsp;</td>
+		<td><img border="1" src="20090908/N7WKilimanjaro.jpg" width="55" height="42" alt="Kilimanjaro" /></td>
+		<th align="left">Kilimanjaro</th>
+		<th style="border-left:1px #000 solid">&nbsp;</td>
+		<td><img border="1" src="20090908/N7WPuerto-Princesa.jpg" width="55" height="42" alt="Puerto Princesa Underground River" /></td>
+		<th style="border-right:1px #000 solid" align="left">Puerto Princesa Underground River</th>
+	</tr>
+	<tr>
+		<th style="border-left:1px #000 solid">&nbsp;</td>
+		<td><img border="1" src="20090908/N7WBay-of-Fundy-.jpg" width="55" height="42" alt="Bay of Fundy" /></td>
+		<th align="left">Bay of Fundy</th>
+		<th style="border-left:1px #000 solid"><span style="color:#090; font-size:2em">✔</span></td>
+		<td><img border="1" src="20090908/N7WGrand-Canyon.jpg" width="55" height="42" alt="Grand Canyon" /></td>
+		<th align="left">Grand Canyon</th>
+		<th style="border-left:1px #000 solid">&nbsp;</td>
+		<td><img border="1" src="20090908/N7WKomodo.jpg" width="55" height="42" alt="Komodo" /></td>
+		<th align="left">Komodo</th>
+		<th style="border-left:1px #000 solid">&nbsp;</td>
+		<td><img border="1" src="20090908/N7WSundarbans.jpg" width="55" height="42" alt="Sundarbans" /></td>
+		<th style="border-right:1px #000 solid" align="left">Sundarbans</th>
+	</tr>
+	<tr>
+		<th style="border-left:1px #000 solid">&nbsp;</td>
+		<td><img border="1" src="20090908/N7WBlack-Forest.jpg" width="55" height="42" alt="Black Forest" /></td>
+		<th align="left">Black Forest</th>
+		<th style="border-left:1px #000 solid">&nbsp;</td>
+		<td><img border="1" src="20090908/N7WGreat-Barrier-Reef.jpg" width="55" height="42" alt="Great Barrier Reef" /></td>
+		<th align="left">Great Barrier Reef</th>
+		<th style="border-left:1px #000 solid">&nbsp;</td>
+		<td><img border="1" src="20090908/N7WMaldives.jpg" width="55" height="42" alt="Maldives" /></td>
+		<th align="left">Maldives</th>
+		<th style="border-left:1px #000 solid">&nbsp;</td>
+		<td><img border="1" src="20090908/N7WTable-Mountain.jpg" width="55" height="42" alt="Table Mountain" /></td>
+		<th style="border-right:1px #000 solid" align="left">Table Mountain</th>
+	</tr>
+	<tr>
+		<th style="border-left:1px #000 solid">&nbsp;</td>
+		<td><img border="1" src="20090908/N7WBu-Tinah-Shoals.jpg" width="55" height="42" alt="Bu Tinah Island" /></td>
+		<th align="left">Bu Tinah Island</th>
+		<th style="border-left:1px #000 solid">&nbsp;</td>
+		<td><img border="1" src="20090908/N7WHalong-Bay.jpg" width="55" height="42" alt="Hạ Long Bay" /></td>
+		<th align="left">Hạ Long Bay</th>
+		<th style="border-left:1px #000 solid">&nbsp;</td>
+		<td><img border="1" src="20090908/N7WMasurian-Lake-District.jpg" width="55" height="42" alt="Masurian Lake District" /></td>
+		<th align="left">Masurian Lake District</th>
+		<th style="border-left:1px #000 solid">&nbsp;</td>
+		<td><img border="1" src="20090908/N7WUluru.jpg" width="55" height="42" alt="Uluṟu" /></td>
+		<th style="border-right:1px #000 solid" align="left">Uluṟu</th>
+	</tr>
+	<tr>
+		<th style="border-left:1px #000 solid"><span style="color:#090; font-size:2em">✔</span></td>
+		<td><img border="1" src="20090908/N7WCliffs-of-Moher-.jpg" width="55" height="42" alt="Cliffs of Moher" /></td>
+		<th align="left">Cliffs of Moher</th>
+		<th style="border-left:1px #000 solid">&nbsp;</td>
+		<td><img border="1" src="20090908/N7WIguazu-Falls.jpg" width="55" height="42" alt="Iguazu Falls" /></td>
+		<th align="left">Iguazu Falls</th>
+		<th style="border-left:1px #000 solid"><span style="color:#090; font-size:2em">✔</span></td>
+		<td><img border="1" src="20090908/N7WMatterhorn--Cervino.jpg" width="55" height="42" alt="Matterhorn/Cervino" /></td>
+		<th align="left">Matterhorn/Cervino</th>
+		<th style="border-left:1px #000 solid"><span style="color:#090; font-size:2em">✔</span></td>
+		<td><img border="1" src="20090908/N7WVesuvius.jpg" width="55" height="42" alt="Vesuvius" /></td>
+		<th style="border-right:1px #000 solid" align="left">Vesuvius</th>
+	</tr>
+	<tr>
+		<th style="border-left:1px #000 solid; border-bottom:1px #000 solid"><span style="color:#090; font-size:2em">✔</span></td>
+		<td style="border-bottom:1px #000 solid"><img border="1" src="20090908/N7WDead-Sea.jpg" width="55" height="42" alt="Dead Sea" /></td>
+		<th style="border-bottom:1px #000 solid" align="left">Dead Sea</th>
+		<th style="border-left:1px #000 solid; border-bottom:1px #000 solid">&nbsp;</td>
+		<td style="border-bottom:1px #000 solid"><img border="1" src="20090908/N7WJeita-Grotto.jpg" width="55" height="42" alt="Jeita Grotto" /></td>
+		<th style="border-bottom:1px #000 solid" align="left">Jeita Grotto</th>
+		<th style="border-left:1px #000 solid; border-bottom:1px #000 solid">&nbsp;</td>
+		<td style="border-bottom:1px #000 solid"><img border="1" src="20090908/N7WMilford-Sound.jpg" width="55" height="42" alt="Milford Sound" /></td>
+		<th style="border-bottom:1px #000 solid" align="left">Milford Sound</th>
+		<th style="border-left:1px #000 solid; border-bottom:1px #000 solid">&nbsp;</td>
+		<td style="border-bottom:1px #000 solid"><img border="1" src="20090908/N7WYushan.jpg" width="55" height="42" alt="Yù Shān" /></td>
+		<th style="border-bottom:1px #000 solid; border-right:1px #000 solid" align="left">Yù Shān</th>
+	</tr>
+</table>
+<p>I&rsquo;ve noted the ones that Billy and I have seen with check marks &#8211; and considering the obscurity of some of the items, I think 5 out of 28 (18%) is pretty good.  But I&rsquo;m not even sure I&rsquo;d put the places that I&rsquo;ve been to on this list:</p>
+<ul>
+	<li>The Matterhorn is just a mountain, and not even the tallest in its neighborhood. How does it rate above Everest?</li>
+	<li>Vesuvius is just a volcano, and wouldn&rsquo;t even be under consideration if it weren&rsquo;t for Pompei (which has nothing to do with wonders of nature). If you want a volcano on the list, why not the Hawai&lsquo;ian volcanoes (which are the tallest mountains on earth as measured from their base), Fuji (with its nearly perfect conical shape), or Yellowstone (the largest supervolcano in the world)?</li>
+	<li>The Cliff of Moher are beautiful &#8211; but there are much higher sheer-vertical cliffs in Scandinavia, and much more unusual cliffs in lots of places (such as the white cliffs of Dover).  Why not those?</li>
+</ul>
+<p>By the way, the meager tiny pictures is all they give you over at New7Wonders. And let the record show that they couldn&rsquo;t be bothered with proper diacritical marks; for this report, I corrected the spelling of &#8220;Hạ Long Bay,&#8221; &#8220;Uluṟu,&#8221; and &#8220;Yù Shān.&#8221;</p>
+<script>WriteH1FooterJ();</script>
+
+
+<hr class="Disappear" />
+<script>
+WriteH1HeaderJ("Driving Back");
+WritePhotoGroupHeaderJ("Cemetery", "Church/Cemetery");
+WritePhotoJ("Cemetery", "20090908", "IMG_0788.JPG", "Cemetery");
+WritePhotoJ("Cemetery", "20090908", "IMG_0789.JPG", "Church and Cemetery");
+WritePhotoJ("Cemetery", "20090908", "IMG_0790.JPG", "Church and Cemetery");
+WritePhotoJ("Cemetery", "20090908", "IMG_0791.JPG", "Cemetery");
+WritePhotoMiddleHeaderJ("House", "Thatched-Roof House");
+WritePhotoJ("House", "20090908", "IMG_0792.JPG", "Thatched-Roof House");
+WritePhotoMiddleHeaderJ("Ferry", "Shannon Ferry");
+WritePhotoJ("Ferry", "20090908", "Ticket21.jpg", "Shannon Ferry Ticket", 231, 293);
+WritePhotoJ("Ferry", "20090908", "Map_Ireland_ShannonFerry.jpg", "Location of Shannon Ferry", 450, 600);
+WritePhotoJ("Ferry", "20090908", "IMG_0794.JPG", "The Suzuki Swift on the Shannon Ferry");
+WritePhotoMiddleHeaderJ("Kerry", "Ring of Kerry");
+WritePhotoJ("Kerry", "20090908", "map-RK.png", "Ring of Kerry", 418, 282);
+WritePhotoGroupFooterJ();
+WriteOghamJ("Loch Luimnigh");
+</script>
+<p>Coming back, we didn&rsquo;t have as much time as we hoped before sunset &#8211; so instead of looking for places to stop, we just tried to enjoy the places we saw.  One spectacular example of this was an old cemetery hugging the Atlantic coast inside what I can only assume was a ruined church.  It was the type of thing that photographers cross Ireland to see, and dedicate a full day of shooting to capture; I only wish my pictures could do it justice.</p>
+<p>In our last trip to the U.K. and Ireland, I was fascinated with the thatched-roof houses that we saw &#8211; but never forced myself to take the time to photograph them.  They were not as common in this area as we had seen elsewhere, but when we passed a couple of such houses, I knew I wanted to memorialize them.  Once a sign of poverty, thatch in the British Isles is now a symbol of wealth, due to the expense of applying it (which requires skilled craftspeople) and of insuring it (because of a perceived fire risk and the replacement cost if it is burned).  Surprisingly durable, thatched roofs can last 50 years, and with &#8220;spar coating&#8221; (i.e., thatching on top of existing thatch), it can accumulate to great thicknesses and ages (Wikipedia offers an example of <script>MeasurementBoxJ("SI", "2.1 m", true);MeasurementBoxJ("US", "7'", false);</script> and 500 years).</p>
+<p>Always looking for ways to explore new transportation options, we crossed the <script>LangBoxJ("EN", "Shannon Estuary");LangBoxJ("GA", "Loch Luimnigh");</script> (where the <script>LangBoxJ("EN", "River Shannon");LangBoxJ("GA", "An tSionainn");</script> widens to meet the <script>LangBoxJ("EN", "Atlantic Ocean");LangBoxJ("GA", "An tAigéan Atlantach");</script>&nbsp;) on the Shannon Ferry &#8211; a service that allowed us to bypass a second trip to Limerick. Billy sat in the car, but I took the time to wander the small vessel, visiting its snack bar and chatting (as best I could) with a German motorcyclist who was on a driving tour of Ireland, and who spoke almost no English.</p>
+<p>Finally, I should mention the <script>LangBoxJ("EN", "Ring of Kerry");LangBoxJ("GA", "An Mhór Chuaird");</script>. This is a prime example of the embarrassment of riches in our environs: Many people plan trips to Ireland just to drive along these splendid byways &#8211; but for us, they were simply the roads between our hotel and the places we wanted to see. We were aware that we were driving around the Ring of Kerry (there wasn&rsquo;t quite that much obliviousness in the air) and we noticed the beauty, of course (it would have been impossible to miss), but I wasn&rsquo;t fully aware of how special the place was until we were back home and I was doing this research. We didn&rsquo;t go all the way around the ring, but we did cover the long distance from <script>LangBoxJ("EN", "Killorglin");LangBoxJ("GA", "Cill Orglan");</script> to <script>LangBoxJ("EN", "Kenmare");LangBoxJ("GA", "An Neidín");</script> (the Irish term means &#8220;The Little Nest&#8221;), through our home base at Caherciveen.</p>
+<script>WriteH1FooterJ();</script>
+
+<p>&nbsp;</p>
+<table class="PageHeaderFrame">
+	<tr>
+		<td>
+			<table class="PageFooter">
+				<tr>
+					<td>
+						<table width="100%">
+							<tr>
+								<td width="33%"><p  class="PageNavigation"><a href="20090907.htm">Previous</a></p></td>
+								<td width="33%"><p  class="PageNavigation"><a href="index.htm">Main</a></p></td>
+								<td width="33%"><p  class="PageNavigation"><a href="20090909.htm">Next</a></p></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+
+<script src="include/footer.js"></script>
+</body>
+</html>

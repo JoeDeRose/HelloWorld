@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Joe DeRose: About Me</title>
+<base target='_blank' />
+
+<style>
+h1 {
+	margin-top: 1em;
+	margin-bottom: 0.25em;
+}
+h2 {
+	margin-top: 0;
+	margin-bottom: 0.25em;
+}
+h3 {
+	margin-top: 0;
+	margin-bottom: 0.25em;
+	margin-left: 2em;
+}
+
+.list {
+	display: table;
+	border: 1px solid black;
+}
+.destinationListener, .destinationx {
+	display: table-row;
+}
+.when, .where, .who, .what {
+	display: table-cell;
+	border: 1px solid black;
+	padding-left: 0.25em;
+	padding-right: 0.25em;
+}
+.when, .location {
+	font-weight: bold;
+}
+.destinationListener .when, .destinationListener .location {
+	color: mediumblue;
+	text-decoration: underline;
+}
+.tablehead {
+	font-weight: bold;
+	background-color: #FC9;
+}
+.destinationListener:hover {
+	background-color: #FFC;
+	cursor: pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<link rel="stylesheet" type="text/css" media="all" href="../CSS/main.css" />
+<link rel="shortcut icon" href="http://joederose.us/favicon.ico?v=3" />
+
+<script src="../scripts/jquery-min.js"></script>
+
+<div class="Title">
+<p><img src="../files/JD - Original Size.jpg" alt="JD Icon"></p>
+<p>
+	<span class="TitleName">Joe DeRose</span><br>
+	<span class="TitleDesc">Hello, World!</span>
+</p>
+</div>
+
+<p>After several significant trips, I've put together trip reports to highlight descriptions and pictures of the things I've seen. In general, I've also tried to use the trip report as an occasion to play with a new technology that I want to become more proficient at &ndash; hence the name of this section: &ldquo;Hello, World!&rdquo;</p>
+
+<p>Note, however, that these pages get very little love and attention after I finish them. So, in almost all cases, they reflect a structure that is a product of their time and my point on the learning curve (prominent &ndash; but not alone &ndash; among these &ldquo;sins&rdquo; being the use of <code>&lt;table&gt;</code> for layout).</p>
+
+<div class="list">
+
+    <div class="destinationx">
+        <div class="when tablehead">When</div>
+        <div class="where tablehead">Where</div>
+        <div class="who tablehead">Who</div>
+        <div class="what tablehead">What</div>
+    </div>
+
+    <div class="destinationx">
+        <div class="when">2015</div>
+        <div class="where">
+            <div class="location">Alaska Cruise</div>
+            <div class="locationdetail">Whittier, AK; Kenai Peninsula, AK; Skagway, AK; Caribou Crossing, YK; Ketchikan, AK; Vancouver, BC; Point Roberts, WA</div>
+        </div>
+        <div class="who">Billy</div>
+        <div class="what"><em>Not started</em></div>
+    </div>
+
+    <div class="destinationx">
+        <div class="when">2012</div>
+        <div class="where">
+            <div class="location">Peru, Rapa Nui (Easter Island)</div>
+            <div class="locationdetail">Colca Canyon, Chivay, Lake Titicaca, Sicuani, Q'eswachaka, Maras, Moray, Machu Picchu, Lima, Rapa Nui</div>
+        </div>
+        <div class="who">Billy</div>
+        <div class="what"><em>Not started</em></div>
+    </div>
+
+    <div class="destinationListener" data-url="2010-Israel/day02.htm">
+        <div class="when">2010</div>
+        <div class="where">
+            <div class="location">Israel and Palestine</div>
+            <div class="locationdetail">Jerusalem, Bethlehem, Nazareth, Golan Heights, Akko, Haifa</div>
+        </div>
+        <div class="who">Mom</div>
+        <div class="what">
+			<em>Unfinished</em><br>
+			JSON, JavaScript page building, image editing (Photoshop)
+		</div>
+    </div>
+
+    <div class="destinationListener" data-url="2009-Europe/index.htm">
+        <div class="when">2009</div>
+        <div class="where">
+            <div class="location">Europe</div>
+            <div class="locationdetail">Netherlands, France, Ireland</div>
+        </div>
+        <div class="who">Billy, Mom</div>
+        <div class="what">Improvements in CSS, JavaScript, jQuery, regular expressions</div>
+    </div>
+
+    <div class="destinationListener" data-url="2007-3Continents/index.htm">
+        <div class="when">2007</div>
+        <div class="where">
+            <div class="location">3 Continents</div>
+            <div class="locationdetail">Greece, Israel, Jordan, Egypt</div>
+        </div>
+        <div class="who">Billy</div>
+        <div class="what">CSS, Unicode, pre-loading of images</div>
+    </div>
+
+    <div class="destinationListener" data-url="2006-Yucatan/report.htm">
+        <div class="when">2006</div>
+        <div class="where">
+            <div class="location">Yucatán</div>
+            <div class="locationdetail">Mexico, Belize, Guatemala</div>
+        </div>
+        <div class="who">Billy</div>
+        <div class="what">Improvements in layout</div>
+    </div>
+
+    <div class="destinationListener" data-url="2005-Europe/report.htm">
+        <div class="when">2005</div>
+        <div class="where">
+            <div class="location">Switzerland, Italy</div>
+            <div class="locationdetail">Switzerland, Liechtenstein, Germany, Austria, Italy, San Marino, Seborga, France, Monaco</div>
+        </div>
+        <div class="who">Billy, Kyle, J.R., Tim, et al.</div>
+        <div class="what">Improvements in design</div>
+    </div>
+
+    <div class="destinationListener" data-url="2003-Italy/report.htm">
+        <div class="when">2003</div>
+        <div class="where">
+            <div class="location">Italy</div>
+            <div class="locationdetail">Italy, Vatican City, San Marino</div>
+        </div>
+        <div class="who">Billy, Mom, Meridel</div>
+        <div class="what">Improvements in page navigation</div>
+    </div>
+
+    <div class="destinationListener" data-url="2002-UKIreland/report.htm">
+        <div class="when">2002</div>
+        <div class="where">
+            <div class="location">UK, Ireland</div>
+            <div class="locationdetail">England, Scotland, Northern Ireland, Ireland, Wales</div>
+        </div>
+        <div class="who">Billy</div>
+        <div class="what">Image editing (CorelDRAW!)</div>
+    </div>
+
+    <div class="destinationx">
+        <div class="when">2001</div>
+        <div class="where">
+            <div class="location">Western US</div>
+            <div class="locationdetail">Los Angeles, Las Vegas, Northern Arizona</div>
+        </div>
+        <div class="who">Billy, Dale</div>
+        <div class="what"><em>No trip report</em></div>
+    </div>
+
+    <div class="destinationx">
+        <div class="when">1999</div>
+        <div class="where">
+            <div class="location">Coasters and Canada</div>
+            <div class="locationdetail">Kings Island (Cincinnati), Cedar Point (Sandusky), Toronto</div>
+        </div>
+        <div class="who">Billy</div>
+        <div class="what"><em>No trip report</em></div>
+    </div>
+
+    <div class="destinationListener" data-url="1996-TripWest/tripwest.html">
+        <div class="when">1996</div>
+        <div class="where">
+            <div class="location">Trip West</div>
+            <div class="locationdetail">Georgia, Alabama, Mississippi, Louisiana, Texas, New Mexico, Colorado, Arizona, Utah, Nevada, California, Kansas, Missouri, Illinois, Kentucky, Tennesse</div>
+        </div>
+        <div class="who">Anthony</div>
+        <div class="what">
+            Frame sets, clickable image maps<br>
+            (It was 1996; give me a break.)
+        </div>
+    </div>
+
+</div>
+
+<h1>Future</h1>
+
+<ul>
+
+    <li>
+    	<span class="location">China</span><br>
+		<span class="locationdetail">Beijing, Datong, Xian, Shanghai, Tibet</span>
+	</li>
+
+    <li>
+        <span class="location">Southeast Asia</span><br>
+        <span class="locationdetail">Thailand, Laos, Cambodia</span>
+	</li>
+
+    <li>
+        <span class="location">East Africa</span><br>
+        <span class="locationdetail">Ethiopia (Lalibela), Kenya, Tanzania, Zimbabwe (Mosi-oa-Tunya), Lesotho</span>
+	</li>
+
+    <li>
+        <span class="location">Western Mediterranean</span><br>
+        <span class="locationdetail">Spain, Andorra, Portugal, Gibraltar, Morocco</span>
+	</li>
+
+</ul>
+
+<h1><a href="RegrettablyMissed/default.htm">Regrettably Missed</a></h1>
+
+<script>
+$("body").on(
+	"click",
+		// Options include standard events (change, keydown, keypress, keyup, mouseover, mouseout, click, dblclick, submit) as well as custom events.
+		// (Note that "keypress" is only triggered by character keys, while "keydown" is also triggered by modifier keys such as SHIFT, CTRL, and ALT.)
+		// Full list is at http://api.jquery.com/category/events/
+	".destinationListener",
+		// Put the class, id, element, etc. here. Add "Listener" at the end for easier maintenance.
+	function() {
+		URLLink = $( this ).attr( "data-url" );
+			// User-defined attributes should start with "data-" and be entirely lower-case.
+		window.open( URLLink, "_blank" );
+	}
+);
+</script>
+
+</body>
+
+</html>

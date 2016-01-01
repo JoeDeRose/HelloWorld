@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link rel="stylesheet" type="text/css" href="include/main.css" />
+</head>
+
+<body>
+
+<script>
+// ============================================================================================================================================
+// Header
+// ============================================================================================================================================
+WriteHeader
+	(
+		/* English */			"Title",
+		/* Hebrew */			"",
+		/* Arabic */			"",
+		/* Religious Icon */	"J",
+		/* Remove Vowels */		true
+	);
+</script>
+<div class='IndentedBody'>
+
+<p>Text</p>
+
+</div>
+
+<script>
+PictureList =
+	[
+	];
+WritePictureFrameAndGroup ( "REPLACE_ID", "REPLACE_TITLE", "REPLACE_FOLDER", PictureList, false );
+</script>
+
+<script>
+WritePictureFrame ( "ExtraFrame", false, "Top" );
+</script>
+<p class="PictureGroupTitle">Extra Frame</p>
+<p class="PictureGroupText">Text</p>
+<script>
+WritePictureFrame ( "ExtraFrame", false, "Bottom" );
+</script>
+
+<script>
+// PictureList with examples
+PictureList =
+	[
+		{
+			image: "Most Basic Picture.JPG",
+			caption: "Picture Caption"
+		},
+		{
+			image: "Elaborate Picture.JPG",
+			caption: "Picture Caption with {{L1}} {{L2}}",
+			folder: "AlternateFolder",
+			L1: [ [ "EN", "Hello" ] ],
+			L2: [ [ "ES", "Hola" ], [ "FR", "Bonjour" ] ]
+		},
+		{
+			image: "Vertical Picture.JPG",
+			orientation: "V"
+		},
+		{
+			image: "Ticket Scan (or other odd size).JPG",
+			orientation: "O",
+			width: 200,
+			height: 250
+		},
+		{
+			end: true,
+			explanation: "This item exists so I don't have to remember to remove the comma after the last item in the list"
+		}
+	];
+WritePictureFrameAndGroup ( "REPLACE_ID", "REPLACE_TITLE", "REPLACE_FOLDER", PictureList, false );
+</script>
+
+<!-- DROPNOTE -->
+<p>
+<span class="dropnote">TEXT_IN_PARAGRAPH</span><span class="downarrow">➴</span>
+</p>
+<table class="dropnoteframe">
+	<tr>
+		<th width="25%">&nbsp;</th>
+		<td width="75%">
+			<table class="dropnotetable">
+				<tr>
+					<th>➴</th>
+					<td>Text</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+
+<script>
+LangBoxReplace ( "{{Content_Holder}}", [ ["EN", "Joudeh"], ["HE", "Hebrew", true] ] );
+LangBoxReplace ( "{{Content_Holder}}", [ ["EN", "Joudeh"], ["AR", "Arabic", true] ] );
+LangBoxReplace ( "{{Content_Holder}}", [ ["EN", "English"], ["HE", "Hebrew", true], ["AR", "Arabic", true] ] );
+LangBoxReplace ( "{{Content_Holder}}", [ ["EN", "English"], ["HE", "Hebrew", true], ["AR", "Arabic", true], ["HY", "Armenian"] ] );
+LangBoxReplace ( "{{Content_Holder}}", [ ["EN", "English"], ["EL", "Greek"] ] );
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<p>Testing:</p>
+<hr />
+<script type="text/javascript" src="http://www.interactivemaps.org/visited_countries/swfobject.php"></script>
+<div id="visitedcountries">
+This application is created by <a href="http://www.interactivemaps.org" target="_blank">interactive maps.</a><br>	You can also have your <a href="http://www.interactivemaps.org/visited_countries/" target="_blank">visited countries map</a> on your site.<br><br>	If you see this message, you need to <a href="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" target="_blank">upgrade your flash player.</a></div>
+
+<script type="text/javascript">
+var so = new SWFObject("http://www.interactivemaps.org/visited_countries/visited_countries.swf", "visitedcountries", 728, 450, "7", "#000000");
+
+ColorResidentJ = 'FFFFFF'     // Live (or lived) here
+ColorVisited1J = 'FFFF00'     // Seen a lot
+ColorVisited2J = 'FF8000'     // Seen a little
+ColorVisited3J = 'FFFF00'     // Seen almost nothing
+ColorInterested1J = '0000FF'  // In planning
+ColorInterested2J = 'FF00FF'  // On my list
+
+// Africa
+    // addLocation('DZ', '', '', '');	//Algeria 
+    // addLocation('AO', '', '', '');	//Angola 
+    // addLocation('BJ', '', '', '');	//Benin 
+    // addLocation('BW', '', '', '');	//Botswana 
+    // addLocation('BF', '', '', '');	//Burkina Faso 
+    // addLocation('BI', '', '', '');	//Burundi 
+    // addLocation('CM', '', '', '');	//Cameroon 
+    // addLocation('CV', '', '', '');	//Cape Verde 
+    // addLocation('CF', '', '', '');	//Central African Republic 
+    // addLocation('TD', '', '', '');	//Chad 
+    // addLocation('KM', '', '', '');	//Comoros 
+    // addLocation('CG', '', '', '');	//Congo Brazzaville 
+    // addLocation('CD', '', '', '');	//Congo Kinshasa 
+    // addLocation('DJ', '', '', '');	//Djibouti 
+    addLocation('EG', '', 'Cairo, Luxor, Aswan', ColorVisited1J);	//Egypt 
+    // addLocation('GQ', '', '', '');	//Equatorial Guinea 
+    // addLocation('ER', '', '', '');	//Eritrea 
+    // addLocation('ET', '', '', '');	//Ethiopia 
+    // addLocation('GA', '', '', '');	//Gabon 
+    // addLocation('GM', '', '', '');	//Gambia 
+    // addLocation('GH', '', '', '');	//Ghana 
+    // addLocation('GW', '', '', '');	//Guinea-Bissau 
+    // addLocation('GN', '', '', '');	//Guinee Conakry 
+    // addLocation('CI', '', '', '');	//Ivory Coast 
+    // addLocation('KE', '', '', '');	//Kenya 
+    // addLocation('LS', '', '', '');	//Lesotho 
+    // addLocation('LR', '', '', '');	//Liberia 
+    // addLocation('LY', '', '', '');	//Libya 
+    // addLocation('MG', '', '', '');	//Madagascar 
+    // addLocation('MW', '', '', '');	//Malawi 
+    // addLocation('ML', '', '', '');	//Mali 
+    // addLocation('MR', '', '', '');	//Mauritania 
+    // addLocation('MU', '', '', '');	//Mauritius 
+    // addLocation('MA', '', '', '');	//Morocco 
+    // addLocation('MZ', '', '', '');	//Mozambique 
+    // addLocation('NA', '', '', '');	//Namibia 
+    // addLocation('NE', '', '', '');	//Niger 
+    // addLocation('NG', '', '', '');	//Nigeria 
+    // addLocation('RE', '', '', '');	//Reunion 
+    // addLocation('RW', '', '', '');	//Rwanda 
+    // addLocation('ST', '', '', '');	//Sao Tome and Principe 
+    // addLocation('SN', '', '', '');	//Senegal 
+    // addLocation('SC', '', '', '');	//Seychelles 
+    // addLocation('SL', '', '', '');	//Sierra Leone 
+    // addLocation('SO', '', '', '');	//Somalia 
+    // addLocation('ZA', '', '', '');	//South Africa 
+    // addLocation('SD', '', '', '');	//Sudan 
+    // addLocation('SZ', '', '', '');	//Swaziland 
+    // addLocation('TZ', '', '', '');	//Tanzania 
+    // addLocation('TG', '', '', '');	//Togo 
+    // addLocation('TN', '', '', '');	//Tunisia 
+    // addLocation('UG', '', '', '');	//Uganda 
+    // addLocation('EH', '', '', '');	//Western Sahara 
+    // addLocation('ZM', '', '', '');	//Zambia 
+    // addLocation('ZW', '', '', '');	//Zimbabwe 
+// Asia
+    // addLocation('AF', '', '', '');	//Afghanistan 
+    // addLocation('BD', '', '', '');	//Bangladesh 
+    // addLocation('BT', '', '', '');	//Bhutan 
+    // addLocation('BN', '', '', '');	//Brunei 
+    // addLocation('KH', '', '', '');	//Cambodia 
+    // addLocation('CN', '', '', '');	//China 
+    // addLocation('TP', '', '', '');	//East Timor 
+    // addLocation('IN', '', '', '');	//India 
+    // addLocation('ID', '', '', '');	//Indonesia 
+    // addLocation('JP', '', '', '');	//Japan 
+    // addLocation('KZ', '', '', '');	//Kazakhstan 
+    // addLocation('KG', '', '', '');	//Kyrgyzstan 
+    // addLocation('LA', '', '', '');	//Laos 
+    // addLocation('MY', '', '', '');	//Malaysia 
+    // addLocation('MV', '', '', '');	//Maldives 
+    // addLocation('MN', '', '', '');	//Mongolia 
+    // addLocation('MM', '', '', '');	//Myanmar (Burma) 
+    // addLocation('NP', '', '', '');	//Nepal 
+    // addLocation('KP', '', '', '');	//North Korea 
+    // addLocation('PK', '', '', '');	//Pakistan 
+    // addLocation('PH', '', '', '');	//Philippines 
+    // addLocation('SG', '', '', '');	//Singapore 
+    // addLocation('LK', '', '', '');	//Sri Lanka 
+    // addLocation('KR', '', '', '');	//South Korea 
+    // addLocation('TW', '', '', '');	//Taiwan 
+    // addLocation('TJ', '', '', '');	//Tajikistan 
+    // addLocation('TH', '', '', '');	//Thailand 
+    // addLocation('TM', '', '', '');	//Turkmenistan 
+    // addLocation('UZ', '', '', '');	//Uzbekistan 
+    // addLocation('VN', '', '', '');	//Vietnam 
+// Australia and Pacific
+    // addLocation('AS', '', '', '');	//American Samoa 
+    // addLocation('AU', '', '', '');	//Australia 
+    // addLocation('FJ', '', '', '');	//Fiji 
+    // addLocation('PF', '', '', '');	//French Polynesia 
+    // addLocation('GU', '', '', '');	//Guam 
+    // addLocation('KI', '', '', '');	//Kiribati 
+    // addLocation('MH', '', '', '');	//Marshall Islands 
+    // addLocation('FM', '', '', '');	//Micronesia 
+    // addLocation('NR', '', '', '');	//Nauru 
+    // addLocation('NC', '', '', '');	//New Caledonia 
+    // addLocation('NZ', '', '', '');	//New Zealand 
+    // addLocation('NU', '', '', '');	//Niue 
+    // addLocation('NF', '', '', '');	//Norfolk Island 
+    // addLocation('MP', '', '', '');	//Northern Mariana Islands 
+    // addLocation('PW', '', '', '');	//Palau 
+    // addLocation('PG', '', '', '');	//Papua New Guinea 
+    // addLocation('PN', '', '', '');	//Pitcairn Islands 
+    // addLocation('CK', '', '', '');	//Rarotonga & the Cook Islands 
+    // addLocation('SB', '', '', '');	//Solomon Islands 
+    // addLocation('TO', '', '', '');	//Tonga 
+    // addLocation('TV', '', '', '');	//Tuvalu 
+    // addLocation('VU', '', '', '');	//Vanuatu 
+    // addLocation('WS', '', '', '');	//Western Samoa 
+// Central America and the Caribbean
+    // addLocation('AI', '', '', '');	//Anguilla 
+    // addLocation('AG', '', '', '');	//Antigua and Barbuda 
+    // addLocation('AW', '', '', '');	//Aruba 
+    // addLocation('BB', '', '', '');	//Barbados 
+    // addLocation('BS', '', '', '');	//Bahamas 
+    addLocation('BZ', '', 'Actun Tunichil Muknal, Xunantunich', ColorVisited1J);	//Belize 
+    // addLocation('BM', '', '', '');	//Bermuda 
+    // addLocation('UV', '', '', '');	//British Virgin Islands 
+    // addLocation('CQ', '', '', '');	//Cayman Islands 
+    // addLocation('CR', '', '', '');	//Costa Rica 
+    // addLocation('CU', '', '', '');	//Cuba 
+    // addLocation('DM', '', '', '');	//Dominica 
+    // addLocation('DO', '', '', '');	//Dominican Republic 
+    // addLocation('SV', '', '', '');	//El Salvador 
+    // addLocation('GP', '', '', '');	//Guadeloupe 
+    addLocation('GT', '', 'Tikal', ColorVisited1J);	//Guatemala 
+    // addLocation('GD', '', '', '');	//Grenada 
+    // addLocation('HT', '', '', '');	//Haiti 
+    // addLocation('HN', '', '', '');	//Honduras 
+    // addLocation('JM', '', '', '');	//Jamaica 
+    // addLocation('MQ', '', '', '');	//Martinique 
+    // addLocation('MS', '', '', '');	//Monserrat 
+    // addLocation('AN', '', '', '');	//Netherlands Antilles 
+    // addLocation('NI', '', '', '');	//Nicaragua 
+    // addLocation('PA', '', '', '');	//Panama 
+    // addLocation('PR', '', '', '');	//Puerto Rico 
+    // addLocation('KK', '', '', '');	//Saint Kitts and Nevis 
+    // addLocation('LC', '', '', '');	//Saint Lucia 
+    // addLocation('TQ', '', '', '');	//Turks and Caicos Islands 
+    // addLocation('TT', '', '', '');	//Trinidad and Tobago 
+    // addLocation('VI', '', '', '');	//Virgin Islands 
+// Europe
+    // addLocation('AL', '', '', '');	//Albania 
+    // addLocation('AD', '', '', '');	//Andorra 
+    // addLocation('AM', '', '', '');	//Armenia 
+    addLocation('AT', '', 'Nassereith', ColorVisited1J);	//Austria 
+    // addLocation('AZ', '', '', '');	//Azerbaijan 
+    // addLocation('BY', '', '', '');	//Belarus 
+    addLocation('BE', '', 'Brussels, Bruges', ColorVisited1J);	//Belgium 
+    // addLocation('BA', '', '', '');	//Bosnia and Herzegovina 
+    // addLocation('BG', '', '', '');	//Bulgaria 
+    // addLocation('QI', '', '', '');	//Channel Islands 
+    // addLocation('HR', '', '', '');	//Croatia 
+    addLocation('CZ', '', '', ColorVisited1J);	//Czech republic 
+    // addLocation('DK', '', '', '');	//Denmark 
+    // addLocation('EE', '', '', '');	//Estonia 
+    // addLocation('FO', '', '', '');	//Faroe Islands 
+    // addLocation('FI', '', '', '');	//Finland 
+    addLocation('FR', '', 'Paris, Mont. St. Michel, Rhiems, Chartres, Nice', ColorVisited1J);	//France 
+    // addLocation('GE', '', '', '');	//Georgia 
+    addLocation('DE', '', 'Neuschwanstein', ColorVisited1J);	//Germany 
+    // addLocation('GI', '', '', '');	//Gibraltar 
+    addLocation('GR', '', 'Athens, Mykonos, Santorini, Iraklio, Knossos, Phaestos', ColorVisited1J);	//Greece 
+    // addLocation('HU', '', '', '');	//Hungary 
+    // addLocation('IS', '', '', '');	//Iceland 
+    addLocation('IE', '', 'Dublin, Newgrange (Br&uacute; na B&oacute;inne)', ColorVisited1J);	//Ireland 
+    addLocation('IT', '', 'Rome, Florence, Milan, Venice, Assisi, Naples, Capri, Pompeii', ColorVisited1J);	//Italy 
+    // addLocation('LV', '', '', '');	//Latvia 
+    addLocation('LI', '', 'Vaduz', ColorVisited1J);	//Liechtenstein 
+    // addLocation('LT', '', '', '');	//Lithuania 
+    addLocation('LU', '', 'Luxembourg', ColorVisited1J);	//Luxembourg 
+    // addLocation('MK', '', '', '');	//Macedonia 
+    // addLocation('MT', '', '', '');	//Malta 
+    // addLocation('MD', '', '', '');	//Moldova 
+    addLocation('MC', '', 'Monte Carlo, Monaco-Ville', ColorVisited1J);	//Monaco 
+    // addLocation('NL', '', '', '');	//Netherlands 
+    // addLocation('NO', '', '', '');	//Norway 
+    // addLocation('PL', '', '', '');	//Poland 
+    // addLocation('PT', '', '', '');	//Portugal 
+    // addLocation('RO', '', '', '');	//Romania 
+    // addLocation('RU', '', '', '');	//Russia 
+    addLocation('SM', '', 'San Marino', ColorVisited1J);	//San Marino 
+    // addLocation('CS', '', '', '');	//Serbia and Montenegro 
+    // addLocation('SK', '', '', '');	//Slovakia 
+    // addLocation('SI', '', '', '');	//Slovenia 
+    // addLocation('ES', '', '', '');	//Spain 
+    // addLocation('SJ', '', '', '');	//Svalbard and Jan Mayen islands 
+    // addLocation('SE', '', '', '');	//Sweden 
+    addLocation('CH', '', 'Z&uuml;rich, Zermatt', ColorVisited1J);	//Switzerland 
+    // addLocation('UA', '', '', '');	//Ukraine 
+    addLocation('UK', '', 'London, Inverness, Orkney, Belfast', ColorVisited1J);	//United Kingdom 
+    addLocation('VA', '', 'Vatican City', ColorVisited1J);	//Vatican City 
+// Middle East
+    // addLocation('BH', '', '', '');	//Bahrain 
+    addLocation('CY', '', '', ColorVisited1J);	//Cyprus 
+    // addLocation('IR', '', '', '');	//Iran 
+    // addLocation('IQ', '', '', '');	//Iraq 
+    addLocation('IL', '', 'Jerusalem', ColorVisited1J);	//Israel 
+    addLocation('JO', '', 'Dead Sea, Petra, Wadi Rum', ColorVisited1J);	//Jordan 
+    // addLocation('KW', '', '', '');	//Kuwait 
+    // addLocation('LB', '', '', '');	//Lebanon 
+    // addLocation('OM', '', '', '');	//Oman 
+    addLocation('PS', '', '', ColorVisited1J);	//Palestinian Authority 
+    // addLocation('QA', '', '', '');	//Qatar 
+    // addLocation('SA', '', '', '');	//Saudi Arabia 
+    // addLocation('SY', '', '', '');	//Syria 
+    // addLocation('TR', '', '', '');	//Turkey 
+    // addLocation('AE', '', '', '');	//United Arab Emirates 
+    // addLocation('YE', '', '', '');	//Yemen 
+// North America
+    addLocation('CA', '', 'Toronto, Montr&eacute;al, Ville de Qu&eacute;bec', ColorVisited1J);	//Canada 
+    // addLocation('GL', '', '', '');	//Greenland 
+    addLocation('US', '', 'Live Here', ColorVisited1J);	//United States 
+    addLocation('MX', '', 'Canc&uacute;n and the Costa Maya', ColorVisited1J);	//Mexico 
+// South America
+    // addLocation('AR', '', '', '');	//Argentina 
+    // addLocation('BO', '', '', '');	//Bolivia 
+    // addLocation('BR', '', '', '');	//Brazil 
+    // addLocation('CL', '', '', '');	//Chile 
+    // addLocation('CO', '', '', '');	//Colombia 
+    // addLocation('EC', '', '', '');	//Ecuador 
+    // addLocation('FK', '', '', '');	//Falkland Islands 
+    // addLocation('GF', '', '', '');	//French Guiana 
+    // addLocation('GY', '', '', '');	//Guyana 
+    // addLocation('PY', '', '', '');	//Paraguay 
+    // addLocation('PE', '', '', '');	//Peru 
+    // addLocation('SR', '', '', '');	//Suriname 
+    // addLocation('UY', '', '', '');	//Uruguay 
+    // addLocation('VE', '', '', '');	//Venezuela 
+addToFlash();
+
+so.addVariable("stageWidth", 728);
+so.addVariable("stageHeight", 450);
+so.addVariable("infoOver", "enabled");
+so.addVariable("zoomFunction", "checked");
+so.addVariable("bgColor", "666666");
+so.addVariable("visitedColor", "5EB7DE");
+so.addVariable("notVisitedColor", "CDCDCD");
+so.addVariable("countryBordersColor", "666666");
+so.addVariable("helpTextColor", "000000");
+so.addVariable("helpText", "Mark the area you wish to zoom in");
+
+so.addParam("scale", "noscale");
+so.addParam("salign", "lt");
+
+so.write("visitedcountries");
+</script>
+
+<table width="728" bgcolor="#333333" border="0" cellspacing="4"><tr><td style="color: #FFFFFF; font-face: Arial; font-size: 12px;">  Make your <a href="http://www.interactivemaps.org/visited_countries" target="_blank" style="color: #FFCC33; font-face: Arial; font-size: 12px;">visited countries map</a></td><td align="right"><a href="http://www.interactivemaps.org" target="_blank" style="color: #FFCC33; font-face: Arial; font-size: 12px;">Interactive flash maps</a></td></tr></table>
+<hr />
+<script type="text/javascript" src="http://www.interactivemaps.org/visited_states/swfobject.php"></script>
+<div id="visitedstates">
+This application is created by <a href="http://www.interactivemaps.org" target="_blank">interactive maps.</a><br>	You can also have your <a href="http://www.interactivemaps.org/visited_states/" target="_blank">visited states map</a> on your site.<br><br>	If you see this message, you need to <a href="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" target="_blank">upgrade your flash player.</a></div>
+
+<script type="text/javascript">
+var so = new SWFObject("http://www.interactivemaps.org/visited_states/visited_states.swf", "visitedstates", 728, 390, "7", "#000000");
+
+    // addLocation('AK', '', '', '');	//Alaska 
+    addLocation('AL', '', '', '');	//Alabama 
+    addLocation('AR', '', '', '');	//Arkansas 
+    addLocation('AZ', '', '', '');	//Arizona 
+    addLocation('CA', '', '', '');	//California 
+    addLocation('CO', '', '', '');	//Colorado 
+    addLocation('CT', '', '', '');	//Connecticut 
+    addLocation('DE', '', '', '');	//Delaware 
+    addLocation('FL', '', '', '');	//Florida 
+    addLocation('GA', '', '', '');	//Georgia 
+    addLocation('HI', '', '', '');	//Hawaii 
+    // addLocation('IA', '', '', '');	//Iowa 
+    // addLocation('ID', '', '', '');	//Idaho 
+    addLocation('IL', '', '', '');	//Illinois 
+    addLocation('IN', '', '', '');	//Indiana 
+    addLocation('KS', '', '', '');	//Kansas 
+    addLocation('KY', '', '', '');	//Kentucky 
+    addLocation('LA', '', '', '');	//Louisiana 
+    addLocation('MA', '', '', '');	//Massachusetts 
+    addLocation('MD', '', '', '');	//Maryland 
+    // addLocation('ME', '', '', '');	//Maine 
+    // addLocation('MI', '', '', '');	//Michigan 
+    // addLocation('MN', '', '', '');	//Minnesota 
+    addLocation('MO', '', '', '');	//Missouri 
+    addLocation('MS', '', '', '');	//Mississippi 
+    // addLocation('MT', '', '', '');	//Montana 
+    addLocation('NC', '', '', '');	//North Carolina 
+    // addLocation('ND', '', '', '');	//North Dakota 
+    // addLocation('NE', '', '', '');	//Nebraska 
+    // addLocation('NH', '', '', '');	//New Hampshire 
+    addLocation('NJ', '', '', '');	//New Jersey 
+    addLocation('NM', '', '', '');	//New Mexico 
+    addLocation('NV', '', '', '');	//Nevada 
+    addLocation('NY', '', '', '');	//New York 
+    addLocation('OH', '', '', '');	//Ohio 
+    // addLocation('OK', '', '', '');	//Oklahoma 
+    // addLocation('OR', '', '', '');	//Oregon 
+    addLocation('PA', '', '', '');	//Pennsylvania 
+    addLocation('RI', '', '', '');	//Rhode Island 
+    addLocation('SC', '', '', '');	//South Carolina 
+    // addLocation('SD', '', '', '');	//South Dakota 
+    addLocation('TN', '', '', '');	//Tennessee 
+    addLocation('TX', '', '', '');	//Texas 
+    addLocation('UT', '', '', '');	//Utah 
+    addLocation('VA', '', '', '');	//Virginia 
+    addLocation('VT', '', '', '');	//Vermont 
+    // addLocation('WA', '', '', '');	//Washington 
+    // addLocation('WI', '', '', '');	//Wisconsin 
+    addLocation('WV', '', '', '');	//West Virginia 
+    // addLocation('WY', '', '', '');	//Wyoming 
+addToFlash();
+
+so.addVariable("stageWidth", 728);
+so.addVariable("stageHeight", 390);
+so.addVariable("infoOver", "enabled");
+so.addVariable("zoomFunction", "checked");
+so.addVariable("bgColor", "666666");
+so.addVariable("visitedColor", "F0A74B");
+so.addVariable("notVisitedColor", "CDCDCD");
+so.addVariable("countryBordersColor", "666666");
+so.addVariable("helpTextColor", "000000");
+so.addVariable("helpText", "Mark the area you wish to zoom in");
+
+so.addParam("scale", "noscale");
+so.addParam("salign", "lt");
+
+so.write("visitedstates");
+</script>
+
+<table width="728" bgcolor="#333333" border="0" cellspacing="4"><tr><td style="color: #FFFFFF; font-face: Arial; font-size: 12px;">  Make your <a href="http://www.interactivemaps.org/visited_states" target="_blank" style="color: #FFCC33; font-face: Arial; font-size: 12px;">visited states map</a></td><td align="right"><a href="http://www.interactivemaps.org" target="_blank" style="color: #FFCC33; font-face: Arial; font-size: 12px;">Interactive flash maps</a></td></tr></table>
+<hr />
+<p>&nbsp; </p>
+</body>
+</html>

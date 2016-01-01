@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<p>Testing:</p>
+<hr />
+<script type="text/javascript" src="http://www.interactivemaps.org/visited_countries/swfobject.php"></script>
+<div id="visitedcountries">
+This application is created by <a href="http://www.interactivemaps.org" target="_blank">interactive maps.</a><br>	You can also have your <a href="http://www.interactivemaps.org/visited_countries/" target="_blank">visited countries map</a> on your site.<br><br>	If you see this message, you need to <a href="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" target="_blank">upgrade your flash player.</a></div>
+
+<script type="text/javascript">
+var so = new SWFObject("http://www.interactivemaps.org/visited_countries/visited_countries.swf", "visitedcountries", 728, 450, "7", "#000000");
+
+ColorResidentJ = 'FFFFFF'     // Live (or lived) here
+ColorVisited1J = 'FFFF00'     // Seen a lot
+ColorVisited2J = 'FF8000'     // Seen a little
+ColorVisited3J = 'FFFF00'     // Seen almost nothing
+ColorInterested1J = '0000FF'  // In planning
+ColorInterested2J = 'FF00FF'  // On my list
+RedJ = 'FF0000'
+BlueJ = '0000FF'
+
+// Africa
+    // addLocation('DZ', '', '', '');	//Algeria 
+    // addLocation('AO', '', '', '');	//Angola 
+    // addLocation('BJ', '', '', '');	//Benin 
+    // addLocation('BW', '', '', '');	//Botswana 
+    // addLocation('BF', '', '', '');	//Burkina Faso 
+    // addLocation('BI', '', '', '');	//Burundi 
+    // addLocation('CM', '', '', '');	//Cameroon 
+    // addLocation('CV', '', '', '');	//Cape Verde 
+    // addLocation('CF', '', '', '');	//Central African Republic 
+    // addLocation('TD', '', '', '');	//Chad 
+    // addLocation('KM', '', '', '');	//Comoros 
+    // addLocation('CG', '', '', '');	//Congo Brazzaville 
+    // addLocation('CD', '', '', '');	//Congo Kinshasa 
+    // addLocation('DJ', '', '', '');	//Djibouti 
+    // addLocation('EG', '', '', '');	//Egypt 
+    // addLocation('GQ', '', '', '');	//Equatorial Guinea 
+    // addLocation('ER', '', '', '');	//Eritrea 
+    // addLocation('ET', '', '', '');	//Ethiopia 
+    // addLocation('GA', '', '', '');	//Gabon 
+    // addLocation('GM', '', '', '');	//Gambia 
+    // addLocation('GH', '', '', '');	//Ghana 
+    // addLocation('GW', '', '', '');	//Guinea-Bissau 
+    // addLocation('GN', '', '', '');	//Guinee Conakry 
+    // addLocation('CI', '', '', '');	//Ivory Coast 
+    // addLocation('KE', '', '', '');	//Kenya 
+    // addLocation('LS', '', '', '');	//Lesotho 
+    // addLocation('LR', '', '', '');	//Liberia 
+    addLocation('LY', '', '', RedJ);	//Libya 
+    // addLocation('MG', '', '', '');	//Madagascar 
+    // addLocation('MW', '', '', '');	//Malawi 
+    // addLocation('ML', '', '', '');	//Mali 
+    // addLocation('MR', '', '', '');	//Mauritania 
+    // addLocation('MU', '', '', '');	//Mauritius 
+    // addLocation('MA', '', '', '');	//Morocco 
+    // addLocation('MZ', '', '', '');	//Mozambique 
+    // addLocation('NA', '', '', '');	//Namibia 
+    // addLocation('NE', '', '', '');	//Niger 
+    // addLocation('NG', '', '', '');	//Nigeria 
+    // addLocation('RE', '', '', '');	//Reunion 
+    // addLocation('RW', '', '', '');	//Rwanda 
+    // addLocation('ST', '', '', '');	//Sao Tome and Principe 
+    // addLocation('SN', '', '', '');	//Senegal 
+    // addLocation('SC', '', '', '');	//Seychelles 
+    // addLocation('SL', '', '', '');	//Sierra Leone 
+    // addLocation('SO', '', '', '');	//Somalia 
+    // addLocation('ZA', '', '', '');	//South Africa 
+    addLocation('SD', '', '', RedJ);	//Sudan 
+    // addLocation('SZ', '', '', '');	//Swaziland 
+    // addLocation('TZ', '', '', '');	//Tanzania 
+    // addLocation('TG', '', '', '');	//Togo 
+    // addLocation('TN', '', '', '');	//Tunisia 
+    // addLocation('UG', '', '', '');	//Uganda 
+    // addLocation('EH', '', '', '');	//Western Sahara 
+    // addLocation('ZM', '', '', '');	//Zambia 
+    // addLocation('ZW', '', '', '');	//Zimbabwe 
+// Asia
+    // addLocation('AF', '', '', '');	//Afghanistan 
+    // addLocation('BD', '', '', '');	//Bangladesh 
+    // addLocation('BT', '', '', '');	//Bhutan 
+    // addLocation('BN', '', '', '');	//Brunei 
+    // addLocation('KH', '', '', '');	//Cambodia 
+    // addLocation('CN', '', '', '');	//China 
+    // addLocation('TP', '', '', '');	//East Timor 
+    // addLocation('IN', '', '', '');	//India 
+    // addLocation('ID', '', '', '');	//Indonesia 
+    // addLocation('JP', '', '', '');	//Japan 
+    // addLocation('KZ', '', '', '');	//Kazakhstan 
+    // addLocation('KG', '', '', '');	//Kyrgyzstan 
+    // addLocation('LA', '', '', '');	//Laos 
+    // addLocation('MY', '', '', '');	//Malaysia 
+    // addLocation('MV', '', '', '');	//Maldives 
+    // addLocation('MN', '', '', '');	//Mongolia 
+    // addLocation('MM', '', '', '');	//Myanmar (Burma) 
+    // addLocation('NP', '', '', '');	//Nepal 
+    // addLocation('KP', '', '', '');	//North Korea 
+    // addLocation('PK', '', '', '');	//Pakistan 
+    // addLocation('PH', '', '', '');	//Philippines 
+    // addLocation('SG', '', '', '');	//Singapore 
+    // addLocation('LK', '', '', '');	//Sri Lanka 
+    // addLocation('KR', '', '', '');	//South Korea 
+    // addLocation('TW', '', '', '');	//Taiwan 
+    // addLocation('TJ', '', '', '');	//Tajikistan 
+    // addLocation('TH', '', '', '');	//Thailand 
+    // addLocation('TM', '', '', '');	//Turkmenistan 
+    // addLocation('UZ', '', '', '');	//Uzbekistan 
+    // addLocation('VN', '', '', '');	//Vietnam 
+// Australia and Pacific
+    // addLocation('AS', '', '', '');	//American Samoa 
+    // addLocation('AU', '', '', '');	//Australia 
+    // addLocation('FJ', '', '', '');	//Fiji 
+    // addLocation('PF', '', '', '');	//French Polynesia 
+    // addLocation('GU', '', '', '');	//Guam 
+    // addLocation('KI', '', '', '');	//Kiribati 
+    // addLocation('MH', '', '', '');	//Marshall Islands 
+    // addLocation('FM', '', '', '');	//Micronesia 
+    // addLocation('NR', '', '', '');	//Nauru 
+    // addLocation('NC', '', '', '');	//New Caledonia 
+    // addLocation('NZ', '', '', '');	//New Zealand 
+    // addLocation('NU', '', '', '');	//Niue 
+    // addLocation('NF', '', '', '');	//Norfolk Island 
+    // addLocation('MP', '', '', '');	//Northern Mariana Islands 
+    // addLocation('PW', '', '', '');	//Palau 
+    // addLocation('PG', '', '', '');	//Papua New Guinea 
+    // addLocation('PN', '', '', '');	//Pitcairn Islands 
+    // addLocation('CK', '', '', '');	//Rarotonga & the Cook Islands 
+    // addLocation('SB', '', '', '');	//Solomon Islands 
+    // addLocation('TO', '', '', '');	//Tonga 
+    // addLocation('TV', '', '', '');	//Tuvalu 
+    // addLocation('VU', '', '', '');	//Vanuatu 
+    // addLocation('WS', '', '', '');	//Western Samoa 
+// Central America and the Caribbean
+    // addLocation('AI', '', '', '');	//Anguilla 
+    // addLocation('AG', '', '', '');	//Antigua and Barbuda 
+    // addLocation('AW', '', '', '');	//Aruba 
+    // addLocation('BB', '', '', '');	//Barbados 
+    // addLocation('BS', '', '', '');	//Bahamas 
+    // addLocation('BZ', '', '', '');	//Belize 
+    // addLocation('BM', '', '', '');	//Bermuda 
+    // addLocation('UV', '', '', '');	//British Virgin Islands 
+    // addLocation('CQ', '', '', '');	//Cayman Islands 
+    // addLocation('CR', '', '', '');	//Costa Rica 
+    // addLocation('CU', '', '', '');	//Cuba 
+    // addLocation('DM', '', '', '');	//Dominica 
+    // addLocation('DO', '', '', '');	//Dominican Republic 
+    // addLocation('SV', '', '', '');	//El Salvador 
+    // addLocation('GP', '', '', '');	//Guadeloupe 
+    // addLocation('GT', '', '', '');	//Guatemala 
+    // addLocation('GD', '', '', '');	//Grenada 
+    // addLocation('HT', '', '', '');	//Haiti 
+    // addLocation('HN', '', '', '');	//Honduras 
+    // addLocation('JM', '', '', '');	//Jamaica 
+    // addLocation('MQ', '', '', '');	//Martinique 
+    // addLocation('MS', '', '', '');	//Monserrat 
+    // addLocation('AN', '', '', '');	//Netherlands Antilles 
+    // addLocation('NI', '', '', '');	//Nicaragua 
+    // addLocation('PA', '', '', '');	//Panama 
+    // addLocation('PR', '', '', '');	//Puerto Rico 
+    // addLocation('KK', '', '', '');	//Saint Kitts and Nevis 
+    // addLocation('LC', '', '', '');	//Saint Lucia 
+    // addLocation('TQ', '', '', '');	//Turks and Caicos Islands 
+    // addLocation('TT', '', '', '');	//Trinidad and Tobago 
+    // addLocation('VI', '', '', '');	//Virgin Islands 
+// Europe
+    // addLocation('AL', '', '', '');	//Albania 
+    // addLocation('AD', '', '', '');	//Andorra 
+    // addLocation('AM', '', '', '');	//Armenia 
+    // addLocation('AT', '', '', '');	//Austria 
+    // addLocation('AZ', '', '', '');	//Azerbaijan 
+    // addLocation('BY', '', '', '');	//Belarus 
+    // addLocation('BE', '', '', '');	//Belgium 
+    // addLocation('BA', '', '', '');	//Bosnia and Herzegovina 
+    // addLocation('BG', '', '', '');	//Bulgaria 
+    // addLocation('QI', '', '', '');	//Channel Islands 
+    // addLocation('HR', '', '', '');	//Croatia 
+    // addLocation('CZ', '', '', '');	//Czech republic 
+    // addLocation('DK', '', '', '');	//Denmark 
+    // addLocation('EE', '', '', '');	//Estonia 
+    // addLocation('FO', '', '', '');	//Faroe Islands 
+    // addLocation('FI', '', '', '');	//Finland 
+    // addLocation('FR', '', '', '');	//France 
+    // addLocation('GE', '', '', '');	//Georgia 
+    // addLocation('DE', '', '', '');	//Germany 
+    // addLocation('GI', '', '', '');	//Gibraltar 
+    // addLocation('GR', '', '', '');	//Greece 
+    // addLocation('HU', '', '', '');	//Hungary 
+    // addLocation('IS', '', '', '');	//Iceland 
+    // addLocation('IE', '', '', '');	//Ireland 
+    // addLocation('IT', '', '', '');	//Italy 
+    // addLocation('LV', '', '', '');	//Latvia 
+    // addLocation('LI', '', '', '');	//Liechtenstein 
+    // addLocation('LT', '', '', '');	//Lithuania 
+    // addLocation('LU', '', '', '');	//Luxembourg 
+    // addLocation('MK', '', '', '');	//Macedonia 
+    // addLocation('MT', '', '', '');	//Malta 
+    // addLocation('MD', '', '', '');	//Moldova 
+    // addLocation('MC', '', '', '');	//Monaco 
+    // addLocation('NL', '', '', '');	//Netherlands 
+    // addLocation('NO', '', '', '');	//Norway 
+    // addLocation('PL', '', '', '');	//Poland 
+    // addLocation('PT', '', '', '');	//Portugal 
+    // addLocation('RO', '', '', '');	//Romania 
+    // addLocation('RU', '', '', '');	//Russia 
+    // addLocation('SM', '', '', '');	//San Marino 
+    // addLocation('CS', '', '', '');	//Serbia and Montenegro 
+    // addLocation('SK', '', '', '');	//Slovakia 
+    // addLocation('SI', '', '', '');	//Slovenia 
+    // addLocation('ES', '', '', '');	//Spain 
+    // addLocation('SJ', '', '', '');	//Svalbard and Jan Mayen islands 
+    // addLocation('SE', '', '', '');	//Sweden 
+    // addLocation('CH', '', '', '');	//Switzerland 
+    // addLocation('UA', '', '', '');	//Ukraine 
+    // addLocation('UK', '', '', '');	//United Kingdom 
+    // addLocation('VA', '', '', '');	//Vatican City 
+// Middle East
+    // addLocation('BH', '', '', '');	//Bahrain 
+    // addLocation('CY', '', '', '');	//Cyprus 
+    addLocation('IR', '', '', RedJ);	//Iran 
+    // addLocation('IQ', '', '', '');	//Iraq 
+    addLocation('IL', '', '', BlueJ);	//Israel 
+    // addLocation('JO', '', '', '');	//Jordan 
+    // addLocation('KW', '', '', '');	//Kuwait 
+    addLocation('LB', '', '', RedJ);	//Lebanon 
+    // addLocation('OM', '', '', '');	//Oman 
+    // addLocation('PS', '', '', '');	//Palestinian Authority 
+    // addLocation('QA', '', '', '');	//Qatar 
+    // addLocation('SA', '', '', '');	//Saudi Arabia 
+    addLocation('SY', '', '', RedJ);	//Syria 
+    // addLocation('TR', '', '', '');	//Turkey 
+    // addLocation('AE', '', '', '');	//United Arab Emirates 
+    addLocation('YE', '', '', RedJ);	//Yemen 
+// North America
+    // addLocation('CA', '', '', '');	//Canada 
+    // addLocation('GL', '', '', '');	//Greenland 
+    // addLocation('US', '', '', '');	//United States 
+    // addLocation('MX', '', '', '');	//Mexico 
+// South America
+    // addLocation('AR', '', '', '');	//Argentina 
+    // addLocation('BO', '', '', '');	//Bolivia 
+    // addLocation('BR', '', '', '');	//Brazil 
+    // addLocation('CL', '', '', '');	//Chile 
+    // addLocation('CO', '', '', '');	//Colombia 
+    // addLocation('EC', '', '', '');	//Ecuador 
+    // addLocation('FK', '', '', '');	//Falkland Islands 
+    // addLocation('GF', '', '', '');	//French Guiana 
+    // addLocation('GY', '', '', '');	//Guyana 
+    // addLocation('PY', '', '', '');	//Paraguay 
+    // addLocation('PE', '', '', '');	//Peru 
+    // addLocation('SR', '', '', '');	//Suriname 
+    // addLocation('UY', '', '', '');	//Uruguay 
+    // addLocation('VE', '', '', '');	//Venezuela 
+addToFlash();
+
+so.addVariable("stageWidth", 728);
+so.addVariable("stageHeight", 450);
+so.addVariable("infoOver", "enabled");
+so.addVariable("zoomFunction", "checked");
+so.addVariable("bgColor", "666666");
+so.addVariable("visitedColor", "5EB7DE");
+so.addVariable("notVisitedColor", "CDCDCD");
+so.addVariable("countryBordersColor", "666666");
+so.addVariable("helpTextColor", "000000");
+so.addVariable("helpText", "Mark the area you wish to zoom in");
+
+so.addParam("scale", "noscale");
+so.addParam("salign", "lt");
+
+so.write("visitedcountries");
+</script>
+
+<table width="728" bgcolor="#333333" border="0" cellspacing="4"><tr><td style="color: #FFFFFF; font-face: Arial; font-size: 12px;">  Make your <a href="http://www.interactivemaps.org/visited_countries" target="_blank" style="color: #FFCC33; font-face: Arial; font-size: 12px;">visited countries map</a></td><td align="right"><a href="http://www.interactivemaps.org" target="_blank" style="color: #FFCC33; font-face: Arial; font-size: 12px;">Interactive flash maps</a></td></tr></table>
+<hr />
+<p>&nbsp; </p>
+</body>
+</html>

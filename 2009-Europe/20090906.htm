@@ -1,0 +1,593 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link rel="stylesheet" type="text/css" href="include/main.css" />
+</head>
+
+<body>
+<script src="include/main.js"></script>
+<script src="include/jquery.min.js"></script>
+<script>
+function BrailleHighlight(ActionJ)
+	{
+		if ( ActionJ == "hide" )
+			{
+				$(".BrailleHighlightlightgreen").removeAttr("bgcolor");
+				$("#BrailleHighlightShow").show();
+				$("#BrailleHighlightHide").hide();
+			}
+		else
+			{
+				$(".BrailleHighlightlightgreen").attr("bgcolor", "lightgreen");
+				$("#BrailleHighlightShow").hide();
+				$("#BrailleHighlightHide").show();
+			}
+	}
+</script>
+<table class="PageHeaderFrame">
+	<tr>
+		<td>
+			<table class="PageHeader">
+				<tr>
+					<td>
+						<table class="PageHeaderContent">
+							<tr>
+								<td>
+									<table class="HeaderDate">
+										<tr>
+											<td rowspan="2" class="FranceDate">Sunday, September 6, 2009</td>
+											<td class="FranceDateRight">&nbsp;</td>
+										</tr>
+										<tr>
+											<td rowspan="2" class="FrenchRepublicanDate1">Jour de la hotte; decadi, 20 fructidor, an CCXVII</td>
+										</tr>
+										<tr>
+											<td class="FrenchRepublicanDate2">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+								<td rowspan="2" class="PageHeaderTOC">
+									<table id="ToC" class="ToC">
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="CountryEnglish">France</span><br />
+									<span class="CountryFrance fade33">France</span>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<table class="IrishPronunciation">
+				<tr>
+					<td>
+						<table class="PageHeaderContent">
+							<tr>
+								<td>
+									<table width="100%">
+										<tr>
+											<td>
+												<span style="color:#59503C; font-size:2em; font-variant:small-caps"><b>Page Navigation</b></span><br />
+											</td>
+											<td>
+												<table class="PageNavigation">
+													<tr>
+														<td rowspan="2" onClick="PageNavigationClick(0)">&nbsp;&nbsp;Main&nbsp;&nbsp;</td>
+														<th colspan="3">August</th>
+														<th colspan="10">September</th>
+													</tr>
+													<tr>
+														<td onMouseOver="PageNavigation(29);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(29);">29</td>
+														<td onMouseOver="PageNavigation(30);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(30);">30</td>
+														<td onMouseOver="PageNavigation(31);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(31);">31</td>
+														<td onMouseOver="PageNavigation(1);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(1);">1</td>
+														<td onMouseOver="PageNavigation(2);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(2);">2</td>
+														<td onMouseOver="PageNavigation(3);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(3);">3</td>
+														<td onMouseOver="PageNavigation(4);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(4);">4</td>
+														<td onMouseOver="PageNavigation(5);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(5);">5</td>
+														<td onMouseOver="PageNavigation(6);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(6);" style="background-color:#B8D3EE">6</td>
+														<td onMouseOver="PageNavigation(7);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(7);">7</td>
+														<td onMouseOver="PageNavigation(8);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(8);">8</td>
+														<td onMouseOver="PageNavigation(9);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(9);">9</td>
+														<td onMouseOver="PageNavigation(10);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(10);">10</td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+									</table>
+									<p id="PageNavigationSubHeads" class="PageNavigation">&nbsp;</p>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+
+<hr class="Disappear" />
+<script>
+WriteH1HeaderJ("Panth&eacute;on");
+WritePhotoGroupHeaderJ("PantheonOutside", "Outside");
+WritePhotoJ("PantheonOutside", "20090906", "Ticket13.jpg", "Entrance Ticket", 265, 214);
+WritePhotoJ("PantheonOutside", "20090906", "LocationPantheon.jpg", "Location of the Pantheon", 521, 439);
+WritePhotoJ("PantheonOutside", "20090906", "IMG_0623.JPG", "Approach to Pantheon");
+WritePhotoJ("PantheonOutside", "20090906", "IMG_0625.JPG", "Portico of the Pantheon, with Its Massive Corinthian Columns");
+WritePhotoMiddleHeaderJ("PantheonInside", "Indside");
+WritePhotoJ("PantheonInside", "20090906", "IMG_0627.JPG", "Interior (Nave When It Was a Church)", 450, 600);
+WritePhotoJ("PantheonInside", "20090906", "IMG_0628.JPG", "Replica of the Foucoult Pendulum");
+WritePhotoMiddleHeaderJ("PantheonBelow", "Below");
+WritePhotoJ("PantheonBelow", "20090906", "IMG_0630.JPG", "Circular Hallway under the Dome at the Crypt Level");
+WritePhotoJ("PantheonBelow", "20090906", "IMG_0631.JPG", "Crypts");
+WritePhotoJ("PantheonBelow", "20090906", "IMG_0632.JPG", "Crypts");
+WritePhotoJ("PantheonBelow", "20090906", "IMG_0633.JPG", "Tomb of Victor Hugo");
+WritePhotoJ("PantheonBelow", "20090906", "IMG_0634.JPG", "Victor Hugo and Alexandre Dumas");
+WritePhotoJ("PantheonBelow", "20090906", "IMG_0635.JPG", "Louis Braille");
+WritePhotoJ("PantheonBelow", "20090906", "IMG_0636.JPG", "Louis Braille");
+WritePhotoJ("PantheonBelow", "20090906", "IMG_0637.JPG", "Louis Braille");
+WritePhotoJ("PantheonBelow", "20090906", "IMG_0638.JPG", "The Heart of L&eacute;on Gambetta");
+WritePhotoMiddleHeaderJ("PantheonAbove", "Above");
+WritePhotoJ("PantheonAbove", "20090906", "IMG_0639.JPG", "At the Top of the Interior, Approaching the Dome");
+WritePhotoJ("PantheonAbove", "20090906", "IMG_0640.JPG", "Interior of the Pantheon from Above");
+WritePhotoJ("PantheonAbove", "20090906", "IMG_0643.JPG", "One of the Sculptures under the Dome<br />(The small seated figure on the left is Billy)", 450, 600);
+WritePhotoJ("PantheonAbove", "20090906", "IMG_0645.JPG", "View of the Eiffel Tower from the Roofline");
+WritePhotoJ("PantheonAbove", "20090906", "IMG_0646.JPG", "Line of Tourists Setting up for the Same Shot as Above");
+WritePhotoJ("PantheonAbove", "20090906", "IMG_0649.JPG", "Columns around the Dome");
+WritePhotoJ("PantheonAbove", "20090906", "IMG_0650.JPG", "Eiffel Tower through the Columns");
+WritePhotoJ("PantheonAbove", "20090906", "IMG_0651.JPG", "Sacr&eacute; C&oelig;ur from the Dome");
+WritePhotoJ("PantheonAbove", "20090906", "IMG_0652.JPG", "Notre Dame from the Dome");
+WritePhotoJ("PantheonAbove", "20090906", "IMG_0657.JPG", "The <nobr><span class='LangFR' title='French'><span class='LangDesignator'>FR</span></span><span class='LangTextFR'>&Eacute;glise Saint-&Eacute;tienne-du-Mont</span></nobr>​<nobr><span class='LangEN' title='English'><span class='LangDesignator'>EN</span></span><span class='LangTextEN'>Church of St. Steven of the Mountain</span></nobr>​ from the Dome");
+WritePhotoJ("PantheonAbove", "20090906", "IMG_0659.JPG", "Stairs Leading Down from the Dome");
+WritePhotoJ("PantheonAbove", "20090906", "IMG_0661.JPG", "The Dome from the Roofline");
+WritePhotoGroupFooterJ();
+WriteParisSignJ(5, "Place ((du)) Panthéon");
+</script>
+<p>The <script>LangBoxJ("FR", "Panth&eacute;on");LangBoxJ("LA", "Pantheon");LangBoxJ("EN", "Pantheon");</script> was originally planned as a church, to replace the aging <script>LangBoxJ("FR", "Abbaye Sainte-Genevi&egrave;ve de Paris");LangBoxJ("EN", "Abbey of St. Genevieve of Paris");</script>. Genevi&egrave;ve was so pious that her superiors actually asked her to reduce her austerities (for example, she was a vegetarian who only ate twice a week). In 451, when Paris was under siege by Attila the Hun, Genevi&egrave;ve prayed for the city&rsquo;s salvation, a prayer that was said to divert Attila&rsquo;s armies to Orl&eacute;ans instead. So, while she&rsquo;s probably not a hero in Orl&eacute;ans, she&rsquo;s the patron saint of Paris.</p>
+<p>Unfortunately, the great church that was being built to honor her happened to be under construction at the time of the Revolution.  So the practice of religion fell out of vogue; the Pantheon was turned into a mausoleum; and Genevi&egrave;ve was left with the same old abbey that she&rsquo;d always had. Oddly, though, the revolutionaries chose a name for the building that described a monument to &#8220;all gods&#8221; rather than none &#8211; a name that has stuck through the centuries, except on a <span class="dropnote">couple of occasions</span><span class="downarrow">➴</span> when the political winds blew just right, such that it was temporarily restored to service as a church.</p>
+<table class="dropnoteframe">
+	<tr>
+		<th width="25%">&nbsp;</th>
+		<td width="75%">
+			<table class="dropnotetable">
+				<tr>
+					<th>➴</th>
+					<td>
+						<ol>
+							<li>From 1821 to 1830, during the reigns of Louis XVIII and Charles X;</li>
+							<li>From 1851 to 1870, during Napol&eacute;lon III&rsquo;s Second Empire.</li>
+						</ol>
+						<p>Between these two periods, it was not in service as a church, but the name &#8220;Panth&eacute;on&#8221; was not restored. Rather, it was known first as the <script>LangBoxJ("FR", "Temple de la Gloire");LangBoxJ("EN", "Temple of Glory");</script> and then as the <script>LangBoxJ("FR", "Temple de l&rsquo;Humanit&eacute;");LangBoxJ("EN", "Temple of Humanity");</script></p>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<p>Currently, a cross is mounted at the top of the dome &#8211; somewhat out of character, everyone acknowledges, with the building&rsquo;s secular function, but carrying the weight of history since the current version was installed in 1873.  There have been quite a few ornamentations, however, in getting to the status quo; following are the items that <script>LangBoxJ("FR", "Wikip&eacute;dia");</script> (the French version) describes as having adorned the dome:</p>
+<ul>
+	<li>At first, a provisional cross while a statue of St. Genevi&egrave;ve was being prepared;</li>
+	<li>A statue of <i>Fame</i> after the <script>LangBoxJ("FR", "Assembl&eacute;e nationale constituante");LangBoxJ("EN", "National Constituent Assembly");</script> decided that the building would serve, instead, as a mausoleum;</li>
+	<li>A cross again under the reign of Louis XVIII;</li>
+	<li>A flag under Louis-Philippe I;</li>
+	<li>A golden cross under Napol&eacute;on III;</li>
+	<li>A red flag under the Commundards; and finally</li>
+	<li>The current stone cross.</li>
+</ul>
+<p>There was a bit of a war of wit amid the the building&rsquo;s toggling of function between church and crypt: When Louis XVIII was pressed to move the remains of secularist Voltaire from the vaults, he replied:</p>
+<table>
+	<tr>
+		<td width="12%">&nbsp;</td>
+		<td width="76%">
+			<table border="0" cellpadding="3" cellspacing="0" align="center">
+				<tr>
+					<td class="LangFR LangDesignator" title="French">FR</td>
+					<td class="LangEN LangDesignator" title="English">EN</td>
+				</tr>
+				<tr>
+					<td class="LangTextFR" style="padding:10px">
+						<table border="0" cellpadding="3" cellspacing="0">
+							<tr>
+								<td>&laquo;&nbsp;Laissez-le donc, il est bien assez puni d&rsquo;avoir &agrave; entendre la messe tous les jours.&nbsp;&raquo;</td>
+							</tr>
+						</table>
+					</td>
+					<td class="LangTextEN" style="padding:10px">
+						<table border="0" cellpadding="3" cellspacing="0">
+							<tr>
+								<td>&#8220;Leave him alone; he is punished enough having to hear Mass every day.&#8221;</td>
+							</tr>
+						</table>
+					</td>
+			  </tr>
+			</table>
+		</td>
+		<td width="12%">&nbsp;</td>
+	</tr>
+</table>
+<p>And Victor Hugo (now himself now buried in the building&rsquo;s crypt) said of Napol&eacute;on III:</p>
+<table>
+	<tr>
+		<td width="12%">&nbsp;</td>
+		<td width="76%">
+			<table border="0" cellpadding="3" cellspacing="0" align="center">
+				<tr>
+					<td class="LangFR LangDesignator" title="French">FR</td>
+					<td class="LangEN LangDesignator" title="English">EN</td>
+				</tr>
+				<tr>
+					<td class="LangTextFR" style="padding:10px">
+						<table border="0" cellpadding="3" cellspacing="0">
+							<tr>
+								<td>&laquo;&nbsp;Il a enfonc&eacute; un clou sacr&eacute; dans le mur du Panth&eacute;on et il a accroch&eacute; &agrave; ce clou son coup d&rsquo;&Eacute;tat.&nbsp;&raquo;</td>
+							</tr>
+						</table>
+					</td>
+					<td class="LangTextEN" style="padding:10px">
+						<table border="0" cellpadding="3" cellspacing="0">
+							<tr>
+								<td>&#8220;He has driven a sacred nail into the wall of the Pantheon, and his coup-d&rsquo;&Eacute;tat has snagged on that nail.&#8221;</td>
+							</tr>
+						</table>
+					</td>
+			  </tr>
+			</table>
+		</td>
+		<td width="12%">&nbsp;</td>
+	</tr>
+</table>
+<p>Despite the enthusiasm of a few rulers, though, this building doesn&rsquo;t really work as a church: As soon as the decision was made that it would be a necropolis, its huge, bright, Gothic windows were sealed, allowing illumination only through the clerestory windows along the roofline &#8211; a redesign that reinforces its intended function to great effect: The Pantheon makes a meager church, but a stunning tomb.</p>
+<p>And it endures to this day, welcoming France&rsquo;s greatest citizens, adorned with the plaque, <span class='SmallCaps'><script>LangBoxJ("FR", "aux grands hommes la patrie reconnaissante");LangBoxJ("EN", "to the great men, the homeland is grateful");</script></span>. That sexist language is not just an artifact of another language or a bygone era, though: The Pantheon is under huge pressure by the feminist presence in France to rectify the glaring imbalance of gender among the people interred there. Indeed, only two women repose in the edifice: Marie Curie (for her merits) and Sophie Berthelot (so as not to separate her from her husband). Selections for interment are made by the French president, and <span class="dropnote">only 10 individuals</span><span class="downarrow">➴</span> have been added during the Fifth Republic (i.e., since 1958), so fixing the imbalance is likely to be a long struggle.</p>
+<table class="dropnoteframe">
+	<tr>
+		<th width="25%">&nbsp;</th>
+		<td width="75%">
+			<table class="dropnotetable">
+				<tr>
+					<th>➴</th>
+					<td>In fact, interment in the Pantheon is such a rare honor that the French language has a word for the process of being interred there, <script>LangBoxJ("FR", "panth&eacute;onisation");</script>.</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<p>St. Genevi&egrave;ve didn&rsquo;t get entirely screwed, though:  On the interior of the dome is a painting titled <script>LangBoxJ("FR", "l&rsquo;Apoth&eacute;ose de sainte Genevi&egrave;ve");LangBoxJ("EN", "The Apotheosis of Saint Genevieve");</script>, which sounds marvelously pious until one understands that &#8220;apotheosis&#8221; describes the process by which one becomes a god. (The term is used with a little more laxity in art, so the original intent may have been viewed by the artist as reverential and in conformance with Roman Catholic dogma &#8211; but I&rsquo;d file it under &#8220;sketchy.&#8221;)</p>
+<p>Another ornamentation of the interior of the dome is a cable measuring <script>MeasurementBoxJ("SI", "67 m", true);MeasurementBoxJ("US", "220'", false);</script>, reaching nearly to the floor of the building, suspending a <script>MeasurementBoxJ("SI", "28 kg", true);MeasurementBoxJ("US", "62 lb.", false);</script> bob; this is a reproduction of the experiment in which L&eacute;on Foucault demonstrated the rotation of the earth on its axis. Foucault set up his experiment just in time, though: A few months later the building was reconsecrated as a church, and such experiments would have been both impossible and forbidden. Causing some confusion to visitors is the fact that the path of the pendulum is tracked by hourly marks that only make it about three-quarters of the way around the base. This is because the the daily rotation of such a pendulum is predicted with the formula:</p>
+<table border="0" cellpadding="0" cellspacing="0" align="center">
+	<tr>
+		<td style="font-size:1em">&alpha; = <script>MeasurementBoxJ("SI", "400 gon", true);MeasurementBoxJ("SI", "2&pi; (6.28) rad", true);MeasurementBoxJ("US", "360&deg;", false);</script> sin &phi;
+		</td>
+	</tr>
+</table>
+<p>... in which &alpha; is the angular speed (grads/radians/degrees covered in a day) and &phi; is the latitude. The Pantheon is at <script>MeasurementBoxJ("SI", "54.273457 gon", true);MeasurementBoxJ("SI", "0.852525 rad", true);MeasurementBoxJ("US", "48&deg;50&prime;46&Prime;", false);</script> north latitude, so the formula fills in as follows:</p>
+<table border="0" cellpadding="3" cellspacing="0" align="center">
+	<tr>
+		<td>&alpha; =&nbsp;</td>
+		<td class="MeasurementAbbr MeasurementDesignator" title="Metric System">SI</td>
+		<td class="MeasurementText2">301.177908 gon = 400 gon sin 54.273457 gon</td>
+	</tr>
+	<tr>
+		<td>&alpha; =&nbsp;</td>
+		<td class="MeasurementAbbr1 MeasurementDesignator" title="Metric System">SI</td>
+		<td class="MeasurementText3">4.730892 rad = 2&pi; rad sin 0.852525 rad</td>
+	</tr>
+	<tr>
+		<td>&alpha; =&nbsp;</td>
+		<td class="MeasurementAbbr1 MeasurementDesignator" title="United States Customary Units">US</td>
+		<td class="MeasurementText3">271.060118&deg; = 360&deg; sin 48&deg;50&prime;46&Prime;</td>
+	</tr>
+</table>
+<p>... so the angular speed at the Pantheon is nearly exactly a three-quarters rotation. In one of my pictures, you can see at the back the unmarked pie slice that represents where the pendulum would be repositioned at midnight.</p>
+<p>Foucault&rsquo;s contributions to the sciences can&rsquo;t be overestimated:  In addition to this pendulum experiment, he also did much work on light (fixing the speed through a vacuum at <script>MeasurementBoxJ("SI", "298,000 km/s", true);MeasurementBoxJ("US", "185,000 mi/s", false);</script>, a figure just 0.6% off the scientifically accepted value now; establishing that there was a difference in the speed of light through air and through water; and definitively disproving Isaac Newton&rsquo;s corpuscle theory of light). Also, he discovered the &#8220;Foucoult currents&#8221; that are generated when a spinning metal plate is exposed to a magnetic field; invented the &#8220;Foucault Test&#8221; to confirm the precision of a concave mirror; and named (but did not invent) the gyroscope.  Foucault, however, is not one of the people honored with interment at the Pantheon:  He had the bad luck to die when it was still a church under the reign of Napol&eacute;on III, and was laid to rest of the <script>LangBoxJ("FR", "Cimeti&egrave;re de Montmartre");LangBoxJ("EN", "Montmartre Cemetery");</script>.</p>
+<p>We went downstairs, though, to see some of the people who&rsquo;d made the cut, among whom a highlight for me (because of my work as a braille transcriptionist in high school) was the tomb of Louis Braille.</p>
+<p>Braille &#8211; pronounced as  
+	<script>LangBoxJ("IPA", "/bʁɑj/");</script> (like &#8220;brahy&#8221;) in French &#8211; was famous of course as the inventor of the raised-dot system of writing used by the visually-impaired worldwide. Braille blinded himself at age 10 by accidentally poking himself in one eye with an awl from his father&rsquo;s workshop, leading to an infection that affected his other eye, resulting in blindness to both. Five years later, at the tender age of 15, he invented the braille writing system &#8211; having taken as an inspiration the raised-letter texts that were then used for the visually-impaired, a night-writing system of raised dots and dashes used by the French military and shown to him by one of its officers, and a set of dice his father had given him with raised dots on the faces. In an astonishing bit of irony, the implement with which Braille designed his writing system was the exact same awl that had caused his loss of sight in the first place.</p>
+<p>Beside the alcove in which Braille&rsquo;s body rests is an audio-visual marker carrying a quote, in print and braille, by his friend and cohort, Hippolyte Coltat: <script>LangBoxJ("FR", "&#8220;&Agrave; celui qui a ouvert &agrave; tous ceux qui ne voient pas les portes du savoir&#8221;");LangBoxJ("EN", "&#8220;To him who opened for all of those who could not see the doors of learning&#8221;");</script>. The inscription appears in braille as below (using, of course, the French style of transcription). <span id="BrailleHighlightShow"><a href="#" onclick="BrailleHighlight('show'); return false;" >Click Here</a> to highlight the braille characters that are different in French and English.</span><span id="BrailleHighlightHide" style="display:none"><a href="#" onclick="BrailleHighlight('hide'); return false;" >Click Here</a> to remove the highlighting of braille characters that are different in French and English.</span></p>
+<div id="LouisBraille" style="overflow:auto; white-space:nowrap; width:300px">
+<table width="1860"><tr><td>
+<script>
+BrailleObject =
+	[
+		{ "dots": "2356", "letter": "&quot;", "bgcolor": "lightgreen" },
+		{ "dots": "46", "letter": "(capital)", "bgcolor": "lightgreen" },
+		{ "dots": "12356", "letter": "&agrave;", "bgcolor": "lightgreen" },
+		{ "dots": "", "letter": "(space)" },
+		{ "dots": "14", "letter": "c" },
+		{ "dots": "15", "letter": "e" },
+		{ "dots": "123", "letter": "l" },
+		{ "dots": "136", "letter": "u" },
+		{ "dots": "24", "letter": "i" },
+		{ "dots": "", "letter": "(space)" },
+		{ "dots": "12345", "letter": "q" },
+		{ "dots": "136", "letter": "u" },
+		{ "dots": "24", "letter": "i" },
+		{ "dots": "", "letter": "(space)" },
+		{ "dots": "1", "letter": "a" },
+		{ "dots": "", "letter": "(space)" },
+		{ "dots": "135", "letter": "o" },
+		{ "dots": "136", "letter": "u" },
+		{ "dots": "1236", "letter": "v" },
+		{ "dots": "15", "letter": "e" },
+		{ "dots": "1235", "letter": "r" },
+		{ "dots": "2345", "letter": "t" },
+		{ "dots": "", "letter": "(space)" },
+		{ "dots": "12356", "letter": "&agrave;", "bgcolor": "lightgreen" },
+		{ "dots": "", "letter": "(space)" },
+		{ "dots": "2345", "letter": "t" },
+		{ "dots": "135", "letter": "o" },
+		{ "dots": "136", "letter": "u" },
+		{ "dots": "234", "letter": "s" },
+		{ "dots": "", "letter": "(space)" },
+		{ "dots": "14", "letter": "c" },
+		{ "dots": "15", "letter": "e" },
+		{ "dots": "136", "letter": "u" },
+		{ "dots": "1346", "letter": "x" },
+		{ "dots": "", "letter": "(space)" },
+		{ "dots": "12345", "letter": "q" },
+		{ "dots": "136", "letter": "u" },
+		{ "dots": "24", "letter": "i" },
+		{ "dots": "", "letter": "(space)" },
+		{ "dots": "1345", "letter": "n" },
+		{ "dots": "15", "letter": "e" },
+		{ "dots": "", "letter": "(space)" },
+		{ "dots": "1236", "letter": "v" },
+		{ "dots": "135", "letter": "o" },
+		{ "dots": "24", "letter": "i" },
+		{ "dots": "15", "letter": "e" },
+		{ "dots": "1345", "letter": "n" },
+		{ "dots": "2345", "letter": "t" },
+		{ "dots": "", "letter": "(space)" },
+		{ "dots": "12345", "letter": "p" },
+		{ "dots": "1", "letter": "a" },
+		{ "dots": "234", "letter": "s" },
+		{ "dots": "", "letter": "(space)" },
+		{ "dots": "123", "letter": "l" },
+		{ "dots": "15", "letter": "e" },
+		{ "dots": "234", "letter": "s" },
+		{ "dots": "", "letter": "(space)" },
+		{ "dots": "1234", "letter": "p" },
+		{ "dots": "135", "letter": "o" },
+		{ "dots": "1235", "letter": "r" },
+		{ "dots": "2345", "letter": "t" },
+		{ "dots": "15", "letter": "e" },
+		{ "dots": "234", "letter": "s" },
+		{ "dots": "", "letter": "(space)" },
+		{ "dots": "145", "letter": "d" },
+		{ "dots": "136", "letter": "u" },
+		{ "dots": "", "letter": "(space)" },
+		{ "dots": "234", "letter": "s" },
+		{ "dots": "1", "letter": "a" },
+		{ "dots": "1236", "letter": "v" },
+		{ "dots": "135", "letter": "o" },
+		{ "dots": "24", "letter": "i" },
+		{ "dots": "1235", "letter": "r" },
+		{ "dots": "2356", "letter": "&quot;", "bgcolor": "lightgreen" }
+	];
+WriteBraille(BrailleObject);
+BrailleObject =
+	[
+		{ "dots": "236", "letter": "(", "bgcolor": "lightgreen" },
+		{ "dots": "46", "letter": "(capital)", "bgcolor": "lightgreen" },
+		{ "dots": "125", "letter": "h" },
+		{ "dots": "24", "letter": "i" },
+		{ "dots": "1234", "letter": "p" },
+		{ "dots": "1234", "letter": "p" },
+		{ "dots": "135", "letter": "o" },
+		{ "dots": "123", "letter": "l" },
+		{ "dots": "13456", "letter": "y" },
+		{ "dots": "2345", "letter": "t" },
+		{ "dots": "15", "letter": "e" },
+		{ "dots": "", "letter": "(space)" },
+		{ "dots": "46", "letter": "(capital)", "bgcolor": "lightgreen" },
+		{ "dots": "14", "letter": "c" },
+		{ "dots": "135", "letter": "o" },
+		{ "dots": "123", "letter": "l" },
+		{ "dots": "2345", "letter": "t" },
+		{ "dots": "1", "letter": "a" },
+		{ "dots": "2345", "letter": "t" },
+		{ "dots": "356", "letter": ")", "bgcolor": "lightgreen" }
+	];
+WriteBraille(BrailleObject);
+</script>
+</td></tr></table>
+</div>
+<p>Also honored, but not interred, at the Pantheon are those that have been designated by Israel&rsquo;s Yad Vashem as &#8220;Righteous among the Nations&#8221; for their work to save Jews during the Nazi occupation. They are remembered with the following plaque:</p>
+<table>
+	<tr>
+		<td width="12%">&nbsp;</td>
+		<td width="76%">
+			<table border="0" cellpadding="3" cellspacing="0" align="center">
+				<tr>
+					<td class="LangFR LangDesignator" title="French">FR</td>
+					<td class="LangEN LangDesignator" title="English">EN</td>
+				</tr>
+				<tr>
+					<td class="LangTextFR" style="padding:10px">
+						<table border="0" cellpadding="3" cellspacing="0">
+							<tr>
+								<td>Sous la chape de haine et de nuit tomb&eacute;e sur la France dans les années d&rsquo;occupation, des lumi&egrave;res, par milliers, refus&egrave;rent de s&rsquo;éteindre. Nomm&eacute;s &#8220;Juste parmi les Nations&#8221; ou rest&eacute;s anonymes, des femmes et des hommes, de toutes origines et de toutes conditions, ont sauv&eacute; des juifs des pers&eacute;cutions antis&eacute;mites et des camps d&rsquo;extermination. Bravant les risques encourus, ils ont incarn&eacute; l&rsquo;honneur de la France, ses valeurs de justice, de tol&eacute;rance et d&rsquo;humanit&eacute;.</td>
+							</tr>
+						</table>
+					</td>
+					<td class="LangTextEN" style="padding:10px">
+						<table border="0" cellpadding="3" cellspacing="0">
+							<tr>
+								<td>Under the cloak of hate and darkness that spread over France during the years of occupation, thousands of lights refused to be extinguished. Named as &#8220;Righteous among the Nations&#8221; or remaining anonymous, women and men, of all backgrounds and social classes, saved Jews from anti-Semitic persecution and the extermination camps. Braving the risks involved, they incarnated the honour of France, and its values of justice, tolerance and humanity.</td>
+							</tr>
+						</table>
+					</td>
+			  </tr>
+			</table>
+		</td>
+		<td width="12%">&nbsp;</td>
+	</tr>
+</table>
+<p>After we all had toured the crypts, Mom and Billy waited below while I went up on a tour of the Dome.</p>
+<script>WriteH1FooterJ();</script>
+
+<hr class="Disappear" />
+<script>
+WriteH1HeaderJ("Catacombes");
+WritePhotoGroupHeaderJ("Catacombes", "Catacombes");
+WritePhotoJ("Catacombes", "20090906", "Ticket15.jpg", "Admission Ticket", 225, 304);
+WritePhotoJ("Catacombes", "20090906", "LocationCatacombes.jpg", "Location of the Catacombs", 521, 439);
+WritePhotoJ("Catacombes", "20090906", "map-c.jpg", "Map of the Route through the Catacombs", 500, 623);
+WritePhotoJ("Catacombes", "20090906", "IMG_0664.JPG", "Entrance to the Catacombs<br />The building to the right is one of the &#8220;Gates of Hell&#8221;.");
+WritePhotoJ("Catacombes", "20090906", "IMG_0666.JPG", "Approach to the Ossuary");
+WritePhotoJ("Catacombes", "20090906", "IMG_0667.JPG", "Approach to the Ossuary");
+WritePhotoJ("Catacombes", "20090906", "IMG_0669.JPG", "Trail Markers");
+WritePhotoJ("Catacombes", "20090906", "IMG_0671.JPG", "D&eacute;cure&rsquo;s Carvings");
+WritePhotoJ("Catacombes", "20090906", "IMG_0672.JPG", "D&eacute;cure&rsquo;s Carvings");
+WritePhotoJ("Catacombes", "20090906", "IMG_0673.JPG", "D&eacute;cure&rsquo;s Carvings");
+WritePhotoJ("Catacombes", "20090906", "IMG_0676.JPG", "&#8220;Quarry Foot Baths&#8221; to Reach the GroundwaterCaption");
+WritePhotoJ("Catacombes", "20090906", "IMG_0677.JPG", "Support Arches Approach the Ossuary");
+WritePhotoJ("Catacombes", "20090906", "IMG_0680.JPG", "Entrance to the Empire of Death");
+WritePhotoJ("Catacombes", "20090906", "IMG_0682.JPG", "Dedication Stone");
+WritePhotoJ("Catacombes", "20090906", "IMG_0683.JPG", "Bones");
+WritePhotoJ("Catacombes", "20090906", "IMG_0683A.JPG", "Bones");
+WritePhotoJ("Catacombes", "20090906", "IMG_0684.JPG", "Cemetery Marker");
+WritePhotoJ("Catacombes", "20090906", "IMG_0685.JPG", "Cemetery Marker");
+WritePhotoJ("Catacombes", "20090906", "IMG_0687.JPG", "Cemetery Marker");
+WritePhotoJ("Catacombes", "20090906", "IMG_0688.JPG", "Death Warning");
+WritePhotoJ("Catacombes", "20090906", "IMG_0690.JPG", "&#8220;Where is Death, always in the future or the past? Barely present, she is already gone again.&#8221;<br />(The &#8220;barely present&#8221; pun &#8211; tense as well as location &#8211; works in French, too.)");
+WritePhotoJ("Catacombes", "20090906", "IMG_0693.JPG", "Crypt of the Sepulchral Lamb");
+WritePhotoJ("Catacombes", "20090906", "IMG_0694.JPG", "Crypt");
+WritePhotoJ("Catacombes", "20090906", "IMG_0695.JPG", "Crypt?", 450, 600);
+WritePhotoJ("Catacombes", "20090906", "IMG_0696.JPG", "Warning?");
+WritePhotoJ("Catacombes", "20090906", "IMG_0697.JPG", "Bones around a Support Column");
+WritePhotoJ("Catacombes", "20090906", "IMG_0698.JPG", "Warning");
+WritePhotoJ("Catacombes", "20090906", "IMG_0699.JPG", "Warning?");
+WritePhotoJ("Catacombes", "20090906", "IMG_0700.JPG", "Support Arches");
+WritePhotoJ("Catacombes", "20090906", "IMG_0701.JPG", "Support Arches");
+WritePhotoGroupFooterJ();
+WriteParisSignJ(14, "Place ((d’)) Enfert");
+</script>
+<p>As with many of the monuments of Paris, this site has both an official name, the <script>LangBoxJ("FR", "Ossuaire municipal");LangBoxJ("EN", "Municipal Ossuary");</script>, and the name by which it is almost universally known, the <script>LangBoxJ("FR", "Catacombes de Paris");LangBoxJ("EN", "Catacombs of Paris");</script>.</p>
+<p>The Catacombs became necessary because of a public health disaster in Paris in the late 1700s (and brewing for at least a century before that), resulting from the saturation of Parisian cemeteries with human remains on a scale far beyond what the land could sustain. A long-standing French burial practice, which is not inherently unsustainable and which is also practiced in parts of the U.S. (notably New Orleans and New York), involves re-use of burial sites and crypts when the bodies contained therein are sufficiently decomposed to allow new additions. But the burgeoning population of Paris in this era, combined with few dodgy practices of the day &#8211; such as re-using coffins (which were not customarily buried with the deceased at that time), hastening decomposition with lime, and interring the poor in groups in mass graves (which by this time were constantly churning with bones when those graves were re-used) &#8211; led to a situation in which the sanitary conditions around cemeteries was described as &#8220;unbearable,&#8221; and the water table that Paris relied on was both fouled and contaminated.</p>
+<p>Realizing that no more corpses could be squeezed into this earth, the leaders of Paris looked for a solution, and found it at last in the old mines that were then south of the city gates. In 1786 the process of moving the bones began: Because of the enormity of the task, Paris endured for three years the gruesome spectacle of unending nighttime parades, led by chanting priests in advance of black covered wagons, ferrying bones from their contaminated burial grounds to the mines. At one end workers dug up corpses from the polluted ground. At the other the bones were dumped in a well and distributed below by a separate contingent underground laborers.</p>
+<p>That destination was known in its day &#8211; for reasons that I cannot find in my research, but which seem unrelated to these burials &#8211; as the <script>LangBoxJ("FR", "Place d&rsquo;Enfer");</script>, which translates to English usually as the <script>LangBoxJ("EN", "Plaza of Hell");</script>, and sometimes as the <script>LangBoxJ("EN", "Plaza of the Underworld");</script>. Indeed, the entrance to the Catacombs is through a green shed that stands adjacent to one of a pair of buildings that once flanked the city gate on this spot, which together were known as the <script>LangBoxJ("FR", "Barri&egrave;re d&rsquo;Enfer");LangBoxJ("EN", "Gates of Hell");</script>. The area is not so known today: 1879 it was renamed <script>LangBoxJ("FR", "Place Denfert-Rochereau");LangBoxJ("EN", "Denfert-Rochereau Plaza");</script> in honor of the Franco-Prussian War hero, Pierre Denfert-Rochereau &#8211; but it was only the spelling and meaning of the word that changed; not the sound: <script>LangBoxJ("IPA", "/dɑ̃fɛʁ/");LangBoxJ("FR", "d&rsquo;Enfer");LangBoxJ("FR", "Denfert");</script>; the homonym was almost certainly a consideration in the municipality&rsquo;s decision that this was the square that would be renamed in his honor.</p>
+<p>So Billy, Mom, and I descended the long staircase for our walk through the <script>MeasurementBoxJ("SI", "1.7 km", true);MeasurementBoxJ("US", "1.1 mi.", false);</script> path through the underworld &#8211; a tiny fraction of the <script>MeasurementBoxJ("SI", "300 km", true);MeasurementBoxJ("US", "186 mi.", false);</script> that serves as an alternate (and currently forbidden by law) network of walkways underneath the sidewalks of the City of Light.</p>
+<p>One has walked about half then length before finally coming to anything whatsoever of note &#8211; but then one sees the first of several carvings completed by a quarry inspector, D&eacute;cure, before the days of the quarry&rsquo;s conversion to an ossuary. These represent the Port-Mahon Palace and other sites nearby, which D&eacute;cure sculpted from memory after looking out at them from a jail cell for many long years. These works are D&eacute;cure&rsquo;s sole enduring legacy, and it was near them that he, himself, began the same journey as that taken by the corpses piled high just on the other side of the wall: The quarry inspector died building an access tunnel at this exact location.</p>
+<p>Finally one arrives at the <span class="dropnote">centuries-old warning</span><span class="downarrow">➴</span>, no less jarring today than it must have been to the superstitious residents of Paris when the ossuary was founded:</p>
+<table border="0" cellpadding="3" cellspacing="0" align="center">
+	<tr>
+		<td class="LangFR LangDesignator" title="French">FR</td>
+		<td class="LangEN LangDesignator" title="English">EN</td>
+	</tr>
+	<tr>
+		<td class="LangTextFR" style="padding:10px">
+			<table border="0" cellpadding="3" cellspacing="0">
+				<tr>
+					<td align="center">
+<span style="font-size:0.8em">ARR&Egrave;TE!<br />
+C&rsquo;EST İCİ L&rsquo;EMPİRE DE LA MORT</span>
+					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="LangTextEN" style="padding:10px">
+			<table border="0" cellpadding="3" cellspacing="0">
+				<tr>
+					<td align="center">
+<span style="font-size:0.8em">STOP!<br />
+THİS İS THE EMPİRE OF DEATH</span>
+					</td>
+				</tr>
+			</table>
+		</td>
+  </tr>
+</table>
+<br />
+<table class="dropnoteframe">
+	<tr>
+		<th width="25%">&nbsp;</th>
+		<td width="75%">
+			<table class="dropnotetable">
+				<tr>
+					<th>➴</th>
+					<td>With an odd orthography, though, in that they put dots over the capital <span class="PictureCaptionRoman">I</span>s, as if this were a diacritical mark rather than an inherent attribute of (only) the lower-case <span class="PictureCaptionRoman">i</span>.</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<p>Finally, we came to the bones themselves. I&rsquo;ll <span class="dropnote">let the pictures tell the story</span><span class="downarrow">➴</span> &#8211; but I at least want to say this here: It wasn&rsquo;t creepy. These remains seem to have been placed lovingly at the time of the establishment of the ossuary, even though the job of placing them &#8211; working underground with decaying and diseased human remains &#8211; must have been about the most repugnant work one could find. Indeed, in some areas the placement is not merely loving &#8211; but artistic. And let us not forget that Paris would have faced a plague if this action had not been taken: The catacombs are not just a haven of death; they are also a gift of life.</p>
+<table class="dropnoteframe">
+	<tr>
+		<th width="25%">&nbsp;</th>
+		<td width="75%">
+			<table class="dropnotetable">
+				<tr>
+					<th>➴</th>
+					<td>But be forewarnded that the quality of these images is meager at best. You can find much better pictures online, taken by people who &#8211; unlike myself &#8211; did not feel compelled to obey the proscription against flash photography.</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<p>I started to translate all the signs that I photographed, but they were too full of abbreviations, arcane terminology, inscrutable etchings, and lax spelling that neither my high-school French nor Google Translate could do a thorough job.  In brief, they generally say things like, &#8220;This area was established by the order of so-and-so ...,&#8221; &#8220;These bones came from the such-and-such cemetery ...,&#8221; and &#8220;Leave the dead alone!&#8221;</p>
+<p>Let me also say this, lest the story be left incomplete: Mom <i>hated</i> this place. The entire walk is 1.7 km, and she complained for at least 1.6 of those. The first thing she did when she got back to her apartment was call people in America and warn them not to bother with the catacombs if they ever came to Paris. And I&rsquo;m finally finishing up this page of the report more than a year after our trip to the Parisian underworld, and she&rsquo;s <i>still</i> complaining about it. But her gripe was not that the catacombs were disturbing (as one might anticipate); rather, it was that they were uninteresting. Anyway, Billy and I thought they were fantastic!</p>
+<script>WriteH1FooterJ();</script>
+
+<hr class="Disappear" />
+<script>
+WriteH1HeaderJ("l&rsquo;Escargot Montorgueil");
+WritePhotoGroupHeaderJ("Escargot", "l&rsquo;Escargot Montorgueil");
+WritePhotoJ("Escargot", "20090906", "LocationMontorgueil.jpg", "Location of l&rsquo;Escargot Montorgueil", 521, 439);
+WritePhotoGroupFooterJ();
+WriteParisSignJ(1, "Rue // Montorgueil");
+</script>
+<p>For dinner we went to l&rsquo;Escargot Montorgueil.  I was attracted to this restaurant because of its pioneering of escargot caviar &#8211; but apparently the dish failed to find an audience, and the restaurant (according to our waiter) went in an entirely different direction.</p>
+<p>Nonetheless, I did provide a nice taste of some traditional French dishes:  For the <script>LangBoxJ("FR", "entr&eacute;e");LangBoxJ("EN", "appetizer");</script>, I had marrow for the first time (not really a fan, but glad for the experience); Billy had eggs and mayonnaise (which had appeared on several menus, and which he said was a great taste despite seeming so simplistic).  For the <script>LangBoxJ("FR", "plat");LangBoxJ("EN", "entree");</script>, I had steak tartare (as usual) and Billy had pot-de-feu (a kind of stew with large hunks of meat and vegetables, and just a dribble of broth).</p>
+<script>WriteH1FooterJ();</script>
+
+<script src="include/footer.js"></script>
+<hr class="Disappear" />
+<script>
+WriteH1HeaderJ("The Tower <i>au jour d&rsquo;hui</i>");
+WritePhotoGroupHeaderJ("Obligatory", "Obligatory Pictures of the Eiffel Tower");
+WritePhotoJ("Obligatory", "20090906", "IMG_0706.JPG", "We saw this street artist working as we walked from the M&eacute;tro station past the Eiffel Tower to Mom&rsquo;s apartment; he had just finished drawing the girl at the left (of his picture as well as mine), and was just starting on the boy.");
+WritePhotoJ("Obligatory", "20090906", "IMG_0708.JPG", "The Tower");
+WritePhotoJ("Obligatory", "20090906", "IMG_0710.JPG", "The Tower");
+WritePhotoGroupFooterJ();
+WriteParisSignJ(7, "Tour//Eiffel");
+</script>
+<p>Staying literally in the shadow of the Eiffel Tower, I just couldn&rsquo;t leave off photographing it when I passed.  You&rsquo;ll find a section like this at the end of the report for almost every day that we were in Paris.</p>
+<script>WriteH1FooterJ();</script>
+
+<p>&nbsp;</p>
+<table class="PageHeaderFrame">
+	<tr>
+		<td>
+			<table class="PageFooter">
+				<tr>
+					<td>
+						<table width="100%">
+							<tr>
+								<td width="33%"><p  class="PageNavigation"><a href="20090905.htm">Previous</a></p></td>
+								<td width="33%"><p  class="PageNavigation"><a href="index.htm">Main</a></p></td>
+								<td width="33%"><p  class="PageNavigation"><a href="20090907.htm">Next</a></p></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+
+<script>
+//Fix DIV for LouisBraille
+$("#LouisBraille").attr("style", "overflow:auto; white-space:nowrap; width:" + ($(window).width()-710) + "px");
+</script>
+</body>
+</html>

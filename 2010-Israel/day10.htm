@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link rel="stylesheet" type="text/css" href="include/main.css" />
+
+</head>
+
+<body>
+<script src="include/main.js" charset="utf-8"></script>
+<script src="include/jquery.min.js"></script>
+
+<script>
+WritePageHead(10);
+</script>
+
+<script>
+// ============================================================================================================================================
+// Header
+// ============================================================================================================================================
+WriteHeader
+	(
+		/* English */			"Back to Atlanta",
+		/* Hebrew */			"אטלנטה",
+		/* Arabic */			"أتلانتا",
+		/* Religious Icon */	"",
+		/* Remove Vowels */		true
+	);
+</script>
+<div class='IndentedBody'>
+
+<p>Text</p>
+
+<script>
+PictureList =
+	[
+		{
+			image: 'Map - Ben Gurion.jpg',
+			caption: 'Map - Ben Gurion.jpg',
+			orientation: 'O',
+			width: 248,
+			height: 600
+		},
+		{
+			image: 'Ticket 10 - TLV-JFK.jpg',
+			caption: 'Ticket 10 - TLV-JFK.jpg',
+			orientation: 'O',
+			width: 600,
+			height: 244
+		},
+		{
+			image: 'Ticket 11 - JFK-ATL.jpg',
+			caption: 'Ticket 11 - JFK-ATL.jpg',
+			orientation: 'O',
+			width: 170,
+			height: 226
+		},
+		{
+			image: 'IMG_1495 - 747 Upstairs.JPG',
+			caption: 'IMG_1495 - 747 Upstairs.JPG'
+		},
+		{
+			end: true,
+			explanation: "This item exists so I don't have to remember to remove the comma after the last item in the list"
+		}
+	];
+WritePictureFrameAndGroup ( "Home", "Back Home", "day10", PictureList, false );
+</script>
+
+</div>
+
+<script>
+PunctuationReplace()	// Must be done before other replacements.
+
+// LangBoxReplace ( "{{REPLACE}}", [ ["EN", "REPLACE"], ["HE", "REPLACE", true], ["AR", "REPLACE", true] ] );
+
+OnRequestEnd();
+</script>
+
+</body>
+</html>

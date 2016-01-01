@@ -1,0 +1,481 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<!--
+DROPNOTE
+<span class="dropnote">
+</span>
+<span class="downarrow">➴</span>
+<table class="dropnotetable">
+	<tr>
+		<th>➴</th>
+		<td>...</td>
+	</tr>
+</table>
+-->
+<script>
+function ConvertGaelicJ()
+	{
+		function ReplaceAndCleanJ(PatternJ, IPAJ)
+			{
+				if (IPATextJ.search(RegExp(PatternJ, "g")) != -1)
+					{
+						if(IPAJ.slice(0,1) == "u")
+								{
+									SpecialCaseJ = "(X1)";
+								}
+							else
+								{
+									SpecialCaseJ = ""
+								}
+						IPACountJ++;
+						IPATextJ = IPATextJ.replace(RegExp(PatternJ, "g"), "[$&]" + SpecialCaseJ + "{" + IPACountJ + "}[$&]");
+						IPAArrayJ[IPACountJ] = IPAJ;
+						
+						IPATextJ = IPATextJ.replace(/\[[aáoóuú]/g, "(B)$&");
+						IPATextJ = IPATextJ.replace(/\[[eéií]/g, "(S)$&");
+						IPATextJ = IPATextJ.replace(/[aáoóuú]\]/g, "$&(B)");
+						IPATextJ = IPATextJ.replace(/[eéií]\]/g, "$&(S)");
+						IPATextJ = IPATextJ.replace(/\[[^aáeéiíoóuú]/g, "(C)$&");
+						IPATextJ = IPATextJ.replace(/[^aáeéiíoóuú]\]/g, "$&(C)");
+						IPATextJ = IPATextJ.replace(/\[.*?\]/g, "");
+						IPATextJ = IPATextJ.replace(/\)\([BSC]\){/g, "){");
+						IPATextJ = IPATextJ.replace(/}\([BSC]\)\(/g, "}(");
+						IPATextJ = IPATextJ.replace(/\)\([BSC]\)\(X/g, ")(X");
+						
+						EnglishApproxArrayJ[IPACountJ] = IPAJ;
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/aː/g, "aa");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/eː/g, "ey");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/əi/g, "uhy");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/əu/g, "uhw");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/iː/g, "ee");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/iə/g, "eeyah");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/oː/g, "ohw");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/uː/g, "uw");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/uə/g, "uwah");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/a/g, "a");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/b/g, "b");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/c/g, "<i>hhy</i>");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/ç/g, "<i>hy</i>");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/ɔ/g, "aw");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/d/g, "d");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/ɛ/g, "eh");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/ʃ/g, "sh");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/ə/g, "u");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/f/g, "f");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/ɣ/g, "<i>gh</i>");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/ɡ/g, "g");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/h/g, "h");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/ɪ/g, "i");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/j/g, "y");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/ɟ/g, "<i>khy</i>");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/k/g, "k");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/l/g, "l");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/m/g, "m");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/n/g, "n");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/ɲ/g, "ny");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/ŋ/g, "ng");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/p/g, "p");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/ɾ/g, "r");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/s/g, "s");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/t/g, "t");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/ʊ/g, "oo");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/v/g, "v");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/w/g, "w");
+						EnglishApproxArrayJ[IPACountJ] = EnglishApproxArrayJ[IPACountJ].replace(/x/g, "<i>kh</i>");
+					}
+				
+				while (GaelicTextJ.search(RegExp(PatternJ, "i")) != -1)
+					{
+						GaelicCountJ++;
+						PositionJ = GaelicTextJ.match(RegExp(PatternJ, "i"));
+						GaelicTextJ = GaelicTextJ.replace(RegExp(PatternJ, "i"), "{" + GaelicCountJ + "}");
+						GaelicArrayJ[GaelicCountJ] = PositionJ[0];
+					}
+			}
+		
+		GaelicTextJ = " " + document.RegExpForm.GaelicJ.value + " ";
+		IPATextJ = " " + document.RegExpForm.GaelicJ.value.toLowerCase() + " ";
+		OghamTextJ = GaelicTextJ.toLowerCase();
+		ISLTextJ = GaelicTextJ.toUpperCase();
+		GaelicCountJ = -1;
+		IPACountJ = -1;
+		GaelicArrayJ = new Array();
+		IPAArrayJ = new Array();
+		EnglishApproxArrayJ = new Array();
+
+		// Here, any backslashes need to be doubled (e.g., "\\s" for a white space), because the parameter is being passed as a variable.
+		ReplaceAndCleanJ("e?adh(ai?)?|ai[dg]h|[eo]i[dg]h(i|ea)?", "əi");							// adh(a(i)), eadh(a(i)), aidh, aigh, eidh(i/ea), eigh(i/ea), oidh(i/ea), oigh(i/ea)
+		ReplaceAndCleanJ("e?a[bm]h(ai?)?|o[bdg]h(ai?)?", "əu");										// abh(a(i)), amh(a(i)), eabh(a(i)), eamh(a(i)), obh(a(i)), odh(a(i)), ogh(a(i))
+		ReplaceAndCleanJ("eoi?|ói?|omh(ai?)?", "oː");												// eo, eoi, ó, ói, omh(a(i))
+		ReplaceAndCleanJ("aío?|aoi?|o?ío?|uío?|i[dg]h", "iː");										// aí, aío, ao, aoi, idh, igh, í, ío, oí, oío, uí, uío
+		ReplaceAndCleanJ("a(?=(r[dln]|[lnr]{2}(\\(C\\)|[b-df-hj-np-tv-z]|\\s)|m\\s))", "aː");		// a before rl, rn, rd; syllable-final ll, nn, rr; word-final m
+		ReplaceAndCleanJ("(ai|ea)(?=(r[dln]|[lnr]{2}(\\(C\\)|[b-df-hj-np-tv-z]|\\s)))", "aː");		// ai, ea before rl, rn, rd; syllable-final ll, nn, rr
+		ReplaceAndCleanJ("aei?|é[ai]?", "eː");														// ae(i), é, éa, éi
+		ReplaceAndCleanJ("iai?", "iə");																// ia, iai
+		ReplaceAndCleanJ("uai?", "uə");																// ua, uai
+		ReplaceAndCleanJ("e?ai?", "a");																// a, ai, ea, eai
+		ReplaceAndCleanJ("e?ái?", "aː");															// á, ái, eá, eái
+		ReplaceAndCleanJ("ei(?=(nn(\\(C\\)|[b-df-hj-np-tv-z]|\\s)|m\\s))", "iː");					// ei before nn, word-final m
+		ReplaceAndCleanJ("ei(?=(mh?|n))", "ɪ");														// ei before m, mh, n
+		ReplaceAndCleanJ("ei(?=r[dln])", "eː");														// ei before rl, rn, rd
+		ReplaceAndCleanJ("ei(?=ll(\\(C\\)|[b-df-hj-np-tv-z]|\\s))", "əi");							// ei before syllable-final ll
+		ReplaceAndCleanJ("ei?", "ɛ");																// e, ei
+		ReplaceAndCleanJ("iu", "ʊ");																// iu
+		ReplaceAndCleanJ("i?úi?", "uː");															// iú, iúi, ú, úi
+		ReplaceAndCleanJ("io(?=[dlnrst])", "ɪ");													// io before d, l, n, r, s, t
+		ReplaceAndCleanJ("oi(?=(s|cht|r[st]))", "ɔ");												// oi before s, cht, rs, rt
+		ReplaceAndCleanJ("oi(?=(nn(\\(C\\)|[b-df-hj-np-tv-z]|\\s)|m\\s))", "iː");					// oi before syllable-final nn, word-final m
+		ReplaceAndCleanJ("oi(?=[nm])", "ɪ");														// oi before n, m
+		ReplaceAndCleanJ("noi", "nˠɪ");																// oi after n
+		ReplaceAndCleanJ("moi", "mˠɪ");																// oi after m
+		ReplaceAndCleanJ("mhoi", "wɪ");																// oi after mh
+		ReplaceAndCleanJ("oi(?=ll(\\(C\\)|[b-df-hj-np-tv-z]|\\s))", "əi");							// oi before syllable-final ll
+		ReplaceAndCleanJ("oi(?=r[dln])", "oː");														// oi before rd, rl, rn
+		ReplaceAndCleanJ("oi", "ɛ");																// oi
+		ReplaceAndCleanJ("o(?=(nn(\\(C\\)|[b-df-hj-np-tv-z]|\\s)|m\\s|ng\\s))", "uː");				// o before syllable-final nn; word-final m, ng
+		ReplaceAndCleanJ("o(?=[nm])", "ʊ");															// o before m, n
+		ReplaceAndCleanJ("o(?=(r[dln]|(ll|rr)(\\(C\\)|[b-df-hj-np-tv-z]|\\s)))", "oː");				// o before rd, rl, rn; syllable-final ll, rr
+		ReplaceAndCleanJ("o", "ɔ");																	// o
+		ReplaceAndCleanJ("ui(?=(cht|r[st]))", "ʊ");													// ui before cht, rs, rt
+		ReplaceAndCleanJ("ui(?=((ll|nn)(\\(C\\)|[b-df-hj-np-tv-z]|\\s)|m\\s))", "iː");				// ui before syllable-final ll, nn; word-final m
+		ReplaceAndCleanJ("ui(?=r[dln])", "uː");														// ui before rd, rl, rn
+		ReplaceAndCleanJ("ui", "ɪ");																// ui
+		ReplaceAndCleanJ("u(?=r[dln])", "uː");														// u before rd, rl, rn
+		ReplaceAndCleanJ("u", "ʊ");																	// u
+		ReplaceAndCleanJ("i(?=((ll|nn)(\\(C\\)|[b-df-hj-np-tv-z]|\\s)|m\\s))", "iː");				// i before syllable-final ll, nn; word-final m
+		ReplaceAndCleanJ("i", "ɪ");																	// i
+		ReplaceAndCleanJ("(\\(S\\)(bhf?|mh|v))|((bhf?|mh|v)\\(S\\))", "vʲ");						// bh, bhf, mh, v -- adjacent to slender vowel
+		ReplaceAndCleanJ("(\\(B\\)(bhf?|mh|v))|((bhf?|mh|v)\\(B\\))", "vˠ");						// bh, bhf, mh, v -- adjacent to broad vowel
+		ReplaceAndCleanJ("bhf?|mh|v", "w");															// bh, bhf, mh, v -- otherwise
+		ReplaceAndCleanJ("sh(?=\\(S\\){\\d+?}(\\(S\\))?(\\(B\\))?\\(X1\\))", "ç");					// sh, followed by e or i, followed by special marking (X1)
+		ReplaceAndCleanJ("th(?!\\([BS]\\))", "");													// th at end of syllable
+		ReplaceAndCleanJ("ch(?=t)", "x");															// ch -- before t
+		ReplaceAndCleanJ("\\(S\\)ch\\(S\\)", "h");													// ch -- between slender vowels
+		ReplaceAndCleanJ("(\\(S\\)ch)|(ch\\(S\\))", "ç");											// ch -- adjacent to slender vowel
+		ReplaceAndCleanJ("(\\(B\\)ch)|(ch\\(B\\))", "ç");											// ch -- adjacent to broad vowel
+		ReplaceAndCleanJ("ch", "x");																// ch -- otherwise
+		ReplaceAndCleanJ("\\sng", "ɲ");																// initial ng
+		ReplaceAndCleanJ("ng", "ɲɟ");																// medial, final ng
+		ReplaceAndCleanJ("\\s[dg]h", "ɣ");															// initial dh, gh
+		ReplaceAndCleanJ("(\\(S\\)[dg]h)|([dg]h\\(S\\))", "j");										// dh, gh -- adjacent to slender vowel
+		ReplaceAndCleanJ("(\\(B\\)[dg]h)|([dg]h\\(B\\))", "j");										// dh, gh -- adjacent to broad vowel
+		ReplaceAndCleanJ("[dg]h", "");																// dh, gh -- otherwise
+		ReplaceAndCleanJ("fh", "");																	// h, sh, th
+		ReplaceAndCleanJ("(\\(S\\)(f|ph))|((f|ph)\\(S\\))", "fʲ");									// f, ph -- adjacent to slender vowel
+		ReplaceAndCleanJ("(\\(B\\)(f|ph))|((f|ph)\\(B\\))", "fˠ");									// f, ph -- adjacent to broad vowel
+		ReplaceAndCleanJ("(f|ph)", "f");															// f, ph -- otherwise
+		ReplaceAndCleanJ("([st])?h", "h");															// h, sh, th
+		ReplaceAndCleanJ("(\\(S\\)ts)|(ts\\(S\\))", "tʲ");											// ts -- adjacent to slender vowel
+		ReplaceAndCleanJ("(\\(B\\)ts)|(ts\\(B\\))", "tˠ");											// ts -- adjacent to broad vowel
+		ReplaceAndCleanJ("ts", "");																	// ts -- otherwise
+		ReplaceAndCleanJ("(\\(S\\)nc)|(nc\\(S\\))", "ɲc");											// nc -- adjacent to slender vowel
+		ReplaceAndCleanJ("nc", "ŋk");																// nc -- otherwise
+		ReplaceAndCleanJ("(\\(S\\)n([nd])?)|(n([nd])?\\(S\\))", "nʲ");								// n, nd, nn -- adjacent to slender vowel
+		ReplaceAndCleanJ("(\\(B\\)n([nd])?)|(n([nd])?\\(B\\))", "nˠ");								// n, nd, nn -- adjacent to broad vowel
+		ReplaceAndCleanJ("n([nd])?", "n");															// n, nd, nn -- otherwise
+		ReplaceAndCleanJ("(\\(S\\)mb?)|(mb?\\(S\\))", "mʲ");										// m, mb -- adjacent to slender vowel
+		ReplaceAndCleanJ("(\\(B\\)mb?)|(mb?\\(B\\))", "mˠ");										// m, mb -- adjacent to broad vowel
+		ReplaceAndCleanJ("mb?", "m");																// m, mb -- otherwise
+		ReplaceAndCleanJ("(\\(S\\)bp?)|(bp?\\(S\\))", "bʲ");										// b, bp -- adjacent to slender vowel
+		ReplaceAndCleanJ("(\\(B\\)bp?)|(bp?\\(B\\))", "bˠ");										// b, bp -- adjacent to broad vowel
+		ReplaceAndCleanJ("bp?", "b");																// b, bp -- otherwise
+		ReplaceAndCleanJ("(\\(S\\)dt?)|(dt?\\(S\\))", "dʲ");										// d, dt -- adjacent to slender vowel
+		ReplaceAndCleanJ("(\\(B\\)dt?)|(dt?\\(B\\))", "dˠ");										// d, dt -- adjacent to broad vowel
+		ReplaceAndCleanJ("dt?", "d");																// d, dt -- otherwise
+		ReplaceAndCleanJ("(\\(S\\)gc?)|(gc?\\(S\\))", "ɟ");											// g, gc -- adjacent to slender vowel
+		ReplaceAndCleanJ("gc?", "ɡ");																// g, gc -- otherwise
+		ReplaceAndCleanJ("(\\(S\\)ll?)|(ll?\\(S\\))", "lʲ");										// l, ll -- adjacent to slender vowel
+		ReplaceAndCleanJ("(\\(B\\)ll?)|(ll?\\(B\\))", "lˠ");										// l, ll -- adjacent to broad vowel
+		ReplaceAndCleanJ("ll?", "l");																// l, ll -- otherwise
+		ReplaceAndCleanJ("rr", "ɾˠ");																// rr
+		ReplaceAndCleanJ("(\\(S\\)r)|(r\\(S\\))", "ɾʲ");											// r -- adjacent to slender vowel
+		ReplaceAndCleanJ("(\\(B\\)r)|(r\\(B\\))", "ɾˠ");											// r -- adjacent to broad vowel
+		ReplaceAndCleanJ("r", "ɾ");																	// r -- otherwise
+		ReplaceAndCleanJ("(\\(S\\)c)|(c\\(S\\))", "c");												// c -- adjacent to slender vowel
+		ReplaceAndCleanJ("c", "k");																	// c -- otherwise
+		ReplaceAndCleanJ("(\\(S\\)p)|(p\\(S\\))", "pʲ");											// p -- adjacent to slender vowel
+		ReplaceAndCleanJ("(\\(B\\)p)|(p\\(B\\))", "pˠ");											// p -- adjacent to broad vowel
+		ReplaceAndCleanJ("p", "p");																	// p -- otherwise
+		ReplaceAndCleanJ("(\\(S\\)s)|(s\\(S\\))", "ʃ");												// s -- adjacent to slender vowel
+		ReplaceAndCleanJ("(\\(B\\)s)|(s\\(B\\))", "ʃ");												// s -- adjacent to broad vowel
+		ReplaceAndCleanJ("s", "s");																	// s -- otherwise
+		ReplaceAndCleanJ("(\\(S\\)t)|(t\\(S\\))", "tʲ");											// t -- adjacent to slender vowel
+		ReplaceAndCleanJ("(\\(B\\)t)|(t\\(B\\))", "tˠ");											// t -- adjacent to broad vowel
+		ReplaceAndCleanJ("t", "t");																	// t -- otherwise
+
+		EnglishApproxTextJ = IPATextJ;
+		
+		IPATextCleanJ = IPATextJ
+		EnglishApproxTextCleanJ = EnglishApproxTextJ;
+		GaelicTextCleanJ = GaelicTextJ
+
+		for(i=0; i<=IPACountJ; i++)
+			{
+				ReplaceStringJ = "\\{" + i + "\\}";
+				IPATextJ = IPATextJ.replace(RegExp(ReplaceStringJ,"g"), "<span class='[[REPLACE]]'>" + IPAArrayJ[i] + "</span>");
+				EnglishApproxTextJ = EnglishApproxTextJ.replace(RegExp(ReplaceStringJ,"g"), "<span class='[[REPLACE]]'>" + EnglishApproxArrayJ[i] + "</span>");
+				IPATextCleanJ = IPATextCleanJ.replace(RegExp(ReplaceStringJ,"g"), IPAArrayJ[i]);
+				EnglishApproxTextCleanJ = EnglishApproxTextCleanJ.replace(RegExp(ReplaceStringJ,"g"), EnglishApproxArrayJ[i]);
+			}
+		IPATextJ = IPATextJ.replace(/^\s+|\((([BCS]|X\d+))\)|\s+$/g, "");
+		EnglishApproxTextJ = EnglishApproxTextJ.replace(/^\s+|[ˠʲ]|\(([BCS]|X\d+)\)|\s+$/g, "");
+		IPATextCleanJ = IPATextCleanJ.replace(/^\s+|\((([BCS]|X\d+))\)|\s+$/g, "");
+		EnglishApproxTextCleanJ = EnglishApproxTextCleanJ.replace(/^\s+|[ˠʲ]|\(([BCS]|X\d+)\)|\s+$/g, "");
+		
+		for(i=0; i<=GaelicCountJ; i++)
+			{
+				ReplaceStringJ = "\\{" + i + "\\}";
+				GaelicTextJ = GaelicTextJ.replace(RegExp(ReplaceStringJ,"g"), "<span class='[[REPLACE]]'>" + GaelicArrayJ[i] + "</span>");
+				GaelicTextCleanJ = GaelicTextCleanJ.replace(RegExp(ReplaceStringJ,"g"), GaelicArrayJ[i]);
+			}
+		GaelicTextJ = GaelicTextJ.replace(/^\s|\s$/, "");
+		GaelicTextCleanJ = GaelicTextCleanJ.replace(/^\s|\s$/, "");
+		
+		TraditionalGaelicTextJ = GaelicTextJ;
+		TraditionalGaelicTextCleanJ = TraditionalGaelicTextJ;
+		TraditionalGaelicTextJ = TraditionalGaelicTextJ.replace(/bh/g, "ḃ");
+		TraditionalGaelicTextJ = TraditionalGaelicTextJ.replace(/ch/g, "ċ");
+		TraditionalGaelicTextJ = TraditionalGaelicTextJ.replace(/dh/g, "ḋ");
+		TraditionalGaelicTextJ = TraditionalGaelicTextJ.replace(/fh/g, "ḟ");
+		TraditionalGaelicTextJ = TraditionalGaelicTextJ.replace(/gh/g, "ġ");
+		TraditionalGaelicTextJ = TraditionalGaelicTextJ.replace(/mh/g, "ṁ");
+		TraditionalGaelicTextJ = TraditionalGaelicTextJ.replace(/ph/g, "ṗ");
+		TraditionalGaelicTextJ = TraditionalGaelicTextJ.replace(/sh/g, "ṡ");
+		TraditionalGaelicTextJ = TraditionalGaelicTextJ.replace(/th/g, "ṫ");
+		TraditionalGaelicTextJ = TraditionalGaelicTextJ.replace(/Bh/g, "Ḃ");
+		TraditionalGaelicTextJ = TraditionalGaelicTextJ.replace(/Ch/g, "Ċ");
+		TraditionalGaelicTextJ = TraditionalGaelicTextJ.replace(/Dh/g, "Ḋ");
+		TraditionalGaelicTextJ = TraditionalGaelicTextJ.replace(/Fh/g, "Ḟ");
+		TraditionalGaelicTextJ = TraditionalGaelicTextJ.replace(/Gh/g, "Ġ");
+		TraditionalGaelicTextJ = TraditionalGaelicTextJ.replace(/Mh/g, "Ṁ");
+		TraditionalGaelicTextJ = TraditionalGaelicTextJ.replace(/Ph/g, "Ṗ");
+		TraditionalGaelicTextJ = TraditionalGaelicTextJ.replace(/Sh/g, "Ṡ");
+		TraditionalGaelicTextJ = TraditionalGaelicTextJ.replace(/Th/g, "Ṫ");
+		TraditionalGaelicTextCleanJ = TraditionalGaelicTextCleanJ.replace(/bh/g, "ḃ");
+		TraditionalGaelicTextCleanJ = TraditionalGaelicTextCleanJ.replace(/ch/g, "ċ");
+		TraditionalGaelicTextCleanJ = TraditionalGaelicTextCleanJ.replace(/dh/g, "ḋ");
+		TraditionalGaelicTextCleanJ = TraditionalGaelicTextCleanJ.replace(/fh/g, "ḟ");
+		TraditionalGaelicTextCleanJ = TraditionalGaelicTextCleanJ.replace(/gh/g, "ġ");
+		TraditionalGaelicTextCleanJ = TraditionalGaelicTextCleanJ.replace(/mh/g, "ṁ");
+		TraditionalGaelicTextCleanJ = TraditionalGaelicTextCleanJ.replace(/ph/g, "ṗ");
+		TraditionalGaelicTextCleanJ = TraditionalGaelicTextCleanJ.replace(/sh/g, "ṡ");
+		TraditionalGaelicTextCleanJ = TraditionalGaelicTextCleanJ.replace(/th/g, "ṫ");
+		TraditionalGaelicTextCleanJ = TraditionalGaelicTextCleanJ.replace(/Bh/g, "Ḃ");
+		TraditionalGaelicTextCleanJ = TraditionalGaelicTextCleanJ.replace(/Ch/g, "Ċ");
+		TraditionalGaelicTextCleanJ = TraditionalGaelicTextCleanJ.replace(/Dh/g, "Ḋ");
+		TraditionalGaelicTextCleanJ = TraditionalGaelicTextCleanJ.replace(/Fh/g, "Ḟ");
+		TraditionalGaelicTextCleanJ = TraditionalGaelicTextCleanJ.replace(/Gh/g, "Ġ");
+		TraditionalGaelicTextCleanJ = TraditionalGaelicTextCleanJ.replace(/Mh/g, "Ṁ");
+		TraditionalGaelicTextCleanJ = TraditionalGaelicTextCleanJ.replace(/Ph/g, "Ṗ");
+		TraditionalGaelicTextCleanJ = TraditionalGaelicTextCleanJ.replace(/Sh/g, "Ṡ");
+		TraditionalGaelicTextCleanJ = TraditionalGaelicTextCleanJ.replace(/Th/g, "Ṫ");
+
+		OghamTextJ = OghamTextJ.replace(/\s+/g, " ");
+		OghamTextJ = OghamTextJ.replace(/^\s+|\s+$/g, "");
+		OghamTextJ = OghamTextJ.replace(/[á]/g, "a");
+		OghamTextJ = OghamTextJ.replace(/[ó]/g, "o");
+		OghamTextJ = OghamTextJ.replace(/[ú]/g, "u");
+		OghamTextJ = OghamTextJ.replace(/[é]/g, "e");
+		OghamTextJ = OghamTextJ.replace(/[í]/g, "i");
+		OghamTextJ = OghamTextJ.replace(/[^blfsnhdtcqmgzraoueip\s]/g, "");
+		OghamTextJ = OghamTextJ.replace(/\s/g, "<IMG SRC='OGHAM_SPACE.PNG' />");
+		OghamTextJ = OghamTextJ.replace(/ng/g, "<IMG SRC='OGHAM_NG.PNG' />");
+		OghamTextJ = OghamTextJ.replace(/ea/g, "<IMG SRC='OGHAM_EA.PNG' />");
+		OghamTextJ = OghamTextJ.replace(/oi/g, "<IMG SRC='OGHAM_OI.PNG' />");
+		OghamTextJ = OghamTextJ.replace(/ui/g, "<IMG SRC='OGHAM_UI.PNG' />");
+		OghamTextJ = OghamTextJ.replace(/ia/g, "<IMG SRC='OGHAM_IA.PNG' />");
+		OghamTextJ = OghamTextJ.replace(/ae/g, "<IMG SRC='OGHAM_AE.PNG' />");
+		OghamTextJ = OghamTextJ.replace(/b/g, "<IMG SRC='OGHAM_B.PNG' />");
+		OghamTextJ = OghamTextJ.replace(/l/g, "<IMG SRC='OGHAM_L.PNG' />");
+		OghamTextJ = OghamTextJ.replace(/f/g, "<IMG SRC='OGHAM_F.PNG' />");
+		OghamTextJ = OghamTextJ.replace(/s/g, "<IMG SRC='OGHAM_S.PNG' />");
+		OghamTextJ = OghamTextJ.replace(/n/g, "<IMG SRC='OGHAM_N.PNG' />");
+		OghamTextJ = OghamTextJ.replace(/h/g, "<IMG SRC='OGHAM_H.PNG' />");
+		OghamTextJ = OghamTextJ.replace(/d/g, "<IMG SRC='OGHAM_D.PNG' />");
+		OghamTextJ = OghamTextJ.replace(/t/g, "<IMG SRC='OGHAM_T.PNG' />");
+		OghamTextJ = OghamTextJ.replace(/c/g, "<IMG SRC='OGHAM_C.PNG' />");
+		OghamTextJ = OghamTextJ.replace(/q/g, "<IMG SRC='OGHAM_Q.PNG' />");
+		OghamTextJ = OghamTextJ.replace(/m/g, "<IMG SRC='OGHAM_M.PNG' />");
+		OghamTextJ = OghamTextJ.replace(/g/g, "<IMG SRC='OGHAM_G.PNG' />");
+		OghamTextJ = OghamTextJ.replace(/z/g, "<IMG SRC='OGHAM_Z.PNG' />");
+		OghamTextJ = OghamTextJ.replace(/r/g, "<IMG SRC='OGHAM_R.PNG' />");
+		OghamTextJ = OghamTextJ.replace(/a/g, "<IMG SRC='OGHAM_A.PNG' />");
+		OghamTextJ = OghamTextJ.replace(/o/g, "<IMG SRC='OGHAM_O.PNG' />");
+		OghamTextJ = OghamTextJ.replace(/u/g, "<IMG SRC='OGHAM_U.PNG' />");
+		OghamTextJ = OghamTextJ.replace(/e/g, "<IMG SRC='OGHAM_E.PNG' />");
+		OghamTextJ = OghamTextJ.replace(/i/g, "<IMG SRC='OGHAM_I.PNG' />");
+		OghamTextJ = OghamTextJ.replace(/p/g, "<IMG SRC='OGHAM_P.PNG' />");
+		OghamTextJ = "<IMG SRC='OGHAM_FEATHER1.PNG' />" + OghamTextJ + "<IMG SRC='OGHAM_FEATHER2.PNG' />"
+		
+		ISLTextJ = ISLTextJ.replace(/\s+/g, " ");
+		ISLTextJ = ISLTextJ.replace(/^\s+|\s+$/g, "");
+		ISLTextJ = ISLTextJ.replace(/[Á]/g, "A");
+		ISLTextJ = ISLTextJ.replace(/[Ó]/g, "O");
+		ISLTextJ = ISLTextJ.replace(/[Ú]/g, "U");
+		ISLTextJ = ISLTextJ.replace(/[É]/g, "E");
+		ISLTextJ = ISLTextJ.replace(/[Í]/g, "I");
+		ISLTextJ = ISLTextJ.replace(/[^A-Z\s]/g, "");
+		ISLTextJ = ISLTextJ.replace(/\s/g, "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ");
+		ISLTextJ = ISLTextJ.replace(/[A-Z]/g, "<IMG SRC='ISL_$&.PNG' />&nbsp;");
+				
+		ClassCountJ = -1;
+		while (GaelicTextJ.search(RegExp("\[\[REPLACE\]\]", "")) != -1)
+			{
+				ClassCountJ++;
+				GaelicTextJ = GaelicTextJ.replace(/\[\[REPLACE\]\]/, "color" + (ClassCountJ % 7));
+				IPATextJ = IPATextJ.replace(/\[\[REPLACE\]\]/, "color" + (ClassCountJ % 7));
+				EnglishApproxTextJ = EnglishApproxTextJ.replace(/\[\[REPLACE\]\]/, "color" + (ClassCountJ % 7));
+				TraditionalGaelicTextJ = TraditionalGaelicTextJ.replace(/\[\[REPLACE\]\]/, "color" + (ClassCountJ % 7));
+			}
+		IPATextJ = "/" + IPATextJ + "/";
+		IPATextCleanJ = "/" + IPATextCleanJ + "/";
+
+		document.getElementById('GaelicResult').innerHTML = GaelicTextJ;
+		document.getElementById('TraditionalGaelicResult').innerHTML = TraditionalGaelicTextJ;
+		document.getElementById('IPAResult').innerHTML = IPATextJ;
+		document.getElementById('EnglishApproxResult').innerHTML = EnglishApproxTextJ;
+		document.getElementById('GaelicCleanResult').innerHTML = GaelicTextCleanJ;
+		document.getElementById('TraditionalGaelicCleanResult').innerHTML = TraditionalGaelicTextCleanJ;
+		document.getElementById('IPACleanResult').innerHTML = IPATextCleanJ;
+		document.getElementById('EnglishApproxCleanResult').innerHTML = EnglishApproxTextCleanJ;
+		document.getElementById('OghamResult').innerHTML = OghamTextJ;
+		document.getElementById('ISLResult').innerHTML = ISLTextJ;
+		
+		document.getElementById("GaelicJ").focus();
+		document.getElementById("GaelicRow").style.display = "";
+		if (GaelicTextJ == TraditionalGaelicTextJ)
+				{
+					document.getElementById("TraditionalGaelicRow").style.display = "none";
+				}
+			else
+				{
+					document.getElementById("TraditionalGaelicRow").style.display = "";
+				}
+		document.getElementById("IPARow").style.display = "";
+		document.getElementById("EnglishApproximateRow").style.display = "";
+		document.getElementById("OghamRow").style.display = "";
+		document.getElementById("ISLRow").style.display = "";
+		document.getElementById("buttons").style.display = "";
+		if (EnglishApproxTextCleanJ.search(/<i>/) == -1)
+				{
+					document.getElementById("ItalicsInEnglishApproximate").style.display = "none";
+				}
+			else
+				{
+					document.getElementById("ItalicsInEnglishApproximate").style.display = "";
+				}
+	}
+
+function ColorsJ(ShowHideJ)
+	{
+		if (ShowHideJ == "show")
+				{
+					document.getElementById("GaelicColor").style.display = "";
+					document.getElementById("TraditionalGaelicColor").style.display = "";
+					document.getElementById("IPAColor").style.display = "";
+					document.getElementById("EnglishApproximateColor").style.display = "";
+					document.getElementById("HideColorButton").style.display = "";
+					document.getElementById("GaelicClean").style.display = "none";
+					document.getElementById("TraditionalGaelicClean").style.display = "none";
+					document.getElementById("IPAClean").style.display = "none";
+					document.getElementById("EnglishApproximateClean").style.display = "none";
+					document.getElementById("ShowColorButton").style.display = "none";
+				}
+			else
+				{
+					document.getElementById("GaelicColor").style.display = "none";
+					document.getElementById("TraditionalGaelicColor").style.display = "none";
+					document.getElementById("IPAColor").style.display = "none";
+					document.getElementById("EnglishApproximateColor").style.display = "none";
+					document.getElementById("HideColorButton").style.display = "none";
+					document.getElementById("GaelicClean").style.display = "";
+					document.getElementById("TraditionalGaelicClean").style.display = "";
+					document.getElementById("IPAClean").style.display = "";
+					document.getElementById("EnglishApproximateClean").style.display = "";
+					document.getElementById("ShowColorButton").style.display = "";
+				}
+	}
+</script>
+<h1><a name="Top" />Irish Eolotthowghrhoighuay</h1>
+<p>Okay, here I'm just being playful: The word &quot;eolotthowghrhoighuay&quot; would be pronounced like &quot;orthography&quot; if you took the (atypical) pronunciations of the letter combinations in the following words:</p>
+<p align="center"><b>G<span class="orthography">eo</span>rge co<span class="orthography">lo</span>nel Ma<span class="orthography">tth</span>ew kn<span class="orthography">ow</span>ledge <span class="orthography">gh</span>ost <span class="orthography">rh</span>eumatic Beauv<span class="orthography">oi</span>r lau<span class="orthography">gh</span> q<span class="orthography">uay</span></b></p>
+<p>So, as much as I'm about to complain about the Irish language below, I'll be quick to acknowledge that English doesn't hold the high ground on this topic. </p>
+<p> But still, I'm not completely without cause for complaint: You may recall – if you immerse yourself in my trip reports with doggedness of a 15-year-old and the driver's manual (as, I must acknowledge, perhaps you don't) – we were tripped up in various contexts in the first trip to Ireland by an utter inability to look at <span class="LangEN"><span class="LangDesignator">EN</span></span><span class="LangTextEN">Irish</span><span class="LangGA"><span class="LangDesignator">GA</span></span><span class="LangTextGA">Gaeilge</span><span class="LangIPA"><span class="LangDesignator">IPA</span></span><span class="LangTextIPA">/ɡeːlʲɟə/</span> text without having our eyes instantly glaze over. And on the day of our escape from Dublin, when snows canceled our ferry back to Britain and we were informed <span class="dropnote">blah&nbsp;blah&nbsp;blah&nbsp;whine&nbsp;whine&nbsp;whine</span><span class="downarrow">➴</span>, I wasted precious seconds asking directions to what I thought was pronounced &quot;dun layogehr&quot; (because it was spelled &quot;Dun Laoghaire&quot;), but was actually pronounced &quot;dun leery.&quot; I thus had the thought: &quot;Perhaps I should learn to pronounce Irish, so the word forms will at least make sense to me, and I will at least be able to ask directions without making time-consuming errors.&quot; </p>
+<table class="dropnotetable">
+	<tr>
+		<th>➴</th>
+		<td>... and we were informed that our ferry wasn't running at the comfortably distant scheduled time four hours later, and that if we wanted to have any hope of boarding our airplane to home the next day on the other side of the Irish Sea, that we had exactly 70 minutes to to retrieve the car from a parking deck several blocks away (using an unfamiliar automatic payment strategy); drive across Dublin (in the snow!) to a different port than the one we had researched and planned on; purchase tickets at a crowded counter in an adjacent building for the single ferry in Ireland with a captain willing to brave the weather; and pull the car onto the Ulysses before it slammed shut its doors, sounded its foghorn, and sailed away.<br />
+<br />
+By providence, we did &ndash; with two minutes to spare. If we'd hid one more red light, who knows? Or &ndash; and this preys on my mind to this day &ndash; if my mispronunciation of Dun Laoghaire had caused any confusion?</td>
+	</tr>
+</table>
+<p>So, as one does, I turned to Wikipedia to ascertain how the letters in Irish are turned into sounds, and this is what lay before me (actually, believe it or not, a slightly more complicated version of this is what lay before me):</p>
+<blockquote>
+<iframe width="100%" height="400" src="GaelicWikipedia.htm"></iframe>
+</blockquote>
+<p>So you can totally see why it makes sense for &quot;Dun Laoghaire&quot; to be pronounced &quot;dun leery,&quot; right? I assume the phrase, &quot;It's spelled like it sounds,&quot; has never been used in relation to Irish without irony.</p>
+<p>If I want to learn something, my standard approach is to break it down to the components that will allow me to write a flow chart or a computer program or whatever that can present the same information. And this is what I did with Irish orthography. First, I simplified the structure by removing things (A) that I considered too complex to bother with (such as stressed vs. unstressed syllables), (B) that I didn't have the background to include in a computer program (such as alternate pronunciations in verb forms), and (C) that I basically considered bullshit (such as an IPA diacritic that presents itself in some contexts of <span class="dropnote">lenition</span><span class="downarrow">➴</span> but which causes all sorts of font mapping issues).</p>
+<table class="dropnotetable">
+	<tr>
+		<th>➴</th>
+		<td>And really, why do words like &quot;lenition&quot; and &quot;eclipsis&quot; keep coming up in this project? Is Irish really this hard, or is there some committee just making it complicated to stave off a search for legitimate employment? If you read enough about it, you'll be informed that all of the extra letters allude to the movement of the tongue as the word is being formed, but that these subtleties can only be heard by native speakers (and, perhaps, bats).</td>
+	</tr>
+</table>
+<p>So, armed with my simplified approach, I wrote me some JavaScript. And I got to play with regular expressesions, which I've used before, but which are about the coolest thing you can do in a computer program. Basically a regular expression is framed in slash marks, </p>
+<blockquote>
+<iframe width="100%" height="400" src="GaelicJavaScript.htm"></iframe>
+</blockquote>
+<form id="RegExpForm" name="RegExpForm" method="post" action="">
+  <table border="1" cellspacing="0" cellpadding="0">
+    <tr>
+      <td>Pronounce This:&nbsp;&nbsp;</td>
+      <td><input name="GaelicJ" type="text" id="GaelicJ" size="45" /><input type="button" name="Button" value="Convert" onclick="ConvertGaelicJ()" /></td>
+    </tr>
+    <tr id="GaelicRow" style="display:none">
+      <td>Gaelic:&nbsp;&nbsp;</td>
+      <td id="GaelicColor" class="result"><span id="GaelicResult">&nbsp;</span></td>
+      <td id="GaelicClean" style="display:none" class="result"><span id="GaelicCleanResult">&nbsp;</span></td>
+    </tr>
+    <tr id="TraditionalGaelicRow" style="display:none">
+      <td>Traditional Gaelic:&nbsp;&nbsp;</td>
+      <td id="TraditionalGaelicColor" class="result"><span id="TraditionalGaelicResult">&nbsp;</span></td>
+      <td id="TraditionalGaelicClean" style="display:none" class="result"><span id="TraditionalGaelicCleanResult">&nbsp;</span></td>
+    </tr>
+    <tr id="IPARow" style="display:none">
+      <td><a href="http://en.wikipedia.org/wiki/International_Phonetic_Alphabet" target="_blank">IPA</a>:&nbsp;&nbsp;</td>
+      <td id="IPAColor" class="result"><span id="IPAResult">&nbsp;</span></td>
+      <td id="IPAClean" style="display:none" class="result"><span id="IPACleanResult">&nbsp;</span></td>
+    </tr>
+    <tr id="EnglishApproximateRow" style="display:none">
+      <td>English Approximate:&nbsp;&nbsp;</td>
+      <td id="EnglishApproximateColor" class="result"><span id="EnglishApproxResult">&nbsp;</span></td>
+      <td id="EnglishApproximateClean" style="display:none" class="result"><span id="EnglishApproxCleanResult">&nbsp;</span></td>
+    </tr>
+    <tr id="OghamRow" style="display:none">
+      <td>Ogham:&nbsp;&nbsp;</td>
+      <td style="padding:5px"><span id="OghamResult">&nbsp;</span></td>
+    </tr>
+    <tr id="ISLRow" style="display:none">
+      <td>ISL:&nbsp;&nbsp;</td>
+      <td style="padding:5px"><span id="ISLResult">&nbsp;</span></td>
+    </tr>
+  </table>
+<div id="buttons" style="display:none">
+<p id="ItalicsInEnglishApproximate" style="display:none">Italics in the &quot;English Approximate&quot; indicate a sound that does not exist in English.  Refer to the &quot;IPA&quot; line for more accurate pronunciation information.</p>
+<p>You can see the results with background color shading to illustrate which letters are mapped to which sounds, or you can hide the colors if you find it difficult the read the shaded text.<br />
+<input id="HideColorButton" type="button" value="Hide Colors" onclick="ColorsJ('hide');" /><input id="ShowColorButton" style="display:none" type="button" value="Show Colors" onclick="ColorsJ('show');" /></p>
+</div>
+</form>
+<script>
+document.getElementById("GaelicJ").focus();
+window.location.hash = "#Top";
+</script>
+
+</body>
+</html>

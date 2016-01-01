@@ -1,0 +1,511 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<style>
+body
+	{
+		background-color:#FFD;
+	}
+.RegExp
+	{
+		background-color:#CCCC66;
+	}
+.Variable
+	{
+		color:#FF0000;
+		font-weight:bold;
+	}
+.Comment
+	{
+		color:#BBB;
+	}
+</style>
+<p>
+<code style="white-space:nowrap">
+  function ConvertGaelicJ()<br />
+  &nbsp;&nbsp;{<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;function ReplaceAndCleanJ(<span class="Variable">PatternJ</span>, <span class="Variable">IPAJ</span>)<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (<span class="Variable">IPATextJ</span>.search(RegExp(<span class="Variable">PatternJ</span>, &quot;g&quot;)) != -1)<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(<span class="Variable">IPAJ</span>.slice(0,1) == &quot;u&quot;)<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">SpecialCaseJ</span> = &quot;(X1)&quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">SpecialCaseJ</span> = &quot;&quot;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">IPACountJ</span>++;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">IPATextJ</span> = <span class="Variable">IPATextJ</span>.replace(RegExp(<span class="Variable">PatternJ</span>, &quot;g&quot;), &quot;[$&]&quot; + <span class="Variable">SpecialCaseJ</span> + &quot;{&quot; + <span class="Variable">IPACountJ</span> + &quot;}[$&]&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">IPAArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">IPAJ</span>;<br />
+  <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">IPATextJ</span> = <span class="Variable">IPATextJ</span>.replace(<span class="RegExp">/\[[a&aacute;o&oacute;u&uacute;]/g</span>, &quot;(B)$&&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">IPATextJ</span> = <span class="Variable">IPATextJ</span>.replace(<span class="RegExp">/\[[e&eacute;i&iacute;]/g</span>, &quot;(S)$&&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">IPATextJ</span> = <span class="Variable">IPATextJ</span>.replace(<span class="RegExp">/[a&aacute;o&oacute;u&uacute;]\]/g</span>, &quot;$&(B)&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">IPATextJ</span> = <span class="Variable">IPATextJ</span>.replace(<span class="RegExp">/[e&eacute;i&iacute;]\]/g</span>, &quot;$&(S)&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">IPATextJ</span> = <span class="Variable">IPATextJ</span>.replace(<span class="RegExp">/\[[^a&aacute;e&eacute;i&iacute;o&oacute;u&uacute;]/g</span>, &quot;(C)$&&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">IPATextJ</span> = <span class="Variable">IPATextJ</span>.replace(<span class="RegExp">/[^a&aacute;e&eacute;i&iacute;o&oacute;u&uacute;]\]/g</span>, &quot;$&(C)&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">IPATextJ</span> = <span class="Variable">IPATextJ</span>.replace(<span class="RegExp">/\[.*?\]/g</span>, &quot;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">IPATextJ</span> = <span class="Variable">IPATextJ</span>.replace(<span class="RegExp">/\)\([BSC]\){/g</span>, &quot;){&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">IPATextJ</span> = <span class="Variable">IPATextJ</span>.replace(<span class="RegExp">/}\([BSC]\)\(/g</span>, &quot;}(&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">IPATextJ</span> = <span class="Variable">IPATextJ</span>.replace(<span class="RegExp">/\)\([BSC]\)\(X/g</span>, &quot;)(X&quot;);<br />
+  <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">IPAJ</span>;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/aː/g</span>, &quot;aa&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/eː/g</span>, &quot;ey&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/əi/g</span>, &quot;uhy&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/əu/g</span>, &quot;uhw&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/iː/g</span>, &quot;ee&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/iə/g</span>, &quot;eeyah&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/oː/g</span>, &quot;ohw&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/uː/g</span>, &quot;uw&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/uə/g</span>, &quot;uwah&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/a/g</span>, &quot;a&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/b/g</span>, &quot;b&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/c/g</span>, &quot;&lt;i&gt;hhy&lt;/i&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/ç/g</span>, &quot;&lt;i&gt;hy&lt;/i&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/ɔ/g</span>, &quot;aw&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/d/g</span>, &quot;d&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/ɛ/g</span>, &quot;eh&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/ʃ/g</span>, &quot;sh&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/ə/g</span>, &quot;u&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/f/g</span>, &quot;f&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/ɣ/g</span>, &quot;&lt;i&gt;gh&lt;/i&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/ɡ/g</span>, &quot;g&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/h/g</span>, &quot;h&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/ɪ/g</span>, &quot;i&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/j/g</span>, &quot;y&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/ɟ/g</span>, &quot;&lt;i&gt;khy&lt;/i&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/k/g</span>, &quot;k&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/l/g</span>, &quot;l&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/m/g</span>, &quot;m&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/n/g</span>, &quot;n&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/ɲ/g</span>, &quot;ny&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/ŋ/g</span>, &quot;ng&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/p/g</span>, &quot;p&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/ɾ/g</span>, &quot;r&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/s/g</span>, &quot;s&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/t/g</span>, &quot;t&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/ʊ/g</span>, &quot;oo&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/v/g</span>, &quot;v&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/w/g</span>, &quot;w&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>] = <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">IPACountJ</span>].replace(<span class="RegExp">/x/g</span>, &quot;&lt;i&gt;kh&lt;/i&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+  <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while (<span class="Variable">GaelicTextJ</span>.search(RegExp(<span class="Variable">PatternJ</span>, &quot;i&quot;)) != -1)<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">GaelicCountJ</span>++;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">PositionJ</span> = <span class="Variable">GaelicTextJ</span>.match(RegExp(<span class="Variable">PatternJ</span>, &quot;i&quot;));<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">GaelicTextJ</span> = <span class="Variable">GaelicTextJ</span>.replace(RegExp(<span class="Variable">PatternJ</span>, &quot;i&quot;), &quot;{&quot; + <span class="Variable">GaelicCountJ</span> + &quot;}&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">GaelicArrayJ</span>[<span class="Variable">GaelicCountJ</span>] = <span class="Variable">PositionJ</span>[0];<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+  <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">GaelicTextJ</span> = &quot; &quot; + document.RegExpForm.GaelicJ.value + &quot; &quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">IPATextJ</span> = &quot; &quot; + document.RegExpForm.GaelicJ.value.toLowerCase() + &quot; &quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">GaelicTextJ</span>.toLowerCase();<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">ISLTextJ</span> = <span class="Variable">GaelicTextJ</span>.toUpperCase();<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">GaelicCountJ</span> = -1;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">IPACountJ</span> = -1;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">GaelicArrayJ</span> = new Array();<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">IPAArrayJ</span> = new Array();<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxArrayJ</span> = new Array();<br />
+  <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// Here, any backslashes need to be doubled (e.g., &quot;\\s&quot; for a white space), because the parameter is being passed as a variable.</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">e?adh(ai?)?|ai[dg]h|[eo]i[dg]h(i|ea)?</span>&quot;, &quot;əi&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// adh(a(i)), eadh(a(i)), aidh, aigh, eidh(i/ea), eigh(i/ea), oidh(i/ea), oigh(i/ea)</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">e?a[bm]h(ai?)?|o[bdg]h(ai?)?</span>&quot;, &quot;əu&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// abh(a(i)), amh(a(i)), eabh(a(i)), eamh(a(i)), obh(a(i)), odh(a(i)), ogh(a(i))</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">eoi?|&oacute;i?|omh(ai?)?</span>&quot;, &quot;oː&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// eo, eoi, &oacute;, &oacute;i, omh(a(i))</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">a&iacute;o?|aoi?|o?&iacute;o?|u&iacute;o?|i[dg]h</span>&quot;, &quot;iː&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// a&iacute;, a&iacute;o, ao, aoi, idh, igh, &iacute;, &iacute;o, o&iacute;, o&iacute;o, u&iacute;, u&iacute;o</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">a(?=(r[dln]|[lnr]{2}(\\(C\\)|[b-df-hj-np-tv-z]|\\s)|m\\s))</span>&quot;, &quot;aː&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// a before rl, rn, rd; syllable-final ll, nn, rr; word-final m</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">(ai|ea)(?=(r[dln]|[lnr]{2}(\\(C\\)|[b-df-hj-np-tv-z]|\\s)))</span>&quot;, &quot;aː&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// ai, ea before rl, rn, rd; syllable-final ll, nn, rr</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">aei?|&eacute;[ai]?</span>&quot;, &quot;eː&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// ae(i), &eacute;, &eacute;a, &eacute;i</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">iai?</span>&quot;, &quot;iə&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// ia, iai</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">uai?</span>&quot;, &quot;uə&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// ua, uai</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">e?ai?</span>&quot;, &quot;a&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// a, ai, ea, eai</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">e?&aacute;i?</span>&quot;, &quot;aː&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// &aacute;, &aacute;i, e&aacute;, e&aacute;i</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">ei(?=(nn(\\(C\\)|[b-df-hj-np-tv-z]|\\s)|m\\s))</span>&quot;, &quot;iː&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// ei before nn, word-final m</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">ei(?=(mh?|n))</span>&quot;, &quot;ɪ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// ei before m, mh, n</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">ei(?=r[dln])</span>&quot;, &quot;eː&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// ei before rl, rn, rd</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">ei(?=ll(\\(C\\)|[b-df-hj-np-tv-z]|\\s))</span>&quot;, &quot;əi&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// ei before syllable-final ll</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">ei?</span>&quot;, &quot;ɛ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// e, ei</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">iu</span>&quot;, &quot;ʊ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// iu</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">i?&uacute;i?</span>&quot;, &quot;uː&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// i&uacute;, i&uacute;i, &uacute;, &uacute;i</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">io(?=[dlnrst])</span>&quot;, &quot;ɪ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// io before d, l, n, r, s, t</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">oi(?=(s|cht|r[st]))</span>&quot;, &quot;ɔ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// oi before s, cht, rs, rt</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">oi(?=(nn(\\(C\\)|[b-df-hj-np-tv-z]|\\s)|m\\s))</span>&quot;, &quot;iː&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// oi before syllable-final nn, word-final m</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">oi(?=[nm])</span>&quot;, &quot;ɪ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// oi before n, m</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">noi</span>&quot;, &quot;nˠɪ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// oi after n</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">moi</span>&quot;, &quot;mˠɪ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// oi after m</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">mhoi</span>&quot;, &quot;wɪ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// oi after mh</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">oi(?=ll(\\(C\\)|[b-df-hj-np-tv-z]|\\s))</span>&quot;, &quot;əi&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// oi before syllable-final ll</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">oi(?=r[dln])</span>&quot;, &quot;oː&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// oi before rd, rl, rn</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">oi</span>&quot;, &quot;ɛ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// oi</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">o(?=(nn(\\(C\\)|[b-df-hj-np-tv-z]|\\s)|m\\s|ng\\s))</span>&quot;, &quot;uː&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// o before syllable-final nn; word-final m, ng</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">o(?=[nm])</span>&quot;, &quot;ʊ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// o before m, n</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">o(?=(r[dln]|(ll|rr)(\\(C\\)|[b-df-hj-np-tv-z]|\\s)))</span>&quot;, &quot;oː&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// o before rd, rl, rn; syllable-final ll, rr</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">o</span>&quot;, &quot;ɔ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// o</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">ui(?=(cht|r[st]))</span>&quot;, &quot;ʊ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// ui before cht, rs, rt</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">ui(?=((ll|nn)(\\(C\\)|[b-df-hj-np-tv-z]|\\s)|m\\s))</span>&quot;, &quot;iː&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// ui before syllable-final ll, nn; word-final m</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">ui(?=r[dln])</span>&quot;, &quot;uː&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// ui before rd, rl, rn</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">ui</span>&quot;, &quot;ɪ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// ui</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">u(?=r[dln])</span>&quot;, &quot;uː&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// u before rd, rl, rn</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">u</span>&quot;, &quot;ʊ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// u</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">i(?=((ll|nn)(\\(C\\)|[b-df-hj-np-tv-z]|\\s)|m\\s))</span>&quot;, &quot;iː&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// i before syllable-final ll, nn; word-final m</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">i</span>&quot;, &quot;ɪ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// i</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">(\\(S\\)(bhf?|mh|v))|((bhf?|mh|v)\\(S\\))</span>&quot;, &quot;vʲ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// bh, bhf, mh, v -- adjacent to slender vowel</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">(\\(B\\)(bhf?|mh|v))|((bhf?|mh|v)\\(B\\))</span>&quot;, &quot;vˠ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// bh, bhf, mh, v -- adjacent to broad vowel</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">bhf?|mh|v</span>&quot;, &quot;w&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// bh, bhf, mh, v -- otherwise</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">sh(?=\\(S\\){\\d+?}(\\(S\\))?(\\(B\\))?\\(X1\\))</span>&quot;, &quot;ç&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// sh, followed by e or i, followed by special marking (X1)</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">th(?!\\([BS]\\))</span>&quot;, &quot;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// th at end of syllable</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">ch(?=t)</span>&quot;, &quot;x&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// ch -- before t</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">\\(S\\)ch\\(S\\)</span>&quot;, &quot;h&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// ch -- between slender vowels</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">(\\(S\\)ch)|(ch\\(S\\))</span>&quot;, &quot;ç&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// ch -- adjacent to slender vowel</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">(\\(B\\)ch)|(ch\\(B\\))</span>&quot;, &quot;ç&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// ch -- adjacent to broad vowel</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">ch</span>&quot;, &quot;x&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// ch -- otherwise</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">\\sng</span>&quot;, &quot;ɲ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// initial ng</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">ng</span>&quot;, &quot;ɲɟ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// medial, final ng</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">\\s[dg]h</span>&quot;, &quot;ɣ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// initial dh, gh</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">(\\(S\\)[dg]h)|([dg]h\\(S\\))</span>&quot;, &quot;j&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// dh, gh -- adjacent to slender vowel</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">(\\(B\\)[dg]h)|([dg]h\\(B\\))</span>&quot;, &quot;j&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// dh, gh -- adjacent to broad vowel</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">[dg]h</span>&quot;, &quot;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// dh, gh -- otherwise</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">fh</span>&quot;, &quot;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// h, sh, th</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">(\\(S\\)(f|ph))|((f|ph)\\(S\\))</span>&quot;, &quot;fʲ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// f, ph -- adjacent to slender vowel</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">(\\(B\\)(f|ph))|((f|ph)\\(B\\))</span>&quot;, &quot;fˠ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// f, ph -- adjacent to broad vowel</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">(f|ph)</span>&quot;, &quot;f&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// f, ph -- otherwise</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">([st])?h</span>&quot;, &quot;h&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// h, sh, th</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">(\\(S\\)ts)|(ts\\(S\\))</span>&quot;, &quot;tʲ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// ts -- adjacent to slender vowel</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">(\\(B\\)ts)|(ts\\(B\\))</span>&quot;, &quot;tˠ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// ts -- adjacent to broad vowel</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">ts</span>&quot;, &quot;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// ts -- otherwise</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">(\\(S\\)nc)|(nc\\(S\\))</span>&quot;, &quot;ɲc&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// nc -- adjacent to slender vowel</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">nc</span>&quot;, &quot;ŋk&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// nc -- otherwise</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">(\\(S\\)n([nd])?)|(n([nd])?\\(S\\))</span>&quot;, &quot;nʲ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// n, nd, nn -- adjacent to slender vowel</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">(\\(B\\)n([nd])?)|(n([nd])?\\(B\\))</span>&quot;, &quot;nˠ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// n, nd, nn -- adjacent to broad vowel</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">n([nd])?</span>&quot;, &quot;n&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// n, nd, nn -- otherwise</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">(\\(S\\)mb?)|(mb?\\(S\\))</span>&quot;, &quot;mʲ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// m, mb -- adjacent to slender vowel</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">(\\(B\\)mb?)|(mb?\\(B\\))</span>&quot;, &quot;mˠ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// m, mb -- adjacent to broad vowel</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">mb?</span>&quot;, &quot;m&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// m, mb -- otherwise</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">(\\(S\\)bp?)|(bp?\\(S\\))</span>&quot;, &quot;bʲ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// b, bp -- adjacent to slender vowel</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">(\\(B\\)bp?)|(bp?\\(B\\))</span>&quot;, &quot;bˠ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// b, bp -- adjacent to broad vowel</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">bp?</span>&quot;, &quot;b&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// b, bp -- otherwise</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">(\\(S\\)dt?)|(dt?\\(S\\))</span>&quot;, &quot;dʲ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// d, dt -- adjacent to slender vowel</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">(\\(B\\)dt?)|(dt?\\(B\\))</span>&quot;, &quot;dˠ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// d, dt -- adjacent to broad vowel</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">dt?</span>&quot;, &quot;d&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// d, dt -- otherwise</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">(\\(S\\)gc?)|(gc?\\(S\\))</span>&quot;, &quot;ɟ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// g, gc -- adjacent to slender vowel</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">gc?</span>&quot;, &quot;ɡ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// g, gc -- otherwise</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">(\\(S\\)ll?)|(ll?\\(S\\))</span>&quot;, &quot;lʲ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// l, ll -- adjacent to slender vowel</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">(\\(B\\)ll?)|(ll?\\(B\\))</span>&quot;, &quot;lˠ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// l, ll -- adjacent to broad vowel</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">ll?</span>&quot;, &quot;l&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// l, ll -- otherwise</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">rr</span>&quot;, &quot;ɾˠ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// rr</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">(\\(S\\)r)|(r\\(S\\))</span>&quot;, &quot;ɾʲ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// r -- adjacent to slender vowel</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">(\\(B\\)r)|(r\\(B\\))</span>&quot;, &quot;ɾˠ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// r -- adjacent to broad vowel</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">r</span>&quot;, &quot;ɾ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// r -- otherwise</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">(\\(S\\)c)|(c\\(S\\))</span>&quot;, &quot;c&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// c -- adjacent to slender vowel</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">c</span>&quot;, &quot;k&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// c -- otherwise</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">(\\(S\\)p)|(p\\(S\\))</span>&quot;, &quot;pʲ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// p -- adjacent to slender vowel</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">(\\(B\\)p)|(p\\(B\\))</span>&quot;, &quot;pˠ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// p -- adjacent to broad vowel</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">p</span>&quot;, &quot;p&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// p -- otherwise</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">(\\(S\\)s)|(s\\(S\\))</span>&quot;, &quot;ʃ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// s -- adjacent to slender vowel</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">(\\(B\\)s)|(s\\(B\\))</span>&quot;, &quot;ʃ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// s -- adjacent to broad vowel</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">s</span>&quot;, &quot;s&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// s -- otherwise</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">(\\(S\\)t)|(t\\(S\\))</span>&quot;, &quot;tʲ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// t -- adjacent to slender vowel</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">(\\(B\\)t)|(t\\(B\\))</span>&quot;, &quot;tˠ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// t -- adjacent to broad vowel</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;ReplaceAndCleanJ(&quot;<span class="RegExp">t</span>&quot;, &quot;t&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Comment">// t -- otherwise</span><br />
+  <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxTextJ</span> = <span class="Variable">IPATextJ</span>;<br />
+  <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">IPATextCleanJ</span> = <span class="Variable">IPATextJ</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxTextCleanJ</span> = <span class="Variable">EnglishApproxTextJ</span>;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">GaelicTextCleanJ</span> = <span class="Variable">GaelicTextJ</span><br />
+  <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;for(<span class="Variable">i</span>=0; <span class="Variable">i</span>&lt;=<span class="Variable">IPACountJ</span>; <span class="Variable">i</span>++)<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">ReplaceStringJ</span> = &quot;\\{&quot; + <span class="Variable">i</span> + &quot;\\}&quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">IPATextJ</span> = <span class="Variable">IPATextJ</span>.replace(RegExp(<span class="Variable">ReplaceStringJ</span>,&quot;g&quot;), &quot;&lt;span class='[[REPLACE]]'&gt;&quot; + <span class="Variable">IPAArrayJ</span>[<span class="Variable">i</span>] + &quot;&lt;/span&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxTextJ</span> = <span class="Variable">EnglishApproxTextJ</span>.replace(RegExp(<span class="Variable">ReplaceStringJ</span>,&quot;g&quot;), &quot;&lt;span class='[[REPLACE]]'&gt;&quot; + <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">i</span>] + &quot;&lt;/span&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">IPATextCleanJ</span> = <span class="Variable">IPATextCleanJ</span>.replace(RegExp(<span class="Variable">ReplaceStringJ</span>,&quot;g&quot;), <span class="Variable">IPAArrayJ</span>[<span class="Variable">i</span>]);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxTextCleanJ</span> = <span class="Variable">EnglishApproxTextCleanJ</span>.replace(RegExp(<span class="Variable">ReplaceStringJ</span>,&quot;g&quot;), <span class="Variable">EnglishApproxArrayJ</span>[<span class="Variable">i</span>]);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">IPATextJ</span> = <span class="Variable">IPATextJ</span>.replace(<span class="RegExp">/^\s+|\((([BCS]|X\d+))\)|\s+$/g</span>, &quot;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxTextJ</span> = <span class="Variable">EnglishApproxTextJ</span>.replace(<span class="RegExp">/^\s+|[ˠʲ]|\(([BCS]|X\d+)\)|\s+$/g</span>, &quot;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">IPATextCleanJ</span> = <span class="Variable">IPATextCleanJ</span>.replace(<span class="RegExp">/^\s+|\((([BCS]|X\d+))\)|\s+$/g</span>, &quot;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxTextCleanJ</span> = <span class="Variable">EnglishApproxTextCleanJ</span>.replace(<span class="RegExp">/^\s+|[ˠʲ]|\(([BCS]|X\d+)\)|\s+$/g</span>, &quot;&quot;);<br />
+  <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;for(<span class="Variable">i</span>=0; <span class="Variable">i</span>&lt;=<span class="Variable">GaelicCountJ</span>; <span class="Variable">i</span>++)<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">ReplaceStringJ</span> = &quot;\\{&quot; + <span class="Variable">i</span> + &quot;\\}&quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">GaelicTextJ</span> = <span class="Variable">GaelicTextJ</span>.replace(RegExp(<span class="Variable">ReplaceStringJ</span>,&quot;g&quot;), &quot;&lt;span class='[[REPLACE]]'&gt;&quot; + <span class="Variable">GaelicArrayJ</span>[<span class="Variable">i</span>] + &quot;&lt;/span&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">GaelicTextCleanJ</span> = <span class="Variable">GaelicTextCleanJ</span>.replace(RegExp(<span class="Variable">ReplaceStringJ</span>,&quot;g&quot;), <span class="Variable">GaelicArrayJ</span>[<span class="Variable">i</span>]);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">GaelicTextJ</span> = <span class="Variable">GaelicTextJ</span>.replace(<span class="RegExp">/^\s|\s$/</span>, &quot;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">GaelicTextCleanJ</span> = <span class="Variable">GaelicTextCleanJ</span>.replace(<span class="RegExp">/^\s|\s$/</span>, &quot;&quot;);<br />
+  <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextJ</span> = <span class="Variable">GaelicTextJ</span>;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextCleanJ</span> = <span class="Variable">TraditionalGaelicTextJ</span>;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextJ</span> = <span class="Variable">TraditionalGaelicTextJ</span>.replace(<span class="RegExp">/bh/g</span>, &quot;ḃ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextJ</span> = <span class="Variable">TraditionalGaelicTextJ</span>.replace(<span class="RegExp">/ch/g</span>, &quot;ċ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextJ</span> = <span class="Variable">TraditionalGaelicTextJ</span>.replace(<span class="RegExp">/dh/g</span>, &quot;ḋ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextJ</span> = <span class="Variable">TraditionalGaelicTextJ</span>.replace(<span class="RegExp">/fh/g</span>, &quot;ḟ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextJ</span> = <span class="Variable">TraditionalGaelicTextJ</span>.replace(<span class="RegExp">/gh/g</span>, &quot;ġ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextJ</span> = <span class="Variable">TraditionalGaelicTextJ</span>.replace(<span class="RegExp">/mh/g</span>, &quot;ṁ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextJ</span> = <span class="Variable">TraditionalGaelicTextJ</span>.replace(<span class="RegExp">/ph/g</span>, &quot;ṗ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextJ</span> = <span class="Variable">TraditionalGaelicTextJ</span>.replace(<span class="RegExp">/sh/g</span>, &quot;ṡ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextJ</span> = <span class="Variable">TraditionalGaelicTextJ</span>.replace(<span class="RegExp">/th/g</span>, &quot;ṫ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextJ</span> = <span class="Variable">TraditionalGaelicTextJ</span>.replace(<span class="RegExp">/Bh/g</span>, &quot;Ḃ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextJ</span> = <span class="Variable">TraditionalGaelicTextJ</span>.replace(<span class="RegExp">/Ch/g</span>, &quot;Ċ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextJ</span> = <span class="Variable">TraditionalGaelicTextJ</span>.replace(<span class="RegExp">/Dh/g</span>, &quot;Ḋ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextJ</span> = <span class="Variable">TraditionalGaelicTextJ</span>.replace(<span class="RegExp">/Fh/g</span>, &quot;Ḟ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextJ</span> = <span class="Variable">TraditionalGaelicTextJ</span>.replace(<span class="RegExp">/Gh/g</span>, &quot;Ġ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextJ</span> = <span class="Variable">TraditionalGaelicTextJ</span>.replace(<span class="RegExp">/Mh/g</span>, &quot;Ṁ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextJ</span> = <span class="Variable">TraditionalGaelicTextJ</span>.replace(<span class="RegExp">/Ph/g</span>, &quot;Ṗ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextJ</span> = <span class="Variable">TraditionalGaelicTextJ</span>.replace(<span class="RegExp">/Sh/g</span>, &quot;Ṡ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextJ</span> = <span class="Variable">TraditionalGaelicTextJ</span>.replace(<span class="RegExp">/Th/g</span>, &quot;Ṫ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextCleanJ</span> = <span class="Variable">TraditionalGaelicTextCleanJ</span>.replace(<span class="RegExp">/bh/g</span>, &quot;ḃ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextCleanJ</span> = <span class="Variable">TraditionalGaelicTextCleanJ</span>.replace(<span class="RegExp">/ch/g</span>, &quot;ċ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextCleanJ</span> = <span class="Variable">TraditionalGaelicTextCleanJ</span>.replace(<span class="RegExp">/dh/g</span>, &quot;ḋ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextCleanJ</span> = <span class="Variable">TraditionalGaelicTextCleanJ</span>.replace(<span class="RegExp">/fh/g</span>, &quot;ḟ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextCleanJ</span> = <span class="Variable">TraditionalGaelicTextCleanJ</span>.replace(<span class="RegExp">/gh/g</span>, &quot;ġ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextCleanJ</span> = <span class="Variable">TraditionalGaelicTextCleanJ</span>.replace(<span class="RegExp">/mh/g</span>, &quot;ṁ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextCleanJ</span> = <span class="Variable">TraditionalGaelicTextCleanJ</span>.replace(<span class="RegExp">/ph/g</span>, &quot;ṗ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextCleanJ</span> = <span class="Variable">TraditionalGaelicTextCleanJ</span>.replace(<span class="RegExp">/sh/g</span>, &quot;ṡ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextCleanJ</span> = <span class="Variable">TraditionalGaelicTextCleanJ</span>.replace(<span class="RegExp">/th/g</span>, &quot;ṫ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextCleanJ</span> = <span class="Variable">TraditionalGaelicTextCleanJ</span>.replace(<span class="RegExp">/Bh/g</span>, &quot;Ḃ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextCleanJ</span> = <span class="Variable">TraditionalGaelicTextCleanJ</span>.replace(<span class="RegExp">/Ch/g</span>, &quot;Ċ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextCleanJ</span> = <span class="Variable">TraditionalGaelicTextCleanJ</span>.replace(<span class="RegExp">/Dh/g</span>, &quot;Ḋ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextCleanJ</span> = <span class="Variable">TraditionalGaelicTextCleanJ</span>.replace(<span class="RegExp">/Fh/g</span>, &quot;Ḟ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextCleanJ</span> = <span class="Variable">TraditionalGaelicTextCleanJ</span>.replace(<span class="RegExp">/Gh/g</span>, &quot;Ġ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextCleanJ</span> = <span class="Variable">TraditionalGaelicTextCleanJ</span>.replace(<span class="RegExp">/Mh/g</span>, &quot;Ṁ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextCleanJ</span> = <span class="Variable">TraditionalGaelicTextCleanJ</span>.replace(<span class="RegExp">/Ph/g</span>, &quot;Ṗ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextCleanJ</span> = <span class="Variable">TraditionalGaelicTextCleanJ</span>.replace(<span class="RegExp">/Sh/g</span>, &quot;Ṡ&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextCleanJ</span> = <span class="Variable">TraditionalGaelicTextCleanJ</span>.replace(<span class="RegExp">/Th/g</span>, &quot;Ṫ&quot;);<br />
+  <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/\s+/g</span>, &quot; &quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/^\s+|\s+$/g</span>, &quot;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/[&aacute;]/g</span>, &quot;a&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/[&oacute;]/g</span>, &quot;o&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/[&uacute;]/g</span>, &quot;u&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/[&eacute;]/g</span>, &quot;e&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/[&iacute;]/g</span>, &quot;i&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/[^blfsnhdtcqmgzraoueip\s]/g</span>, &quot;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/\s/g</span>, &quot;&lt;IMG SRC='OGHAM_SPACE.PNG' /&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/ng/g</span>, &quot;&lt;IMG SRC='OGHAM_NG.PNG' /&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/ea/g</span>, &quot;&lt;IMG SRC='OGHAM_EA.PNG' /&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/oi/g</span>, &quot;&lt;IMG SRC='OGHAM_OI.PNG' /&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/ui/g</span>, &quot;&lt;IMG SRC='OGHAM_UI.PNG' /&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/ia/g</span>, &quot;&lt;IMG SRC='OGHAM_IA.PNG' /&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/ae/g</span>, &quot;&lt;IMG SRC='OGHAM_AE.PNG' /&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/b/g</span>, &quot;&lt;IMG SRC='OGHAM_B.PNG' /&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/l/g</span>, &quot;&lt;IMG SRC='OGHAM_L.PNG' /&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/f/g</span>, &quot;&lt;IMG SRC='OGHAM_F.PNG' /&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/s/g</span>, &quot;&lt;IMG SRC='OGHAM_S.PNG' /&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/n/g</span>, &quot;&lt;IMG SRC='OGHAM_N.PNG' /&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/h/g</span>, &quot;&lt;IMG SRC='OGHAM_H.PNG' /&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/d/g</span>, &quot;&lt;IMG SRC='OGHAM_D.PNG' /&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/t/g</span>, &quot;&lt;IMG SRC='OGHAM_T.PNG' /&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/c/g</span>, &quot;&lt;IMG SRC='OGHAM_C.PNG' /&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/q/g</span>, &quot;&lt;IMG SRC='OGHAM_Q.PNG' /&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/m/g</span>, &quot;&lt;IMG SRC='OGHAM_M.PNG' /&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/g/g</span>, &quot;&lt;IMG SRC='OGHAM_G.PNG' /&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/z/g</span>, &quot;&lt;IMG SRC='OGHAM_Z.PNG' /&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/r/g</span>, &quot;&lt;IMG SRC='OGHAM_R.PNG' /&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/a/g</span>, &quot;&lt;IMG SRC='OGHAM_A.PNG' /&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/o/g</span>, &quot;&lt;IMG SRC='OGHAM_O.PNG' /&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/u/g</span>, &quot;&lt;IMG SRC='OGHAM_U.PNG' /&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/e/g</span>, &quot;&lt;IMG SRC='OGHAM_E.PNG' /&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/i/g</span>, &quot;&lt;IMG SRC='OGHAM_I.PNG' /&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = <span class="Variable">OghamTextJ</span>.replace(<span class="RegExp">/p/g</span>, &quot;&lt;IMG SRC='OGHAM_P.PNG' /&gt;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">OghamTextJ</span> = &quot;&lt;IMG SRC='OGHAM_FEATHER1.PNG' /&gt;&quot; + <span class="Variable">OghamTextJ</span> + &quot;&lt;IMG SRC='OGHAM_FEATHER2.PNG' /&gt;&quot;<br />
+  <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">ISLTextJ</span> = <span class="Variable">ISLTextJ</span>.replace(<span class="RegExp">/\s+/g</span>, &quot; &quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">ISLTextJ</span> = <span class="Variable">ISLTextJ</span>.replace(<span class="RegExp">/^\s+|\s+$/g</span>, &quot;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">ISLTextJ</span> = <span class="Variable">ISLTextJ</span>.replace(<span class="RegExp">/[Á]/g</span>, &quot;A&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">ISLTextJ</span> = <span class="Variable">ISLTextJ</span>.replace(<span class="RegExp">/[Ó]/g</span>, &quot;O&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">ISLTextJ</span> = <span class="Variable">ISLTextJ</span>.replace(<span class="RegExp">/[Ú]/g</span>, &quot;U&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">ISLTextJ</span> = <span class="Variable">ISLTextJ</span>.replace(<span class="RegExp">/[É]/g</span>, &quot;E&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">ISLTextJ</span> = <span class="Variable">ISLTextJ</span>.replace(<span class="RegExp">/[Í]/g</span>, &quot;I&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">ISLTextJ</span> = <span class="Variable">ISLTextJ</span>.replace(<span class="RegExp">/[^A-Z\s]/g</span>, &quot;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">ISLTextJ</span> = <span class="Variable">ISLTextJ</span>.replace(<span class="RegExp">/\s/g</span>, &quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">ISLTextJ</span> = <span class="Variable">ISLTextJ</span>.replace(<span class="RegExp">/[A-Z]/g</span>, &quot;&lt;IMG SRC='ISL_$&.PNG' /&gt;&nbsp;&quot;);<br />
+  <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">ClassCountJ</span> = -1;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;while (<span class="Variable">GaelicTextJ</span>.search(RegExp(&quot;<span class="RegExp">\[\[REPLACE\]\]</span>&quot;, &quot;&quot;)) != -1)<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">ClassCountJ</span>++;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">GaelicTextJ</span> = <span class="Variable">GaelicTextJ</span>.replace(<span class="RegExp">/\[\[REPLACE\]\]/</span>, &quot;color&quot; + (<span class="Variable">ClassCountJ</span> % 7));<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">IPATextJ</span> = <span class="Variable">IPATextJ</span>.replace(<span class="RegExp">/\[\[REPLACE\]\]/</span>, &quot;color&quot; + (<span class="Variable">ClassCountJ</span> % 7));<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">EnglishApproxTextJ</span> = <span class="Variable">EnglishApproxTextJ</span>.replace(<span class="RegExp">/\[\[REPLACE\]\]/</span>, &quot;color&quot; + (<span class="Variable">ClassCountJ</span> % 7));<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">TraditionalGaelicTextJ</span> = <span class="Variable">TraditionalGaelicTextJ</span>.replace(<span class="RegExp">/\[\[REPLACE\]\]/</span>, &quot;color&quot; + (<span class="Variable">ClassCountJ</span> % 7));<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">IPATextJ</span> = &quot;/&quot; + <span class="Variable">IPATextJ</span> + &quot;/&quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="Variable">IPATextCleanJ</span> = &quot;/&quot; + <span class="Variable">IPATextCleanJ</span> + &quot;/&quot;;<br />
+  <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('GaelicResult').innerHTML = <span class="Variable">GaelicTextJ</span>;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('TraditionalGaelicResult').innerHTML = <span class="Variable">TraditionalGaelicTextJ</span>;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('IPAResult').innerHTML = <span class="Variable">IPATextJ</span>;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('EnglishApproxResult').innerHTML = <span class="Variable">EnglishApproxTextJ</span>;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('GaelicCleanResult').innerHTML = <span class="Variable">GaelicTextCleanJ</span>;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('TraditionalGaelicCleanResult').innerHTML = <span class="Variable">TraditionalGaelicTextCleanJ</span>;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('IPACleanResult').innerHTML = <span class="Variable">IPATextCleanJ</span>;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('EnglishApproxCleanResult').innerHTML = <span class="Variable">EnglishApproxTextCleanJ</span>;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('OghamResult').innerHTML = <span class="Variable">OghamTextJ</span>;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('ISLResult').innerHTML = <span class="Variable">ISLTextJ</span>;<br />
+  <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(&quot;GaelicJ&quot;).focus();<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(&quot;GaelicRow&quot;).style.display = &quot;&quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;if (<span class="Variable">GaelicTextJ</span> == <span class="Variable">TraditionalGaelicTextJ</span>)<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(&quot;TraditionalGaelicRow&quot;).style.display = &quot;none&quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(&quot;TraditionalGaelicRow&quot;).style.display = &quot;&quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(&quot;IPARow&quot;).style.display = &quot;&quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(&quot;EnglishApproximateRow&quot;).style.display = &quot;&quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(&quot;OghamRow&quot;).style.display = &quot;&quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(&quot;ISLRow&quot;).style.display = &quot;&quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(&quot;buttons&quot;).style.display = &quot;&quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;if (<span class="Variable">EnglishApproxTextCleanJ</span>.search(/&lt;i&gt;/) == -1)<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(&quot;ItalicsInEnglishApproximate&quot;).style.display = &quot;none&quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(&quot;ItalicsInEnglishApproximate&quot;).style.display = &quot;&quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+  &nbsp;&nbsp;}<br />
+  <br />
+  function ColorsJ(<span class="Variable">ShowHideJ</span>)<br />
+  &nbsp;&nbsp;{<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;if (<span class="Variable">ShowHideJ</span> == &quot;show&quot;)<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(&quot;GaelicColor&quot;).style.display = &quot;&quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(&quot;TraditionalGaelicColor&quot;).style.display = &quot;&quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(&quot;IPAColor&quot;).style.display = &quot;&quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(&quot;EnglishApproximateColor&quot;).style.display = &quot;&quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(&quot;HideColorButton&quot;).style.display = &quot;&quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(&quot;GaelicClean&quot;).style.display = &quot;none&quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(&quot;TraditionalGaelicClean&quot;).style.display = &quot;none&quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(&quot;IPAClean&quot;).style.display = &quot;none&quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(&quot;EnglishApproximateClean&quot;).style.display = &quot;none&quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(&quot;ShowColorButton&quot;).style.display = &quot;none&quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(&quot;GaelicColor&quot;).style.display = &quot;none&quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(&quot;TraditionalGaelicColor&quot;).style.display = &quot;none&quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(&quot;IPAColor&quot;).style.display = &quot;none&quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(&quot;EnglishApproximateColor&quot;).style.display = &quot;none&quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(&quot;HideColorButton&quot;).style.display = &quot;none&quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(&quot;GaelicClean&quot;).style.display = &quot;&quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(&quot;TraditionalGaelicClean&quot;).style.display = &quot;&quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(&quot;IPAClean&quot;).style.display = &quot;&quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(&quot;EnglishApproximateClean&quot;).style.display = &quot;&quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(&quot;ShowColorButton&quot;).style.display = &quot;&quot;;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+  &nbsp;&nbsp;}</code></p>
+</body>
+</html>

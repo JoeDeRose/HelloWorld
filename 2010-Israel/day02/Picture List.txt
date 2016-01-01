@@ -1,0 +1,83 @@
+ Volume in drive C has no label.
+ Volume Serial Number is 3846-81F9
+
+ Directory of C:\Users\Joe Laptop\Documents\My Webs\Joe\vacation\2010-Israel\1005
+
+10/31/2010  02:37 PM    <DIR>          .
+10/31/2010  02:37 PM    <DIR>          ..
+10/31/2010  02:32 PM            91,863 Church of the Holy Seplucher.jpg
+10/17/2010  08:59 PM            17,246 Church of the Holy Sepulcher.gif
+10/31/2010  02:26 PM           117,824 Church of the Holy Sepulcher.png
+10/31/2010  01:57 AM           554,881 City Wall - AD 70.png
+10/31/2010  01:58 AM           551,089 City Walls - Present.png
+10/31/2010  02:26 PM            69,343 Holy Sepulchre - 4th Century.png
+10/31/2010  02:26 PM           471,889 Holy Sepulchre - 4th Century.psd
+10/24/2010  08:18 PM            86,242 IMG_0959 - Western Wall.JPG
+10/24/2010  08:19 PM           100,415 IMG_0960 - Prayers in the Western Wall.JPG
+10/24/2010  08:19 PM            91,232 IMG_0961 - Prayers in the Western Wall.JPG
+10/24/2010  08:19 PM           104,577 IMG_0962 - 2nd Station of the Cross.JPG
+10/24/2010  08:19 PM            82,643 IMG_0963 - 1st Station of the Cross.JPG
+10/24/2010  08:19 PM           102,001 IMG_0966 - Aley Scene.JPG
+10/24/2010  08:19 PM            93,900 IMG_0967 - Via Dolorosa.JPG
+10/24/2010  08:18 PM            87,330 IMG_0969 - 3rd Station - 3rd Station of the Cross.JPG
+10/24/2010  08:19 PM           111,150 IMG_0970 - 4th Station of the Cross.JPG
+10/24/2010  08:19 PM            91,018 IMG_0974 - 5th Station of the Cross.JPG
+10/24/2010  08:19 PM           114,271 IMG_0975 - 5th Station of the Cross (Joe).JPG
+10/24/2010  08:19 PM           104,497 IMG_0977 - 6th Station of the Cross.JPG
+10/24/2010  08:21 PM            91,074 IMG_0980 - 7th Station of the Cross.JPG
+10/24/2010  08:21 PM           108,451 IMG_0981 - 8th Station of the Cross.JPG
+10/24/2010  08:20 PM           100,576 IMG_0982 - Church of the Holy Sepulchre.JPG
+10/24/2010  08:20 PM           109,507 IMG_0983 - Church of the Holy Sepulchre.JPG
+10/24/2010  08:20 PM            92,444 IMG_0985 - 9th Station of the Cross.JPG
+10/24/2010  08:20 PM            92,688 IMG_0985A - Jesus.jpg
+10/24/2010  08:20 PM            45,651 IMG_0987 - Cistern.JPG
+10/24/2010  08:20 PM            54,054 IMG_0989 - Cistern.JPG
+10/24/2010  08:21 PM           111,999 IMG_0990 - Cistern.JPG
+10/24/2010  08:21 PM           114,754 IMG_0991 - 10th or 11th Station of the Cross.JPG
+10/24/2010  08:21 PM           130,028 IMG_0992 - 10th or 11th Station of the Cross.JPG
+10/24/2010  08:21 PM            81,359 IMG_0995 - Prayer Niche.JPG
+10/24/2010  08:21 PM            65,404 IMG_0998 - Prayer Niche.JPG
+10/24/2010  08:22 PM            81,938 IMG_1000 - Ramparts.JPG
+10/24/2010  08:22 PM            95,820 IMG_1001 - Ramparts.JPG
+10/24/2010  08:22 PM            95,853 IMG_1002 - Ramparts.JPG
+10/24/2010  08:22 PM            80,728 IMG_1004 - Ramparts.JPG
+10/24/2010  08:22 PM            78,401 IMG_1005 - Ramparts.JPG
+10/24/2010  08:22 PM           102,363 IMG_1006 - Ramparts.JPG
+10/24/2010  08:22 PM            96,629 IMG_1007 - Ramparts.JPG
+10/24/2010  08:22 PM            76,904 IMG_1008 - Ramparts (Damascus Gate).JPG
+10/24/2010  08:22 PM            63,340 IMG_1009 - Ramparts (Damascus Gate).JPG
+10/24/2010  08:23 PM            90,764 IMG_1012 - Ramparts.JPG
+10/24/2010  08:23 PM            81,028 IMG_1017 - Ramparts.JPG
+10/24/2010  08:23 PM            95,340 IMG_1019 - Ramparts.JPG
+10/24/2010  08:23 PM            68,707 IMG_1021 - Ramparts.JPG
+10/24/2010  08:23 PM            55,539 IMG_1022 - Ramparts.JPG
+10/24/2010  08:23 PM           104,653 IMG_1023 - 1st Station of the Cross.JPG
+10/24/2010  08:23 PM            87,776 IMG_1024 - Damascus Gate.JPG
+10/24/2010  08:23 PM            71,926 IMG_1026 - Mea Shearim.JPG
+10/24/2010  08:23 PM            98,977 IMG_1028 - Mea Shearim.JPG
+10/24/2010  08:23 PM            94,532 IMG_1029 - Mea Shearim.JPG
+10/24/2010  08:24 PM           107,336 IMG_1030 - Omphalos.JPG
+10/24/2010  08:24 PM            62,065 IMG_1032 - 14th Station of the Cross.JPG
+10/24/2010  08:24 PM           101,307 IMG_1033 - Chruch of the Holy Sepulchre.JPG
+10/24/2010  08:24 PM            88,413 IMG_1035 - Chruch of the Holy Sepulchre.JPG
+10/24/2010  08:24 PM           111,377 IMG_1036 - Joseph of Aramathea's Tomb.JPG
+10/26/2010  09:59 PM           107,676 IMG_1037 - Western Wall.JPG
+10/24/2010  08:25 PM            80,052 IMG_1083 - Franciscan Chapel at Church of the Holy Sepulcher.JPG
+10/24/2010  08:25 PM           115,678 IMG_1084 - Greek Orthodox Chapel at Church of the Holy Sepulcher.JPG
+10/24/2010  08:25 PM            95,868 IMG_1085 - Ethiopian Monastery.JPG
+10/24/2010  08:25 PM            74,159 IMG_1086 - Chruch of the Holy Sepulcher from the Ethiopian Monastery.JPG
+10/24/2010  08:24 PM            85,643 IMG_1087 - Ethiopian Chapel (Name QQ).JPG
+10/24/2010  08:24 PM           101,291 IMG_1088 - Lower Ethiopian Chapel (Name QQ).JPG
+10/31/2010  02:37 PM                 0 list.txt
+10/31/2010  01:58 AM           551,019 Map - Holy Sepulchre.png
+10/30/2010  09:11 PM           550,605 Map - Mea Shearim.png
+10/30/2010  09:10 PM           550,951 Map - Queen Helen.png
+10/30/2010  09:10 PM           549,116 Map - Ramparts.png
+10/30/2010  09:09 PM           550,418 Map - Via Dolorosa.png
+10/30/2010  09:06 PM           550,562 Map - Western Wall Tunnel.png
+10/30/2010  09:05 PM           550,735 Map - Western Wall.png
+10/28/2010  11:02 PM            36,450 Ticket 2 - Ramparts Walk.jpg
+10/31/2010  02:33 PM           112,257 Via Dolorosa.jpg
+10/29/2010  09:22 PM           101,215 Western Wall Tunnels Route.jpg
+              74 File(s)     11,096,811 bytes
+               2 Dir(s)  240,221,712,384 bytes free

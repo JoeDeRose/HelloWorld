@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link rel="stylesheet" type="text/css" href="include/main.css" />
+</head>
+
+<body>
+
+<!-- SECTION -->
+<hr class="Disappear" />
+<script>
+WriteH1HeaderJ("Title");
+</script>
+<p>Text</p>
+<script>WriteH1FooterJ()</script>
+
+<script>
+WriteOghamJ("OghamText");
+WriteParisSignJ(0, "Avenue ((de)) la Bourdonnais");
+
+</script>
+
+
+<!-- SECTION (ONLY FOR SITUATIONS IN WHICH SCRIPTED CONSTRUCT FAILS) -->
+<h1>Title</h1>
+<table class="MainContent" border="0">
+	<tr>
+		<th class="MainContentHead"></th>
+		<td class="MainContentBody">
+			<table class="hOghamBox">
+			  <tr>
+				<td><script>OghamJ("")</script></td>
+			  </tr>
+			</table>
+			<p>Text</p>
+			<table class="MainContentBottom">
+              <tr>
+                <td>&nbsp;</td>
+              </tr>
+            </table>
+		</td>
+	</tr>
+</table>
+
+<!-- PICTURE GROUP -->
+<script>
+// Change "false" to "true" for the 2nd and later photo groups within a header.
+WritePhotoGroupHeaderJ("Group1", "Title");
+WritePhotoJ("Group1", "Folder", "File", "Caption");
+WritePhotoMiddleHeaderJ("Group2", "Title");
+WritePhotoJ("Group2", "Folder", "File", "Caption");
+WritePhotoGroupFooterJ();
+</script>
+
+<!-- DROPNOTE -->
+<p>
+<span class="dropnote">TEXT_IN_PARAGRAPH</span><span class="downarrow">➴</span>
+</p>
+<table class="dropnoteframe">
+	<tr>
+		<th width="25%">&nbsp;</th>
+		<td width="75%">
+			<table class="dropnotetable">
+				<tr>
+					<th>➴</th>
+					<td>Text</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+
+<!-- JOHN SPEAKS -->
+<table class="dropnoteframe">
+	<tr>
+		<th width="25%">&nbsp;</th>
+		<td width="75%">
+			<table class="JohnSpeaks">
+				<tr>
+					<th width="125">
+						<img src="images/JohnSpeaks.jpg" width="125" height="100" /><br />
+						John Speaks<br />
+						<span style="font-size:0.75em"><br />b. April 27, 1945<br />
+						d. August 27, 2009</span>
+					</th>
+					<td>
+						<table border="0" cellspacing="0" cellpadding="0" class="nobordertable">
+							<tr>
+							  <td>Text</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+
+<!-- BRAILLE -->
+<script>
+BrailleObject =
+	[
+		{
+			"dots"    : "1",
+			"bgcolor" : "yellow",
+	        "letter"  : "a"
+		}, 
+		{
+			"dots"    : "12",
+	        "letter"  : "b"
+		}
+		// Last item in the array has no comma
+	];
+WriteBraille(BrailleObject);
+</script>
+
+<!-- PARIS SIGN -->
+<script>
+WriteParisSignJ(10, "Gare ((du)) nord");
+</script>
+
+<!-- LANGUAGE AND MEASUREMENTS -->
+<p>
+<script>LangBoxJ("EN", "English")</script>
+<script>LangBoxJ("GA", "Irish")</script>
+<script>LangBoxJ("FR", "French")</script>
+<script>LangBoxJ("IPA", "IPAText")</script>
+<script>LangBoxJ("EN", "English");LangBoxJ("GA", "Irish")</script>
+<script>LangBoxJ("GA", "Irish");LangBoxJ("EN", "English")</script>
+<script>LangBoxJ("EN", "English");LangBoxJ("GA", "Irish");LangBoxJ("IPA", "IPAText")</script>
+<script>LangBoxJ("LA", "Latin");LangBoxJ("EN", "English")</script>
+<script>LangBoxJ("NL", "Dutch");LangBoxJ("EN", "English")</script>
+<script>LangBoxJ("EN", "English");LangBoxJ("NL", "Dutch")</script>
+<script>LangBoxJ("FR", "French");LangBoxJ("EN", "English")</script>
+<script>LangBoxJ("EN", "English");LangBoxJ("FR", "French")</script>
+
+<script>MeasurementBoxJ("SI", "2.54 cm", true);MeasurementBoxJ("US", "1&quot;", false)</script>
+</p>
+
+<!-- OGHAM BOX -->
+<table class="hOghamBox">
+  <tr>
+    <td><script>OghamJ("Text")</script></td>
+  </tr>
+</table>
+
+<!-- ROMAN IN ITALICS BLOCK -->
+<span class='PictureCaptionRoman'>
+</span>
+
+</body>
+</html>

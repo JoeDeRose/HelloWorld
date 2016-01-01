@@ -1,0 +1,1413 @@
+body
+	{
+		background-color:#F9F0FF;
+	}
+
+td
+	{
+		vertical-align:top;
+	}
+
+p
+	{
+	}
+
+iframe
+	{
+		border: 1px #000000 dotted;
+	}
+
+.PageHeaderFrame
+	{
+		background-color:#59503C;
+		width: 101.25%;
+		margin-top:5px;
+		margin-left:-10px;
+		margin-bottom:-2px;
+		padding: 5px;
+		border-top: 4px #003300 solid;
+		border-bottom: 4px #003300 solid;
+	}
+
+.PageHeader
+	{
+		border:3px #003300 solid;
+		width:90%;
+		height:13em;
+		background-color:#F9F0FF;
+		margin-left:auto;
+		margin-right:auto;
+	}
+
+.PageFooter
+	{
+		border:3px #003300 solid;
+		width:90%;
+		background-color:#F9F0FF;
+		margin-left:auto;
+		margin-right:auto;
+		padding-left:1em;
+		padding-right:1em;
+	}
+
+.IrishPronunciation
+	{
+		border:3px #003300 solid;
+		width:90%;
+		background-color:#F9F0FF;
+		margin-left:auto;
+		margin-right:auto;
+	}
+
+.PageHeaderContent
+	{
+		width:100%;
+	}
+
+.PageHeaderTOC
+	{
+		text-align:right;
+	}
+
+h1
+	{
+		background-color:#59503C;
+		color:#FFD;
+		text-align:center;
+		width: 102%;
+		margin-top:5px;
+		margin-left:-10px;
+		margin-bottom:-2px;
+		padding: 5px;
+		border-top: 2px #003300 solid;
+		font-variant:small-caps;
+		letter-spacing:0.15em;
+		margin-top:1em;
+	}
+
+.ToC
+	{
+		border-top:5px #59503C groove;
+		border-bottom:5px #59503C ridge;
+		margin-left:auto;
+		text-align:center;
+		padding-left:25px;
+		padding-right:25px;
+		font-variant:small-caps;
+	}
+
+.ToC a
+	{
+		color:#59503C;
+		text-decoration:none;
+	}
+
+.MainContent
+	{
+		width: 105%;
+		margin-left:-15px;
+		border-spacing:0;
+		height:200px;
+	}
+
+.MainContentHead
+	{
+		width:3%;
+		vertical-align:top;
+		border:0;
+		padding:0;
+		margin-right: -5px;
+		background-image:url(../images/SideTransition1.jpg);
+		background-repeat:no-repeat;
+	}
+
+.MainContentBody
+	{
+		width:97%;
+		padding-top:10px;
+		padding-left:10px;
+		padding-right:60px;
+		border-top: 5px #003300 double;
+		border-left: 5px #003300 double;
+	}
+
+.MainContentBottom
+	{
+		width:97%;
+		height:30px;
+		margin-left:auto;
+		border-bottom: 2px #003300 solid;
+		border-right: 5px #003300 double;
+	}
+
+table.hOghamBox
+	{
+		float:left;
+		border:2px #59503C solid;
+		margin-right:20px;
+		margin-bottom:10px;
+		background-color:#FFFFFF;
+		padding:5px;
+	}
+
+table.hParisSignBox
+	{
+		float:left;
+		margin-right:20px;
+		margin-bottom:10px;
+		padding:5px;
+	}
+
+table.HeaderDate
+	{
+		border-spacing:0;
+	}
+
+.NetherlandsDate
+	{
+		background-color:#FFFFFF;
+		border:2px #59503C solid;
+		height:1.7em;
+		padding:5px;
+		font-weight:bold;
+		font-style:italic;
+		text-align:center;
+	}
+
+.FranceDate
+	{
+		background-color:#FFFFFF;
+		border-top:2px #59503C solid;
+		border-left:2px #59503C solid;
+		border-bottom:2px #59503C solid;
+		height:1.7em;
+		padding:5px;
+		font-weight:bold;
+		font-style:italic;
+		text-align:center;
+	}
+
+.FranceDateRight
+	{
+		border-left:2px #59503C solid;
+		font-size:0.7em;
+	}
+.FrenchRepublicanDate1
+	{
+		background-color:#FFFFFF;
+		border-top:2px #59503C solid;
+		border-right:2px #59503C solid;
+		border-bottom:2px #59503C solid;
+		height:1.7em;
+		padding:5px;
+		font-weight:bold;
+		font-style:italic;
+		text-align:center;
+		color:#002669;
+	}
+
+.FrenchRepublicanDate2
+	{
+		border-right:2px #59503C solid;
+		font-size:0.7em;
+	}
+
+.OghamDateOgham
+	{
+		background-color:#FFFFFF;
+		border-bottom:2px #59503C solid;
+		border-left:2px #59503C solid;
+		border-top:2px #59503C solid;
+		padding:5px;
+		vertical-align:middle;
+	}
+
+.OghamDateEnglish
+	{
+		background-color:#FFFFFF;
+		border-bottom:2px #59503C solid;
+		border-right:2px #59503C solid;
+		border-top:2px #59503C solid;
+		height:1.7em;
+		padding:5px;
+		font-weight:bold;
+		font-style:italic;
+		width:15em;
+		text-align:center;
+	}
+
+.OghamDateNone
+	{
+		border-left:2px #59503C solid;
+	}
+
+.color0
+	{
+		/* orange */
+		background-color: #FFCC66;
+	}
+
+.white
+	{
+		/* gray */
+		background-color: #FFF;
+	}
+
+.lightgray
+	{
+		/* gray */
+		background-color: #CCC;
+	}
+
+.lightgreen
+	{
+		/* green */
+		background-color: #CFC;
+	}
+
+.lightred
+	{
+		/* red */
+		background-color: #FDD;
+	}
+
+.lightorange
+	{
+		/* orange */
+		background-color:#FEA;
+	}
+
+.lightyellow
+	{
+		/* yellow */
+		background-color: #FFB;
+	}
+
+.color1
+	{
+		/* green */
+		background-color: #99FF99;
+	}
+
+.color2
+	{
+		/* red */
+		background-color: #FF9999;
+	}
+
+.color3
+	{
+		/* light blue */
+		background-color: #99FFFF;
+	}
+
+.color4
+	{
+		/* purple */
+		background-color: #FF99FF;
+	}
+
+.color5
+	{
+		/* yellow */
+		background-color: #FFFF99;
+	}
+
+.color6
+	{
+		/* dark blue */
+		background-color: #9999FF;
+	}
+
+.centeredtable .LeftJustify
+	{
+		text-align:left;
+	}
+
+.centeredtable .RightJustify
+	{
+		text-align:right;
+	}
+
+.centeredtable .VerticalMiddle
+	{
+		vertical-align:middle;
+	}
+
+.result
+	{
+		font-size:1.5em;
+		font-family:Arial, Helvetica, sans-serif;
+	}
+
+.orthography
+	{
+		color:#990000;
+		text-decoration:underline;
+	}
+
+.downarrow
+	{
+		font-family:Arial, Helvetica, sans-serif;
+		font-weight:bold;
+		color:#FF0;
+		border:1px #59503C solid;
+		background-color:#59503C;
+	}
+
+.RegExp
+	{
+		background-color:#CCCC66;
+	}
+
+.RegExpCode
+	{
+		background-color:#CCCC66;
+		font-family:"Courier New", Courier, monospace;
+	}
+
+.RegExpCodeHighlight
+	{
+		background-color:#0F3;
+	}
+
+.PictureOuterFrame
+	{
+		width:616px;
+		margin-left:auto;
+		margin-right:auto;
+		float:right;
+		margin-top:0;
+		margin-bottom:0;
+	}
+
+.PictureFrame
+	{
+		border: 3px #59503C solid;
+		width:606px;
+		margin-left:auto;
+		margin-right:auto;
+	}
+
+.PictureFrameNoWidth
+	{
+		border: 3px #59503C solid;
+		margin-left:auto;
+		margin-right:auto;
+	}
+
+.PictureFrameCountryBox
+	{
+		border: 3px #59503C solid;
+		margin-left:auto;
+		margin-right:auto;
+		width:75%;
+	}
+
+.PictureImage
+	{
+		text-align:center;
+		background-color:#FFD;
+	}
+	
+.PictureImage img
+	{
+		border-width:1px;
+		border-color:#59503C;
+		border-style:solid;
+		margin-left:auto;
+		margin-right:auto;
+		cursor:pointer;
+	}
+
+.PictureTitle
+	{
+		vertical-align:top;
+		font-size:1.5em;
+		padding:6px;
+		color:#FFD;
+		border-bottom: 2px #59503C solid;
+		background-color:#59503C;
+		text-align:center;
+		font-variant:small-caps;
+		letter-spacing:0.15em;
+	}
+
+.PictureMiddleTitle
+	{
+		vertical-align:top;
+		font-size:1.5em;
+		padding:6px;
+		color:#FFD;
+		border-top: 2px #59503C solid;
+		border-bottom: 2px #59503C solid;
+		background-color:#59503C;
+		text-align:center;
+		font-variant:small-caps;
+		letter-spacing:0.15em;
+	}
+
+.PictureCaption
+	{
+		vertical-align:top;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:0.75em;
+		color:#000;
+		border-top: 2px #59503C solid;
+		background-color:#FFD;
+		text-align:center;
+		padding:6px;
+	}
+
+.PictureCaptionRoman
+	{
+		font-style:normal;
+	}
+
+.PictureInstructions
+	{
+		border:1px #000000 solid;
+		padding-left:0.5em;
+		padding-right:0.5em;
+		text-align:center;
+		margin-left:auto;
+		margin-right:auto;
+		font-weight:bold;
+		cursor:pointer;
+		background-color:#F9F0FF;
+	}
+
+.PictureNote
+	{
+		font-style:italic;
+		color:#59503C;
+		padding-left:5px;
+		padding-right:5px;
+	}
+
+.PictureClear
+	{
+		clear:right;
+	}
+
+.CountryBox
+	{
+		text-align:center;
+		padding:10px;
+		background-color:#FFD;
+	}
+
+.CountryBox img
+	{
+		border-width:1px;
+		border-color:#59503C;
+		border-style:solid;
+		margin-left:auto;
+		margin-right:auto;
+	}
+
+.CountryBox .NoBorder
+	{
+		border-width:0;
+	}
+
+.CountryDescrip
+	{
+		font-size:0.8em;
+		font-style:italic;
+		line-height:1.2em;
+	}
+
+.CountryOfficialName
+	{
+		vertical-align:bottom;
+	}
+
+.dropnote
+	{
+		border-top:1px #59503C dashed;
+		border-left:1px #59503C dashed;
+		border-bottom:1px #59503C dashed;
+		padding-left:3px;
+		padding-right:3px;
+	}
+
+.dropnoteframe
+	{
+		margin-left:auto;
+		margin-right:0;
+		border-spacing:0px;
+		border:0;
+	}
+
+.dropnotetable
+	{
+		margin-left:auto;
+		margin-right:15px;
+		border-spacing:0px;
+	}
+
+.dropnotetable th
+	{
+		vertical-align:top;
+		font-family:Arial, Helvetica, sans-serif;
+		font-weight:bold;
+		color:#FF0;
+		border:1px #59503C solid;
+		background-color:#59503C;
+		width:1em;
+	}
+
+.dropnotetable td
+	{
+		border-top:1px #59503C dotted;
+		border-right:1px #59503C dotted;
+		border-bottom:1px #59503C dotted;
+		color:#59503C;
+		padding-left:7px;
+		padding-right:3px;
+		font-style:italic;
+	}
+
+.dropnotetable td.dropnotetablefollow
+	{
+		border-top:none;
+	}
+
+.JohnSpeaks
+	{
+		margin-left:auto;
+		margin-right:15px;
+		border-spacing:0px;
+	}
+
+.JohnSpeaks th
+	{
+		vertical-align:top;
+		font-family:Arial, Helvetica, sans-serif;
+		font-weight:bold;
+		color:#000;
+		border:1px #59503C solid;
+		background-color:#FFD;
+	}
+
+.JohnSpeaks td
+	{
+		border-top:1px #59503C dotted;
+		border-right:1px #59503C dotted;
+		border-bottom:1px #59503C dotted;
+		color:#59503C;
+		padding-left:3px;
+		padding-right:3px;
+		font-style:italic;
+	}
+
+.SignLangTable th
+	{
+		font-size:3em;
+		font-weight:bold;
+		vertical-align:middle;
+		padding-left:15px;
+		padding-right:15px;
+	}
+
+.SignLangTable td
+	{
+		vertical-align:middle;
+		padding-left:20px;
+		padding-right:20px;
+		padding-top:10px;
+	}
+
+.SignLangTable .SignLangStepColumn
+	{
+		vertical-align:top;
+		width:300px;
+		padding-left:20px;
+		padding-right:20px;
+	}
+
+.SignLangTable .SignLangStep
+	{
+		vertical-align:top;
+		text-align:left;
+		padding:0;
+	}
+	
+.SignLangTable .SignLangStepButton
+	{
+		text-align:right;
+	}
+	
+.SignLangTable .SignLangStepCenter
+	{
+		text-align:center;
+	}
+
+.nobordertable td
+	{
+		border:0px #000 solid;
+		color:#59503C;
+		font-style:normal;
+	}
+
+.nopaddingtable td
+	{
+		padding:0;
+	}
+
+.centeredtable
+	{
+		margin-left:auto;
+		margin-right:auto;
+	}
+
+.WhiteTable
+	{
+		background-color:#FFFFFF;
+	}
+
+.centeredtable td
+	{
+		text-align:center;
+	}
+
+.BoldText
+	{
+		font-weight:bold;
+	}
+
+.GreenText
+	{
+		color:#090;
+	}
+
+.MeasurementDesignator
+	{
+		font-family: Arial, Helvetica, sans-serif;
+		font-weight: bold;
+		color:#000;
+		font-size: 10px;
+		padding-left: 2px;
+		padding-right: 2px;
+		font-style:normal;
+		vertical-align:middle;
+		cursor:help;
+	}
+
+.MeasurementAbbr
+	{
+		background:#FF0;
+		border:1px solid #999;
+	}
+
+.MeasurementAbbr1
+	{
+		background:#FF0;
+		border-left:1px solid #999;
+		border-bottom:1px solid #999;
+		border-right:1px solid #999;
+	}
+
+.MeasurementText1
+	{
+		border-top:1px dotted #999;
+		border-bottom:1px dotted #999;
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+.MeasurementText2
+	{
+		border-top:1px dotted #999;
+		border-bottom:1px dotted #999;
+		border-right:1px dotted #999;
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+.MeasurementText3
+	{
+		border-bottom:1px dotted #999;
+		border-right:1px dotted #999;
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+.LangDesignator
+	{
+		font-family: Arial, Helvetica, sans-serif;
+		font-weight: bold;
+		color: #FFF;
+		font-size: 10px;
+		padding-left: 3px;
+		font-style:normal;
+		vertical-align:middle;
+		cursor:help;
+	}
+
+.LangEN /* English */
+	{
+		background:#000;			/* color reflects language selection */
+		border:1px solid #000;		/* color reflects language selection */
+	}
+
+.LangTextEN
+	{
+		color: #000;				/* color reflects language selection */
+		border:1px solid #000;		/* color reflects language selection */
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+.LangGA /* Irish */
+	{
+		background:#060;			/* color reflects language selection */
+		border:1px solid #060;		/* color reflects language selection */
+	}
+
+.LangTextGA
+	{
+		color: #060;				/* color reflects language selection */
+		border:1px solid #060;		/* color reflects language selection */
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+.LangEL /* Greek */
+	{
+		background:#08F;			/* color reflects language selection */
+		border:1px solid #08F;		/* color reflects language selection */
+	}
+
+.LangTextEL
+	{
+		color: #08F;				/* color reflects language selection */
+		border:1px solid #08F;		/* color reflects language selection */
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+.LangEO /* Esperanto */
+	{
+		background:#090;			/* color reflects language selection */
+		border:1px solid #090;		/* color reflects language selection */
+	}
+
+.LangTextEO
+	{
+		color: #090;				/* color reflects language selection */
+		border:1px solid #090;		/* color reflects language selection */
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+.LangIT /* Italian */
+	{
+		background:#CE2B37;			/* color reflects language selection */
+		border:1px solid #CE2B37;	/* color reflects language selection */
+	}
+
+.LangTextIT
+	{
+		color: #CE2B37;				/* color reflects language selection */
+		border:1px solid #CE2B37;	/* color reflects language selection */
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+.LangYOL /* Yola */
+	{
+		background:#690;			/* color reflects language selection */
+		border:1px solid #690;		/* color reflects language selection */
+	}
+
+.LangTextYOL
+	{
+		color: #690;				/* color reflects language selection */
+		border:1px solid #690;		/* color reflects language selection */
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+.LangNON /* Old Norse */
+	{
+		background:#F30;			/* color reflects language selection */
+		border:1px solid #F30;		/* color reflects language selection */
+	}
+
+.LangTextNON
+	{
+		color: #F30;				/* color reflects language selection */
+		border:1px solid #F30;		/* color reflects language selection */
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+.LangCS /* Czech */
+	{
+		background:#936;			/* color reflects language selection */
+		border:1px solid #936;		/* color reflects language selection */
+	}
+
+.LangTextCS
+	{
+		color: #936;				/* color reflects language selection */
+		border:1px solid #936;		/* color reflects language selection */
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+.LangGD /* Scottish Gaelic */
+	{
+		background:#39F;			/* color reflects language selection */
+		border:1px solid #39F;		/* color reflects language selection */
+	}
+
+.LangTextGD
+	{
+		color: #39F;				/* color reflects language selection */
+		border:1px solid #39F;		/* color reflects language selection */
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+.LangNL /* Dutch */
+	{
+		background:#F60;			/* color reflects language selection */
+		border:1px solid #F60;		/* color reflects language selection */
+	}
+
+.LangTextNL
+	{
+		color: #F60;				/* color reflects language selection */
+		border:1px solid #F60;		/* color reflects language selection */
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+.LangFR /* French */
+	{
+		background:#002395;			/* color reflects language selection */
+		border:1px solid #002395;	/* color reflects language selection */
+	}
+
+.LangTextFR
+	{
+		color: #002395;				/* color reflects language selection */
+		border:1px solid #002395;	/* color reflects language selection */
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+.LangLA /* Latin */
+	{
+		background:#999;			/* color reflects language selection */
+		border:1px solid #999;		/* color reflects language selection */
+	}
+
+.LangTextLA
+	{
+		color: #999;				/* color reflects language selection */
+		border:1px solid #999;		/* color reflects language selection */
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+.LangDE /* German */
+	{
+		background:#C90;			/* color reflects language selection */
+		border:1px solid #C90;		/* color reflects language selection */
+	}
+
+.LangTextDE
+	{
+		color: #C90;				/* color reflects language selection */
+		border:1px solid #C90;		/* color reflects language selection */
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+.LangFRK /* Frankish */
+	{
+		background:#960;			/* color reflects language selection */
+		border:1px solid #960;		/* color reflects language selection */
+	}
+
+.LangTextFRK
+	{
+		color: #960;				/* color reflects language selection */
+		border:1px solid #960;		/* color reflects language selection */
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+.LangIPA /* IPA */
+	{
+		background:#666;			/* color reflects language selection */
+		border:1px solid #666;	/* color reflects language selection */
+	}
+
+.LangTextIPA
+	{
+		color: #666;				/* color reflects language selection */
+		border:1px solid #666;	/* color reflects language selection */
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+.CountryNameBig
+	{
+		font-size:1.5em;
+		font-weight:bold;
+		text-align:left;
+		vertical-align:bottom;
+	}
+
+.CountryNameRegular
+	{
+		font-size:1.2em;
+		font-weight:bold;
+		text-align:left;
+		vertical-align:bottom;
+	}
+
+.CountryEnglish
+	{
+		font-size:5em;
+		color:#59503C;
+		font-style:italic;
+		letter-spacing:0.2em;
+		font-weight:bold;
+		font-variant:small-caps;
+		position:relative;
+		top:.2em;
+		left:0.5em;
+		color:#999966;
+	}
+
+.CountryIrish
+	{
+		font-size:5em;
+		font-style:italic;
+		letter-spacing:0.2em;
+		font-weight:bold;
+		font-variant:small-caps;
+		position:relative;
+		top:-0.5em;
+		left:2em;
+		color:#006600;
+	}
+
+.CountryNetherlands
+	{
+		font-size:5em;
+		font-style:italic;
+		letter-spacing:0.2em;
+		font-weight:bold;
+		font-variant:small-caps;
+		position:relative;
+		top:-0.5em;
+		left:1.5em;
+		color:#FF6600;
+	}
+
+.CountryFrance
+	{
+		font-size:5em;
+		font-style:italic;
+		letter-spacing:0.2em;
+		font-weight:bold;
+		font-variant:small-caps;
+		position:relative;
+		top:-0.5em;
+		left:2em;
+		color:#3399CC;
+	}
+
+.ParisSignT
+	{
+		background-image:url(../images/Paris_enseigne_t.gif);
+		min-width:145px;
+		height:53px;
+		margin-left:auto;
+		margin-right:auto;
+		text-align:center;
+		color:#EEEEEE;
+		padding-top:25px;
+		vertical-align:bottom;
+		font-family:Arial, Helvetica, sans-serif;
+		font-weight:bold;
+		font-size:0.85em;
+	}
+
+.ParisSignTW
+	{
+		width:141px;
+	}
+
+.ParisSignTL
+	{
+		border-top:1px #004629 solid;
+		border-left:1px #004629 solid;
+		text-align:left;
+		vertical-align:top;
+		width:27px;
+		height:27px;
+	}
+	
+.ParisSignTR
+	{
+		border-top:1px #004629 solid;
+		border-right:1px #004629 solid;
+		text-align:right;
+		vertical-align:top;
+		width:27px;
+		height:27px;
+	}
+
+.ParisSignT1
+	{
+		background-color:#004629;
+		height:10px;
+	}
+	
+.ParisSignT2
+	{
+		background-color:#002669;
+		height:17px;
+	}
+	
+.ParisSignM
+	{
+		vertical-align:middle;
+		background-color:#002669;
+		color:#EEEEEE;
+		font-family:Arial, Helvetica, sans-serif;
+		font-weight:bold;
+		font-size:1.25em;
+		text-align:center;
+		min-width:91px;
+	}
+
+.ParisSignL1
+	{
+		background-color:#004629;
+		width:10px;
+	}
+	
+.ParisSignL2
+	{
+		background-color:#002669;
+		width:17px;
+	}
+	
+.ParisSignR1
+	{
+		background-color:#002669;
+		border-right:1px #CCCCCC solid;
+		width:17px;
+	}
+	
+.ParisSignR2
+	{
+		background-color:#004629;
+		width:10px;
+	}
+	
+.ParisSignBL
+	{
+		border-bottom:1px #004629 solid;
+		border-left:1px #004629 solid;
+		text-align:left;
+		vertical-align:bottom;
+		width:27px;
+		height:27px;
+	}
+
+.ParisSignBR
+	{
+		border-bottom:1px #004629 solid;
+		border-right:1px #004629 solid;
+		text-align:right;
+		vertical-align:bottom;
+		width:27px;
+		height:27px;
+	}
+
+.ParisSignRInset
+	{
+		border-left:1px #FFFFFF solid;
+		border-right:1px #FFFFFF solid;
+		margin-left:auto;
+	}
+
+.ParisSignBInset
+	{
+		border-bottom:1px #FFFFFF solid;
+		width:100%;
+	}
+
+.ParisSignB1
+	{
+		background-color:#002669;
+		border-bottom:1px #CCCCCC solid;
+		height:17px;
+	}
+	
+.ParisSignB2
+	{
+		background-color:#004629;
+		height:10px;
+	}
+	
+.ParisSignSmallText
+	{
+		font-size:0.6em;
+	}
+
+.NetherlandsBicycleSign
+	{
+		float:left;
+		margin-right:20px;
+		margin-bottom:5px;
+		background-image:url(../images/NetherlandsSign-Bicycle.png);
+		width:195px;
+		height:64px;
+		color:#F00;
+		font-family:Arial, Helvetica, sans-serif;
+		border-width:0;
+		border-collapse:collapse;
+	}
+
+.NetherlandsBicycleSignCity
+	{
+		height:32px;
+		font-weight:bold;
+		padding-left:15px;
+		vertical-align:middle;
+	}
+
+.NetherlandsBicycleSignkm
+	{
+		height:32px;
+		text-align:right;
+		padding-right:30px;
+		vertical-align:middle;
+	}
+
+.NetherlandsBicycleSignCity1
+	{
+		font-weight:bold;
+		padding-left:15px;
+		vertical-align:bottom;
+	}
+
+.NetherlandsBicycleSignkm1
+	{
+		text-align:right;
+		padding-right:30px;
+		vertical-align:bottom;
+	}
+
+.NetherlandsBicycleSignCity2
+	{
+		font-weight:bold;
+		padding-left:15px;
+		vertical-align:top;
+	}
+
+.NetherlandsBicycleSignkm2
+	{
+		text-align:right;
+		padding-right:30px;
+		vertical-align:top;
+	}
+
+.NetherlandsCarSign
+	{
+		float:left;
+		margin-right:20px;
+		margin-bottom:5px;
+		background-image:url(../images/NetherlandsSign-Car.png);
+		width:200px;
+		height:66px;
+		color:#FFF;
+		font-family:Arial, Helvetica, sans-serif;
+		border-width:0;
+		border-collapse:collapse;
+	}
+
+.NetherlandsCarSignCity
+	{
+		height:33px;
+		font-weight:bold;
+		padding-left:15px;
+		vertical-align:middle;
+	}
+
+.NetherlandsCarSignkm
+	{
+		height:33px;
+		text-align:right;
+		padding-right:30px;
+		vertical-align:middle;
+	}
+
+.NetherlandsCarSignCity1
+	{
+		font-weight:bold;
+		padding-left:15px;
+		vertical-align:bottom;
+	}
+
+.NetherlandsCarSignkm1
+	{
+		text-align:right;
+		padding-right:30px;
+		vertical-align:bottom;
+	}
+
+.NetherlandsCarSignCity2
+	{
+		font-weight:bold;
+		padding-left:15px;
+		vertical-align:top;
+	}
+
+.NetherlandsCarSignkm2
+	{
+		text-align:right;
+		padding-right:30px;
+		vertical-align:top;
+	}
+
+.InlineGraphic
+	{
+		height:0.8em;
+		border-width:0;
+	}
+
+.PictureImage img.InlineGraphic
+	{
+		border-width:0;
+		cursor:auto;
+	}
+
+.PictureFloatLeft
+	{
+		float:left;
+		margin-right:10px;
+		margin-bottom:10px;
+	}
+
+.PictureFloatRight
+	{
+		float:right;
+		margin-left:10px;
+		margin-bottom:10px;
+	}
+
+.CenterMiddle
+	{
+		text-align:center;
+		vertical-align:middle;
+		margin-left:auto;
+		margin-right:auto;
+	}
+
+.AlignRight
+	{
+		text-align:right;
+	}
+
+.valignbottom
+	{
+		vertical-align:bottom;
+	}
+
+.valignmiddle
+	{
+		vertical-align:middle;
+	}
+
+.BrailleCell:hover
+	{
+		background-color:#FF0;
+	}
+
+.BrailleCellNoHover
+	{
+		background-color:#F9F0FF;
+	}
+
+.TableShadeYellow
+	{
+		background-color:#FF9;
+	}
+
+.BackgroundHighlight
+	{
+		background-color:#FF9;
+	}
+
+.SmallCaps
+	{
+		/* text MUST be lower case to show as small caps */
+		font-variant:small-caps;
+	}
+
+table.PageNavigation
+	{
+		border-collapse:collapse;
+		margin-left:auto;
+	}
+
+table.PageNavigation th, table.PageNavigation td
+	{
+		border: 1px #59503C solid;
+		width: 2em;
+		height: 1.5em;
+		text-align:center;
+		vertical-align:middle;
+		font-weight:bold;
+	}
+
+table.PageNavigation td
+	{
+		cursor:pointer;
+	}
+
+p.PageNavigation
+	{
+		text-align:center;
+		font-variant:small-caps;
+	}
+
+.MenuPicture
+	{
+		border: 1px #59503C solid;
+		margin-right:20px;
+	}
+
+.MenuTable
+	{
+		margin-bottom:1em;
+		padding:20px;
+	}
+
+.MenuPageNavigation
+	{
+		font-variant:small-caps;
+		font-size:1.5em;
+		font-weight:bold;
+		margin-top:0.75em;
+	}
+
+.MenuPageSubHead
+	{
+		font-variant:small-caps;
+		font-size:1.25em;
+		margin-top:-0.5em;
+		margin-bottom:-1em;
+	}

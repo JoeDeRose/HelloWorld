@@ -1,0 +1,295 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link rel="stylesheet" type="text/css" href="include/main.css" />
+</head>
+
+<body>
+<script src="include/main.js"></script>
+<script src="include/jquery.min.js"></script>
+<table class="PageHeaderFrame">
+	<tr>
+		<td>
+			<table class="PageHeader">
+				<tr>
+					<td>
+						<table class="PageHeaderContent">
+							<tr>
+								<td>
+									<table class="HeaderDate">
+										<tr>
+											<td rowspan="2" class="OghamDateOgham"><script>document.write(OghamJ("G UI"));</script></td>
+											<td class="OghamDateEnglish">Wednesday, September 9, 2009</td>
+											<td>&nbsp;</td>
+										</tr>
+										<tr>
+											<td class="OghamDateNone" colspan="2">
+												<span class="CountryEnglish">Ireland</span><br>
+												<span class="CountryIrish fade33"><a name="Eire" id="Eire" />Éire</span>
+											</td>
+										</tr>
+									</table>
+								</td>
+								<td align="right">
+									<table id="ToC" class="ToC">
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<table class="IrishPronunciation">
+				<tr>
+					<td>
+						<table class="PageHeaderContent">
+							<tr>
+								<td>
+									<table width="100%">
+										<tr>
+											<td>
+												<span style="color:#59503C; font-size:2em; font-variant:small-caps"><b>Page Navigation</b></span><br />
+											</td>
+											<td>
+												<table class="PageNavigation">
+													<tr>
+														<td rowspan="2" onClick="PageNavigationClick(0)">&nbsp;&nbsp;Main&nbsp;&nbsp;</td>
+														<th colspan="3">August</th>
+														<th colspan="10">September</th>
+													</tr>
+													<tr>
+														<td onMouseOver="PageNavigation(29);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(29);">29</td>
+														<td onMouseOver="PageNavigation(30);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(30);">30</td>
+														<td onMouseOver="PageNavigation(31);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(31);">31</td>
+														<td onMouseOver="PageNavigation(1);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(1);">1</td>
+														<td onMouseOver="PageNavigation(2);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(2);">2</td>
+														<td onMouseOver="PageNavigation(3);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(3);">3</td>
+														<td onMouseOver="PageNavigation(4);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(4);">4</td>
+														<td onMouseOver="PageNavigation(5);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(5);">5</td>
+														<td onMouseOver="PageNavigation(6);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(6);">6</td>
+														<td onMouseOver="PageNavigation(7);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(7);">7</td>
+														<td onMouseOver="PageNavigation(8);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(8);">8</td>
+														<td onMouseOver="PageNavigation(9);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(9);" style="background-color:#A7C3AB">9</td>
+														<td onMouseOver="PageNavigation(10);" onMouseOut="PageNavigation(0);" onClick="PageNavigationClick(10);">10</td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+									</table>
+									<p id="PageNavigationSubHeads" class="PageNavigation">&nbsp;</p>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<table class="IrishPronunciation">
+				<tr>
+					<td>
+						<table class="PageHeaderContent">
+							<tr>
+								<td>
+									<form id="RegExpForm" name="RegExpForm" method="post" action="">
+									  <span style="color:#59503C; font-size:2em; font-variant:small-caps"><b><a name="Pronounce" id="Pronounce"></a>Irish Pronunciation Utility</b></span><br />
+									  &nbsp;
+									  <table border="1" cellspacing="0" cellpadding="0" class="WhiteTable">
+										<tr>
+										  <td nowrap="nowrap">Pronounce This:&nbsp;&nbsp;</td>
+										  <td><input name="GaelicJ" type="text" id="GaelicJ" size="45" /><input type="button" name="Button" value="Convert" onclick="ConvertGaelicJ();" /></td>
+										</tr>
+										<tr id="GaelicRow" style="display:none">
+										  <td nowrap="nowrap">Irish:&nbsp;&nbsp;</td>
+										  <td id="GaelicColor" class="result"><span id="GaelicResult">&nbsp;</span></td>
+										  <td id="GaelicClean" style="display:none" class="result"><span id="GaelicCleanResult">&nbsp;</span></td>
+										</tr>
+										<tr id="TraditionalGaelicRow" style="display:none">
+										  <td nowrap="nowrap">Traditional Irish:&nbsp;&nbsp;</td>
+										  <td id="TraditionalGaelicColor" class="result"><span id="TraditionalGaelicResult">&nbsp;</span></td>
+										  <td id="TraditionalGaelicClean" style="display:none" class="result"><span id="TraditionalGaelicCleanResult">&nbsp;</span></td>
+										</tr>
+										<tr id="IPARow" style="display:none">
+										  <td nowrap="nowrap"><a href="http://en.wikipedia.org/wiki/International_Phonetic_Alphabet" target="_blank">IPA</a>:&nbsp;&nbsp;</td>
+										  <td id="IPAColor" class="result"><span id="IPAResult">&nbsp;</span></td>
+										  <td id="IPAClean" style="display:none" class="result"><span id="IPACleanResult">&nbsp;</span></td>
+										</tr>
+										<tr id="EnglishApproximateRow" style="display:none">
+										  <td nowrap="nowrap">English Approximate:&nbsp;&nbsp;</td>
+										  <td id="EnglishApproximateColor" class="result"><span id="EnglishApproxResult">&nbsp;</span></td>
+										  <td id="EnglishApproximateClean" style="display:none" class="result"><span id="EnglishApproxCleanResult">&nbsp;</span></td>
+										</tr>
+										<tr id="OghamRow" style="display:none">
+										  <td nowrap="nowrap">Ogham:&nbsp;&nbsp;</td>
+										  <td style="padding:5px"><span id="OghamResult">&nbsp;</span></td>
+										</tr>
+										<tr id="ISLRow" style="display:none">
+										  <td nowrap="nowrap">ISL:&nbsp;&nbsp;</td>
+										  <td style="padding:5px"><span id="ISLResult">&nbsp;</span></td>
+										</tr>
+									  </table>
+									<div id="buttons" style="display:none">
+									<p align="left" id="ItalicsInEnglishApproximate" style="display:none">Italics in the &quot;English Approximate&quot; indicate a sound that does not exist in English.  Refer to the &quot;IPA&quot; line for more accurate pronunciation information.</p>
+									<p align="left"> You can see the results with background color shading to illustrate which letters are mapped to which sounds, or you can hide the colors if you find it difficult the read the shaded text.<br />
+									<input id="HideColorButton" type="button" value="Hide Colors" onclick="ColorsJ('hide');" /><input id="ShowColorButton" style="display:none" type="button" value="Show Colors" onclick="ColorsJ('show');" /></p>
+									<p><input id="ReturnToTextButton" style="display:none" type="button" value="Return to Where You Were" onclick="PronounceReturnToTextJ();" /></p>
+									</div>
+									</form>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+
+<hr class="Disappear" />
+<script>
+WriteH1HeaderJ("The Skelligs", "Co. Kerry");
+WritePhotoGroupHeaderJ("Anticipation", "Anticipation");
+WritePhotoJ("Anticipation", "20090909", "Map_Ireland_SkelligMichael.jpg", "Location of Skellig Michael", 450, 600);
+WritePhotoJ("Anticipation", "20090909", "IMG_0798.JPG", "The <span class='PictureCaptionRoman'>Ken Brencent</span>");
+WritePhotoJ("Anticipation", "20090909", "IMG_0800.JPG", "Leaving the Mainland Behind");
+WritePhotoJ("Anticipation", "20090909", "IMG_0807.JPG", "Leaving the Mainland Behind");
+WritePhotoMiddleHeaderJ("LittleSkellig", "Little Skellig");
+WritePhotoJ("LittleSkellig", "20090909", "IMG_0808.JPG", "All of the White Dots Are Gannets");
+WritePhotoJ("LittleSkellig", "20090909", "IMG_0809.JPG", "Little Skellig and Gannets");
+WritePhotoJ("LittleSkellig", "20090909", "IMG_0810.JPG", "Little Skellig and Gannets");
+WritePhotoJ("LittleSkellig", "20090909", "IMG_0811.JPG", "A Natural Bridge on Little Skellig");
+WritePhotoJ("LittleSkellig", "20090909", "IMG_0814.JPG", "Chiseled Rocks at the Top of Little Skellig");
+WritePhotoMiddleHeaderJ("GreatSkellig", "Great Skellig");
+WritePhotoJ("GreatSkellig", "20090909", "IMG_0815.JPG", "Skellig Michael");
+WritePhotoJ("GreatSkellig", "20090909", "IMG_0816.JPG", "Skellig Michael");
+WritePhotoJ("GreatSkellig", "20090909", "IMG_0817.JPG", "A Wall at Monastic Ruins at the Very Top");
+WritePhotoJ("GreatSkellig", "20090909", "IMG_0818.JPG", "The Monastic Ruins");
+WritePhotoJ("GreatSkellig", "20090909", "IMG_0819.JPG", "The Ruins, and a Clochán");
+WritePhotoJ("GreatSkellig", "20090909", "IMG_0819A.JPG", "The Ruins, and a Clochán (Maybe Two)");
+WritePhotoJ("GreatSkellig", "20090909", "IMG_0820.JPG", "The Trail up the Mountain<br />The dip between the peaks is known as &#8220;Christ&rsquo;s Saddle.&#8221;");
+WritePhotoMiddleHeaderJ("Disappointment", "Disappointment");
+WritePhotoJ("Disappointment", "20090909", "IMG_0821.JPG", "Leaving Skellig Michael Behind");
+WritePhotoJ("Disappointment", "20090909", "IMG_0822.JPG", "The Skelligs");
+WritePhotoJ("Disappointment", "20090909", "IMG_0825.JPG", "Portmagee");
+WritePhotoMiddleHeaderJ("Portmagee", "Portmagee");
+WritePhotoJ("Portmagee", "20090909", "IMG_0799.JPG", "Irish in Actual Usage");
+WritePhotoJ("Portmagee", "20090909", "IMG_0829.JPG", "So we didn&rsquo;t see Skellig Michael, but we did have a chance to experience what had been the second-best toilet in Ireland in 2002 (though Billy fears that he jeopardized its reputation).");
+WritePhotoGroupFooterJ();
+WriteOghamJ("Sceilig Mhichíl");
+</script>
+<p>So we were still in Caherciveen, having thrown a complete monkey wrench into our plans in the hope of rescuing a <script>LangBoxJ("EN", "Skellig Michael");LangBoxJ("GA", "Sceilig Mhichíl");</script>. But let&rsquo;s not build suspense: It didn&rsquo;t happen.</p>
+<p>I don&rsquo;t think anyone intentionally misled us at any point, but we were prepared for disappointment over our (delicious) <span class="dropnote">Irish breakfast</span><span class="downarrow">➴</span>, when we noticed that yesterday&rsquo;s &#8220;I&rsquo;m certain&#8221; had turned into today&rsquo;s &#8220;I think.&#8221; Nevertheless, we dutifully hied to <script>LangBoxJ("EN", "Portmagee");LangBoxJ("GA", "An Caladh");</script> (&#8220;The Ferry&#8221; in Irish) and presented ourselves to the captain of the <i>Ken Brencent</i>. He delayed our launch by almost an hour, hoping to give the seas time to calm, and then we set out in the hopes that the landing crew on Skellig Michael would give us permission to dock upon arrival. The captain had an incentive to land us if possible, as the fare was less for a trip around <script>LangBoxJ("EN", "The Skelligs");LangBoxJ("GA", "Na Scealaga");</script> than for one that included a landing on Skellig Michael, so I&rsquo;m sure his disappointment paralleled our own.</p>
+<table class="dropnoteframe">
+	<tr>
+		<th width="25%">&nbsp;</th>
+		<td width="75%">
+			<table class="dropnotetable">
+				<tr>
+					<th>➴</th>
+					<td>Blood sausage, eggs, and bacon.</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<p>The trip out was over water that reminded me of the waves in a Japanese woodblock print, and the boat bobbed mercilessly (but not so much that anyone put on the optional life jackets, which in retrospect was pretty stupid of us all even though nothing happened).</p>
+<p>Finally, <script>LangBoxJ("EN", " Little Skellig");LangBoxJ("GA", "Sceilig Bheag");</script> (which is so fragile that no one is allowed to land on it) loomed into view, nearly covered with gannets. This is one of only thirty-five breeding colonies that these birds have in six nations of the North Atlantic, which would lead one to the assumption that they must be endangered &#8211; yet these colonies are so remote, robust, and crowded that the gannet&rsquo;s conservation status is &#8220;least concern&#8221; (which is the same rating that pigs and dandelions get).</p>
+<p>Then, with futile hope and misguided anticipation, we reached Skellig Michael (also known as Great Skelling), where the landing crews were standing on the dock waving their arms into an <i>X</i> shape above their heads &#8211; and we didn&rsquo;t need the nautical training of our captain to know that this was bad news.</p>
+<p>If we had docked, we would have been able to walk a trail up to the top of the mountain and see the stone beehive-shaped huts (&nbsp;<script>LangBoxJ("GA", "Clochán");</script>&nbsp;) that a community of just around twelve monks and an abbot lived in until the 12th Century. Based on pictures, the ruins are remarkably well preserved in light of the ravenous weather to which they are constantly exposed, and (again, based on pictures) stunningly beautiful. Alas, I have no such pictures to show you, but I can recommend a <a href="http://images.google.com/images?q=Skellig+Michael">Google images search</a>.</p>
+<p>And with no other choice, we left the Skelligs in the rear-view mirror (or whatever boats have) and made our way back to colorful and charming Portmagee. You&rsquo;ll notice in the picture of the town that the waters are quite calm. This is because the port is buffeted by <script>LangBoxJ("EN", "Valentia Island");LangBoxJ("GA", "Dairbhre");</script> &#8211; which, by the way, has the distinction of having been the eastern terminus of the first (viable) transatlantic telegraph cable in 1857.</p>
+<script>WriteH1FooterJ();</script>
+
+<hr class="Disappear" />
+<script>
+WriteH1HeaderJ("Ogham Stone", "Co. Kerry");
+WritePhotoGroupHeaderJ("OghamStone", "Ogham Stone");
+WritePhotoJ("OghamStone", "20090907", "Map_Ireland_Derrynane.jpg", "Location of Derrynane", 450, 600);
+WritePhotoJ("OghamStone", "20090909", "IMG_0831.JPG", "Ogham Stone");
+WritePhotoJ("OghamStone", "20090909", "IMG_0832.JPG", "Ogham Stone");
+WritePhotoJ("OghamStone", "20090909", "IMG_0833.JPG", "Ogham Stone", 450, 600);
+WritePhotoJ("OghamStone", "20090909", "IMG_0834.JPG", "Ogham Stone", 450, 600);
+WritePhotoGroupFooterJ();
+WriteOghamJ("Clough Oghaim");
+</script>
+<p>Making lemonade from lemons, we took the occasion to re-visit the Ogham Stone in Derrynane. As you&rsquo;ll recall from the report of two days ago, I was gobsmacked just to be in the presence of the stone in pitch-black night, when I couldn&rsquo;t even see it except in my own flash photographs. If our schedule had worked as planned, time would have been as such a premium that a return to the stone would have been impossible &#8211; but as things played out, we had some time to kill.</p>
+<p>Seeing the stone by light, standing as it does like a sentinel over Derrynane Bay, was a cherished experience.</p>
+<script>WriteH1FooterJ();</script>
+
+<hr class="Disappear" />
+<script>
+WriteH1HeaderJ("Beara Peninsula", "Co. Kerry");
+WritePhotoGroupHeaderJ("Beara", "Ring of Beara");
+WritePhotoJ("Beara", "20090909", "Map_Ireland_Beara.jpg", "Location of Beara", 450, 600);
+WritePhotoJ("Beara", "20090909", "IMG_0836.JPG", "The Winding Road along the Peninsula");
+WritePhotoJ("Beara", "20090909", "IMG_0839.JPG", "Granite Outcroppings<br />(which were really beautiful in real life, but not so much in the picture)");
+WritePhotoJ("Beara", "20090909", "IMG_0842.JPG", "Wildflowers and Granite");
+WritePhotoJ("Beara", "20090909", "IMG_0844.JPG", "Sheep at an Uncharacteristically Wide Spot in the Road");
+WritePhotoJ("Beara", "20090909", "IMG_0830.JPG", "A More Characteristic Piece of Road");
+WritePhotoGroupFooterJ();
+WriteOghamJ("Béara");
+</script>
+<p>And to end our time in Ireland, we killed all the time we had available &#8211; and then some &#8211; on the <script>LangBoxJ("EN", "Beara Peninsula");LangBoxJ("GA", "Béara");</script>. I had heard that there was a cable car at the end of the peninsula connecting the mainland to 
+	<script>LangBoxJ("EN", "Dursey Island");LangBoxJ("GA", "Baoi Bhéarra");LangBoxJ("GA", "Oileán Baoi");</script>, and that this cable car had a policy that livestock took precedence over human passengers. I was hoping that there would be a sign to that effect, as I thought a picture of such a notice would a great souvenir of the trip &#8211; but even though paved roads (presumably) led there, it became clear by late afternoon that it would be impossible to reach.</p>
+<p>Our current understanding of interstellar travel is disappointing: With increased distance and acceleration, exponentially greater amounts of energy are consumed, and time is slowed to a crawl, such that eventually the hypothetical star traveler has consumed all of the energy in the universe, and has outlived her or his civilization. Driving toward Dursey was a similar experience: We covered half the distance in the first half-hour, and things seemed remarkably agreeable. Then the roads became narrower and windier, and we covered half of the remaining distance in the next half-hour. The same thing happened again and again &#8211; with new impediments along the way, such as flocks of sheep in the roadway, high stone walls that made passing on the ostensibly two-way road impossible, diminished signage, and decreasing reliability of the GPS &#8211; such that each half-hour brought us only halfway to our destination. By the time we turned back, we could (I think) see Dursey Island in the distance &#8211; but we could also see the roads ahead and it was clear that we would run very late for our reservation in Kilkenny if I didn&rsquo;t bite the bullet and give up.</p>
+<p>The roads we were on, by the way, are known as the Ring of Beara, a competitor of sorts to the Ring of Kerry.  Beara is staggeringly beautiful (though I regret that you can&rsquo;t tell it from my pictures), but I&rsquo;m guessing it&rsquo;s not much a part of the self-guided traveler&rsquo;s itinerary based on the meager signage there.</p>
+<script>WriteH1FooterJ();</script>
+
+<hr class="Disappear" />
+<script>
+WriteH1HeaderJ("Kilkenny", "Co. Kilkenny");
+WritePhotoGroupHeaderJ("Kilkenny", "Kilkenny");
+WritePhotoJ("Kilkenny", "20090909", "Map_Ireland_Kilkenny.jpg", "Location of Kilkenny", 450, 600);
+WritePhotoGroupFooterJ();
+WriteOghamJ("Cill Chainnigh");
+</script>
+<p>Having scrapped our standing reservation in Derry, we arranged to spend the night in <script>LangBoxJ("EN", "Kilkenny");LangBoxJ("GA", "Cill Chainnigh");</script>, which wasn&rsquo;t nearly as steeped in historical interest &#8211; but, at least, positioned us to reach Dublin Airport in time for our flight without waking up at 5:00 AM.  I was still taking our many scheduling disappointments in Ireland pretty hard &#8211; but this was a silver lining of sorts.</p>
+<p>An immature part of me wants to shout, <span class="dropnote">&#8220;You Bastards!&#8221;</span><span class="downarrow">➴</span> every time the name &#8220;Kilkenny&#8221; comes up. Alas, as it turns out, it was more likely to be yelled at us.</p>
+<table class="dropnoteframe">
+	<tr>
+		<th width="25%">&nbsp;</th>
+		<td width="75%">
+			<table class="dropnotetable">
+				<tr>
+					<th>➴</th>
+					<td>It&rsquo;s a quote from <span class='PictureCaptionRoman'>South Park</span>: In the first seasons, the character of Kenny McCormick would be slain near the end of every episode, whereupon one of his companions would invariably shout, &#8220;Oh my God, they killed Kenny! ...You bastards!&#8221;</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<p>Finally we arrived in Kilkenny &#8211; two hours late for our reservation, for which we were scolded briefly with the mouth, and at great length with the eyes. I do regret that I didn&rsquo;t call until we were nearly there &#8211; but we hit an area in which there were literally no phones of any sort, nor any other conveniences. And anyway, it&rsquo;s not like we showed up in the dead of night: We had told them to expect us at 6:00 PM, and we arrived a little after 8:00.</p>
+<p>Famished, having foregone food in our desperate enthusiasm to get to the B&B in time, I ran to a nearby pub to pick up dinner for me and Billy. I took a pass on blood pudding because I wasn&rsquo;t in the mood for it &#8211; but I regret that decision to this day: The only previous time I&rsquo;ve had blood pudding was when it was plastic-sealed on the ferry between Orkney and Scrabster, and it would have been nice to know what it&rsquo;s like when it&rsquo;s (semi-)lovingly prepared. In the end, I think we had some kind of turkey and ranch grill. (And despite my regret, I remember that it <i>really</i> hit the spot.)</p>
+<script>WriteH1FooterJ();</script>
+
+<p>&nbsp;</p>
+<table class="PageHeaderFrame">
+	<tr>
+		<td>
+			<table class="PageFooter">
+				<tr>
+					<td>
+						<table width="100%">
+							<tr>
+								<td width="33%"><p  class="PageNavigation"><a href="20090908.htm">Previous</a></p></td>
+								<td width="33%"><p  class="PageNavigation"><a href="index.htm">Main</a></p></td>
+								<td width="33%"><p  class="PageNavigation"><a href="20090910.htm">Next</a></p></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+
+<script src="include/footer.js"></script>
+</body>
+</html>

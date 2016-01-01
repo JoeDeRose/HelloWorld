@@ -1,0 +1,744 @@
+@font-face
+	{
+		font-family: CopticFont;
+		src: url('ANTINOOU_0.TTF');
+	}
+
+@font-face
+	{
+		font-family: ArialNarrow;
+		src: url('ARIALN.TTF');
+	}
+
+p
+	{
+		line-height: 1.3em;
+	}
+
+li
+	{
+		line-height: 1.3em;
+	}
+
+.RomanText
+	{
+		font-style: normal;
+	}
+
+.LangDesignator
+	{
+		font-family: Arial, Helvetica, sans-serif;
+		font-weight: bold;
+		color: #FFF;
+		font-size: 10px;
+		padding-left: 3px;
+		font-style: normal;
+		vertical-align: middle;
+		cursor: help;
+	}
+
+.LangAR /* Arabic */
+	{
+		background: green;			/* color reflects language selection */
+		border: 1px solid green;		/* color reflects language selection */
+	}
+.LangTextAR
+	{
+		color: green;				/* color reflects language selection */
+		border: 1px solid green;		/* color reflects language selection */
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+.LangARC /* Aramaic */
+	{
+		background: coral;			/* color reflects language selection */
+		border: 1px solid coral;		/* color reflects language selection */
+	}
+.LangTextARC
+	{
+		color: coral;				/* color reflects language selection */
+		border: 1px solid coral;		/* color reflects language selection */
+		padding-left: 2px;
+		padding-right: 2px;
+		text-align: right;
+	}
+
+.LangCOP /* Coptic */
+	{
+		background: firebrick;			/* color reflects language selection */
+		border: 1px solid firebrick;		/* color reflects language selection */
+	}
+.LangTextCOP
+	{
+		font-family: CopticFont;
+		color: firebrick;				/* color reflects language selection */
+		border: 1px solid firebrick;		/* color reflects language selection */
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+.LangEL /* Greek */
+	{
+		background: royalblue;			/* color reflects language selection */
+		border: 1px solid royalblue;		/* color reflects language selection */
+	}
+.LangTextEL
+	{
+		color: royalblue;				/* color reflects language selection */
+		border: 1px solid royalblue;		/* color reflects language selection */
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+.LangEN /* English */
+	{
+		background: black;			/* color reflects language selection */
+		border: 1px solid black;		/* color reflects language selection */
+	}
+.LangTextEN
+	{
+		color: black;				/* color reflects language selection */
+		border: 1px solid black;		/* color reflects language selection */
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+.LangGEZ /* Ge'ez */
+	{
+		background: darkgoldenrod;			/* color reflects language selection */
+		border: 1px solid darkgoldenrod;		/* color reflects language selection */
+	}
+.LangTextGEZ
+	{
+		color: darkgoldenrod;				/* color reflects language selection */
+		border: 1px solid darkgoldenrod;		/* color reflects language selection */
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+.LangHE /* Hebrew */
+	{
+		background: mediumblue;			/* color reflects language selection */
+		border: 1px solid mediumblue;	/* color reflects language selection */
+	}
+.LangTextHE
+	{
+		color: mediumblue;				/* color reflects language selection */
+		border: 1px solid mediumblue;	/* color reflects language selection */
+		padding-left: 2px;
+		padding-right: 2px;
+		text-align: right;
+	}
+
+.LangHY /* Armenian */
+	{
+		background: crimson;			/* color reflects language selection */
+		border: 1px solid crimson;	/* color reflects language selection */
+	}
+.LangTextHY
+	{
+		color: crimson;				/* color reflects language selection */
+		border: 1px solid crimson;	/* color reflects language selection */
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+.LangIPA /* IPA */
+	{
+		background: #666;			/* color reflects language selection */
+		border: 1px solid #666;		/* color reflects language selection */
+	}
+.LangTextIPA
+	{
+		color: #666;				/* color reflects language selection */
+		border: 1px solid #666;		/* color reflects language selection */
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+.LangLA /* Latin */
+	{
+		background: goldenrod;			/* color reflects language selection */
+		border: 1px solid goldenrod;		/* color reflects language selection */
+	}
+.LangTextLA
+	{
+		color: goldenrod;				/* color reflects language selection */
+		border: 1px solid goldenrod;		/* color reflects language selection */
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+.LangSYC /* Syriac */
+	{
+		background: darkmagenta;			/* color reflects language selection */
+		border: 1px solid darkmagenta;		/* color reflects language selection */
+	}
+.LangTextSYC
+	{
+		color: darkmagenta;					/* color reflects language selection */
+		border: 1px solid darkmagenta;		/* color reflects language selection */
+		padding-left: 2px;
+		padding-right: 2px;
+		text-align: right;
+	}
+
+.LangTR /* Turkish */
+	{
+		background: red;				/* color reflects language selection */
+		border: 1px solid red;		/* color reflects language selection */
+	}
+.LangTextTR
+	{
+		color: red;					/* color reflects language selection */
+		border: 1px solid red;		/* color reflects language selection */
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+.LangYI /* Yiddish */
+	{
+		background: saddlebrown;				/* color reflects language selection */
+		border: 1px solid saddlebrown;		/* color reflects language selection */
+	}
+.LangTextYI
+	{
+		color: saddlebrown;					/* color reflects language selection */
+		border: 1px solid saddlebrown;		/* color reflects language selection */
+		padding-left: 2px;
+		padding-right: 2px;
+		text-align: right;
+	}
+
+table.LangTable
+	{
+		border-collapse: collapse;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+table.LangTable th
+	{
+		text-align: center;
+		vertical-align: top;
+	}
+table.LangTable td
+	{
+		vertical-align: top;
+	}
+
+.MeasurementDesignator
+	{
+		font-family: Arial, Helvetica, sans-serif;
+		font-weight: bold;
+		color: #000;
+		font-size: 10px;
+		padding-left: 2px;
+		padding-right: 2px;
+		font-style: normal;
+		vertical-align: middle;
+		cursor: help;
+	}
+
+.MeasurementAbbr
+	{
+		background: #FF0;
+		border: 1px solid #999;
+	}
+
+.MeasurementTableLeft
+	{
+		background: #FF0;
+		border-left: 1px solid #999;
+		border-bottom: 1px solid #999;
+		border-top: 1px solid #999;
+		text-align: center;
+	}
+
+.MeasurementTableRight
+	{
+		background: #FF0;
+		border-right: 1px solid #999;
+		border-bottom: 1px solid #999;
+		border-top: 1px solid #999;
+		text-align: center;
+	}
+
+.MeasurementAbbr1
+	{
+		background: #FF0;
+		border-left: 1px solid #999;
+		border-bottom: 1px solid #999;
+		border-right: 1px solid #999;
+	}
+
+.MeasurementText1
+	{
+		border-top: 1px dotted #999;
+		border-bottom: 1px dotted #999;
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+.MeasurementText2
+	{
+		border-top: 1px dotted #999;
+		border-bottom: 1px dotted #999;
+		border-right: 1px dotted #999;
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+.MeasurementText3
+	{
+		border-bottom: 1px dotted #999;
+		border-right: 1px dotted #999;
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+.TextRed
+	{
+		color: #F00;
+	}
+
+.TextGreen
+	{
+		color: #390;
+	}
+
+.PageHeader
+	{
+	}
+
+.HeaderSection
+	{
+		margin-top: 10em;
+	}
+
+.HeaderBlocks
+	{
+		border-collapse: collapse;
+	}
+
+.HeaderBlocks td
+	{
+		padding: 0;
+		vertical-align: top;
+	}
+
+.HeaderBlocks td.VAlignMiddle
+	{
+		vertical-align: middle;
+	}
+
+.HeaderBlocks td.VAlignBottom
+	{
+		vertical-align: bottom;
+	}
+
+.HeaderBlocks td.Square
+	{
+		width: 80px;
+		height: 80px;
+		text-align: center;
+		vertical-align: middle;
+	}
+
+.HeaderBlocks td.Block
+	{
+		background-image: url(../images/block-80.png);
+	}
+
+td.HeaderBlockHebrew
+	{
+		vertical-align: middle;
+		color: mediumblue;
+		text-align: right;
+		padding-right: 30px;
+		font-size: 2em;
+		direction: rtl;
+	}
+
+td.HeaderBlockArabic
+	{
+		vertical-align: middle;
+		color: green;
+		text-align: right;
+		padding-right: 30px;
+		font-size: 2em;
+		direction: rtl;
+	}
+
+td.HeaderBlockEnglish
+	{
+		vertical-align: top;
+		color: #666;
+		text-align: left;
+		padding-left: 45px;
+		padding-top: 20px;
+		font-size: 2em;
+		font-weight: bold;
+		letter-spacing: 0.25em;
+		font-variant: small-caps;
+	}
+
+span.HeaderBlockEnglishCapital
+	{
+		font-size: 1.35em;
+		color: #000;
+	}
+	
+.HeaderBlocks .Invisible
+	{
+		width: 39px;
+		height: 39px;
+	}
+
+div.IndentedBody
+	{
+		padding-left: 100px;
+		padding-right: 100px;
+	}
+
+.FrameTop
+	{
+		border-top: 1px #000 solid;
+	}
+
+.FrameBoxCorner
+	{
+		width: 80px;
+		height: 80px;
+	}
+
+.ThickFrameBoxLeft
+	{
+		background-image: url(../images/frame/ThickFrameLeft.png);
+	}
+
+.ThickFrameBoxBottomLeft
+	{
+		background-image: url(../images/frame/ThickFrameBottomLeft.png);
+	}
+
+.ThickFrameBoxBottom
+	{
+		background-image: url(../images/frame/ThickFrameBottom.png);
+	}
+
+.BlackFrameBoxTop
+	{
+		background-image: url(../images/frame/BlackFrameTop.png);
+	}
+
+.BlackFrameBoxLeft
+	{
+		background-image: url(../images/frame/BlackFrameLeft.png);
+	}
+
+.BlackFrameBoxBottomLeft
+	{
+		background-image: url(../images/frame/BlackFrameBottomLeft.png);
+	}
+
+.BlackFrameBoxBottom
+	{
+		background-image: url(../images/frame/BlackFrameBottom.png);
+	}
+
+.FrameBoxTopLeft
+	{
+		background-image: url(../images/frame/FrameTopLeft.png);
+	}
+
+.FrameBoxTop
+	{
+		background-image: url(../images/frame/FrameTop.png);
+	}
+
+.FrameBoxTopRight
+	{
+		background-image: url(../images/frame/FrameTopRight.png);
+	}
+
+.FrameBoxLeft
+	{
+		background-image: url(../images/frame/FrameLeft.png);
+	}
+
+.FrameBoxRight
+	{
+		background-image: url(../images/frame/FrameRight.png);
+	}
+
+.FrameBoxBottomLeft
+	{
+		background-image: url(../images/frame/FrameBottomLeft.png);
+	}
+
+.FrameBoxBottom
+	{
+		background-image: url(../images/frame/FrameBottom.png);
+	}
+
+.FrameBoxBottomRight
+	{
+		background-image: url(../images/frame/FrameBottomRight.png);
+	}
+
+#TOC
+	{
+		margin-left: auto;
+		margin-right: 0;
+	}
+
+#TOC th
+	{
+		font-size: 1.5em;
+		color: #666;
+		font-variant: small-caps;
+		vertical-align: middle;
+	}
+
+#TOC th a
+	{
+		color: #666;
+		text-decoration: none;
+	}
+
+#TOC td
+	{
+		vertical-align: middle;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+.PictureGroupTitle
+	{
+		font-size: 1.5em;
+		color: #666;
+		font-variant: small-caps;
+		margin-left: 5px;
+		margin-right: 5px;
+		margin-top: 5px;
+		margin-bottom: 0;
+	}
+
+.PictureGroupText
+	{
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+
+.PictureGroup
+	{
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+.PictureGroup td
+	{
+		text-align: center;
+	}
+
+.PictureGroupTop img, .PictureGroupBottom img
+	{
+		margin: 5px;
+	}
+
+.PictureGroup img
+	{
+		border: 1px #000 solid;
+		vertical-align: middle;
+		cursor: pointer;
+	}
+
+.PictureGroupMiddle img
+	{
+		margin-top: 1em;
+		margin-bottom: 2px;
+	}
+
+.PictureGroupCaption p
+	{
+		color: #8C6C48;
+		margin-top: 0;
+		font-weight: bold;
+	}
+
+.PictureGroupCaption p span.CaptionAddendum
+	{
+		font-weight: normal;
+	}
+
+
+img.ImageWithBorder
+	{
+		border: 1px #000 solid;
+	}
+
+td.CalendarBlock
+	{
+		border: 1px black solid;
+	}
+
+td.CalendarBlock table
+	{
+		border-collapse: collapse;
+		width: 13em;
+	}
+
+.Calendar table
+	{
+		font-size: 0.85em;
+	}
+
+.Calendar th
+	{
+		padding-left: 0.5em;
+		padding-right: 0.5em;
+		text-align: center;
+	}
+
+.CalendarBlock td
+	{
+		text-align: center;
+	}
+
+.Calendar .CalendarHeader
+	{
+		font-size: 1.75em;
+		font-weight: bold;
+		font-variant: small-caps;
+		padding-top: 1em;
+		padding-left: 20px;
+		padding-right: 20px;
+		text-align: left;
+	}
+
+.CalendarHide
+	{
+		display: none;
+	}
+
+.CalendarHebrew
+	{
+		color: mediumblue;
+	}
+
+.CalendarJulian
+	{
+		color: royalblue;
+	}
+
+.CalendarIslamic
+	{
+		color: green;
+	}
+
+.CalendarCoptic
+	{
+		font-family: CopticFont;
+		color: firebrick;
+	}
+
+.CalendarEthiopian
+	{
+		color: darkgoldenrod;
+	}
+
+.CalendarBahai
+	{
+		color: green;
+	}
+
+.CalendarToday
+	{
+		color: white;
+		font-weight: bold;
+		background-color: #960;
+	}
+
+.dropnote
+	{
+		border-top: 1px #59503C dashed;
+		border-left: 1px #59503C dashed;
+		border-bottom: 1px #59503C dashed;
+		padding-left: 3px;
+		padding-right: 3px;
+	}
+
+.dropnoteframe
+	{
+		margin-left: auto;
+		margin-right: 0;
+		border-spacing: 0px;
+		border: 0;
+	}
+
+.dropnotetable
+	{
+		margin-left: auto;
+		margin-right: 15px;
+		border-spacing: 0px;
+	}
+
+.dropnotetable th
+	{
+		vertical-align: top;
+		font-family: Arial, Helvetica, sans-serif;
+		font-weight: bold;
+		color: #FF0;
+		border: 1px #59503C solid;
+		background-color: #59503C;
+		width: 1em;
+	}
+
+.dropnotetable td
+	{
+		border-top: 1px #59503C dotted;
+		border-right: 1px #59503C dotted;
+		border-bottom: 1px #59503C dotted;
+		color: #59503C;
+		padding-left: 7px;
+		padding-right: 3px;
+		font-style: italic;
+	}
+
+.dropnotetable td.dropnotetablefollow
+	{
+		border-top: none;
+	}
+
+.downarrow
+	{
+		font-family: Arial, Helvetica, sans-serif;
+		font-weight: bold;
+		color: #FF0;
+		border: 1px #59503C solid;
+		background-color: #59503C;
+	}
+
+li.Highlighted
+	{
+		background-color: #FFFF99;
+	}
+
+p.UNESCOImages
+	{
+		float: left;
+		padding-left: 1em;
+	}
+
+p.UNESCOImages img
+	{
+		padding-right: 1em;
+		vertical-align: middle;
+	}
+
+.AlignCenter
+	{
+		text-align: center;
+	}
